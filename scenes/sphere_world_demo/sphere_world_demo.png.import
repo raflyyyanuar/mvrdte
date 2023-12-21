@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhd30j0xpcxoi"
 path.s3tc="res://.godot/imported/sphere_world_demo.png-dea9370d686dcfe7b9838df58c9a3444.s3tc.ctex"
-path.etc2="res://.godot/imported/sphere_world_demo.png-dea9370d686dcfe7b9838df58c9a3444.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/sphere_world_demo/sphere_world_demo.png"
-dest_files=["res://.godot/imported/sphere_world_demo.png-dea9370d686dcfe7b9838df58c9a3444.s3tc.ctex", "res://.godot/imported/sphere_world_demo.png-dea9370d686dcfe7b9838df58c9a3444.etc2.ctex"]
+dest_files=["res://.godot/imported/sphere_world_demo.png-dea9370d686dcfe7b9838df58c9a3444.s3tc.ctex"]
 
 [params]
 

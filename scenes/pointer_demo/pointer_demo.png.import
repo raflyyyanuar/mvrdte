@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh5j2q7vpmr0b"
 path.s3tc="res://.godot/imported/pointer_demo.png-7c94b1c1841ccccd10b6c24cae4ad418.s3tc.ctex"
-path.etc2="res://.godot/imported/pointer_demo.png-7c94b1c1841ccccd10b6c24cae4ad418.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/pointer_demo/pointer_demo.png"
-dest_files=["res://.godot/imported/pointer_demo.png-7c94b1c1841ccccd10b6c24cae4ad418.s3tc.ctex", "res://.godot/imported/pointer_demo.png-7c94b1c1841ccccd10b6c24cae4ad418.etc2.ctex"]
+dest_files=["res://.godot/imported/pointer_demo.png-7c94b1c1841ccccd10b6c24cae4ad418.s3tc.ctex"]
 
 [params]
 
