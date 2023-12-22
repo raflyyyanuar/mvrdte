@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkr1jkk3jerux"]
+[gd_scene load_steps=4 format=3 uid="uid://eqly4lxc4awg"]
 
 [ext_resource type="PackedScene" uid="uid://bnqnnnet4dw12" path="res://addons/godot-xr-tools/staging/staging.tscn" id="1"]
 [ext_resource type="Script" path="res://demo_staging.gd" id="2"]
