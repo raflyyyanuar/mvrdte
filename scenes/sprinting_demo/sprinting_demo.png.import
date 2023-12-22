@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://v4807nasx1dc"
 path.s3tc="res://.godot/imported/sprinting_demo.png-7c44fd4c5246ffb4c41197c5b9952020.s3tc.ctex"
+path.etc2="res://.godot/imported/sprinting_demo.png-7c44fd4c5246ffb4c41197c5b9952020.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/sprinting_demo/sprinting_demo.png"
-dest_files=["res://.godot/imported/sprinting_demo.png-7c44fd4c5246ffb4c41197c5b9952020.s3tc.ctex"]
+dest_files=["res://.godot/imported/sprinting_demo.png-7c44fd4c5246ffb4c41197c5b9952020.s3tc.ctex", "res://.godot/imported/sprinting_demo.png-7c44fd4c5246ffb4c41197c5b9952020.etc2.ctex"]
 
 [params]
 

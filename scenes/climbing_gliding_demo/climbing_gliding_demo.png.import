@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3epm85d4s28f"
 path.s3tc="res://.godot/imported/climbing_gliding_demo.png-081dc6127bfcb7c6b0f985142441fb0b.s3tc.ctex"
+path.etc2="res://.godot/imported/climbing_gliding_demo.png-081dc6127bfcb7c6b0f985142441fb0b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/climbing_gliding_demo/climbing_gliding_demo.png"
-dest_files=["res://.godot/imported/climbing_gliding_demo.png-081dc6127bfcb7c6b0f985142441fb0b.s3tc.ctex"]
+dest_files=["res://.godot/imported/climbing_gliding_demo.png-081dc6127bfcb7c6b0f985142441fb0b.s3tc.ctex", "res://.godot/imported/climbing_gliding_demo.png-081dc6127bfcb7c6b0f985142441fb0b.etc2.ctex"]
 
 [params]
 

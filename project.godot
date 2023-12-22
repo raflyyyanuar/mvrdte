@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Godot XR Tools Demo"
+config/name="MVRDTE"
 run/main_scene="res://demo_staging.tscn"
 config/features=PackedStringArray("4.1")
 config/icon="res://icon.png"

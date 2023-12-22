@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://2tmlveuwlpbw"
 path.bptc="res://.godot/imported/starmap_and_constellation_figures_4k.jpg-44440b8ebaa8e4137f11fb76267d3017.bptc.ctex"
+path.astc="res://.godot/imported/starmap_and_constellation_figures_4k.jpg-44440b8ebaa8e4137f11fb76267d3017.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/nasa/starmap_and_constellation_figures_4k.jpg"
-dest_files=["res://.godot/imported/starmap_and_constellation_figures_4k.jpg-44440b8ebaa8e4137f11fb76267d3017.bptc.ctex"]
+dest_files=["res://.godot/imported/starmap_and_constellation_figures_4k.jpg-44440b8ebaa8e4137f11fb76267d3017.bptc.ctex", "res://.godot/imported/starmap_and_constellation_figures_4k.jpg-44440b8ebaa8e4137f11fb76267d3017.astc.ctex"]
 
 [params]
 
