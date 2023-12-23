@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cu4j1s8qr1rjq"
-path.s3tc="res://.godot/imported/teleport_target.png-cd812f7d5692711ac91f6c8a4753ad73.s3tc.ctex"
-path.etc2="res://.godot/imported/teleport_target.png-cd812f7d5692711ac91f6c8a4753ad73.etc2.ctex"
+path.s3tc="res://.godot/imported/teleport_target.png-a087c6683af0192b7058103adc09b08e.s3tc.ctex"
+path.etc2="res://.godot/imported/teleport_target.png-a087c6683af0192b7058103adc09b08e.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/godot-xr-tools/images/teleport_target.png"
-dest_files=["res://.godot/imported/teleport_target.png-cd812f7d5692711ac91f6c8a4753ad73.s3tc.ctex", "res://.godot/imported/teleport_target.png-cd812f7d5692711ac91f6c8a4753ad73.etc2.ctex"]
+source_file="res://godot-xr-tools/images/teleport_target.png"
+dest_files=["res://.godot/imported/teleport_target.png-a087c6683af0192b7058103adc09b08e.s3tc.ctex", "res://.godot/imported/teleport_target.png-a087c6683af0192b7058103adc09b08e.etc2.ctex"]
 
 [params]
 

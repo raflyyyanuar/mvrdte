@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://04fn15h4x333"
-path="res://.godot/imported/movement_provider.svg-3c994cf0a3775c20f333be563d69fbf8.ctex"
+path="res://.godot/imported/movement_provider.svg-c4288b5defcf8838885c37cc38f190f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/godot-xr-tools/editor/icons/movement_provider.svg"
-dest_files=["res://.godot/imported/movement_provider.svg-3c994cf0a3775c20f333be563d69fbf8.ctex"]
+source_file="res://godot-xr-tools/editor/icons/movement_provider.svg"
+dest_files=["res://.godot/imported/movement_provider.svg-c4288b5defcf8838885c37cc38f190f6.ctex"]
 
 [params]
 

@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://h3sjbnu6uplb"
-path.s3tc="res://.godot/imported/hands_occlusionRoughnessMetallic.png-73229fc54301aa8833117ebde8abfd4e.s3tc.ctex"
-path.etc2="res://.godot/imported/hands_occlusionRoughnessMetallic.png-73229fc54301aa8833117ebde8abfd4e.etc2.ctex"
+path.s3tc="res://.godot/imported/hands_occlusionRoughnessMetallic.png-11bd183f7bb03449b263aed26c463b1e.s3tc.ctex"
+path.etc2="res://.godot/imported/hands_occlusionRoughnessMetallic.png-11bd183f7bb03449b263aed26c463b1e.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/godot-xr-tools/hands/textures/hands_occlusionRoughnessMetallic.png"
-dest_files=["res://.godot/imported/hands_occlusionRoughnessMetallic.png-73229fc54301aa8833117ebde8abfd4e.s3tc.ctex", "res://.godot/imported/hands_occlusionRoughnessMetallic.png-73229fc54301aa8833117ebde8abfd4e.etc2.ctex"]
+source_file="res://godot-xr-tools/hands/textures/hands_occlusionRoughnessMetallic.png"
+dest_files=["res://.godot/imported/hands_occlusionRoughnessMetallic.png-11bd183f7bb03449b263aed26c463b1e.s3tc.ctex", "res://.godot/imported/hands_occlusionRoughnessMetallic.png-11bd183f7bb03449b263aed26c463b1e.etc2.ctex"]
 
 [params]
 

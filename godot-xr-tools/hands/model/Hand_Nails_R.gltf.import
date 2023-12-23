@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c6s5nvekg0isa"
-path="res://.godot/imported/Hand_Nails_R.gltf-35869d6a39400588d95465aa5e3b528d.scn"
+path="res://.godot/imported/Hand_Nails_R.gltf-e52ad160098923f1734297af8b33f5c1.scn"
 
 [deps]
 
-source_file="res://addons/godot-xr-tools/hands/model/Hand_Nails_R.gltf"
-dest_files=["res://.godot/imported/Hand_Nails_R.gltf-35869d6a39400588d95465aa5e3b528d.scn"]
+source_file="res://godot-xr-tools/hands/model/Hand_Nails_R.gltf"
+dest_files=["res://.godot/imported/Hand_Nails_R.gltf-e52ad160098923f1734297af8b33f5c1.scn"]
 
 [params]
 
@@ -22,6 +22,7 @@ meshes/generate_lods=true
 meshes/create_shadow_meshes=true
 meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
@@ -29,4 +30,5 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={}
+gltf/naming_version=0
 gltf/embedded_image_handling=1

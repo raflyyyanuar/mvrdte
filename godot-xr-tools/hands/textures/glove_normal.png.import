@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dt6k4nuvpo38o"
-path.s3tc="res://.godot/imported/glove_normal.png-da82759e655cb7106cb0172b7076b948.s3tc.ctex"
-path.etc2="res://.godot/imported/glove_normal.png-da82759e655cb7106cb0172b7076b948.etc2.ctex"
+path.s3tc="res://.godot/imported/glove_normal.png-649dab32eeebaccb2d7f80501f4ee123.s3tc.ctex"
+path.etc2="res://.godot/imported/glove_normal.png-649dab32eeebaccb2d7f80501f4ee123.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/godot-xr-tools/hands/textures/glove_normal.png"
-dest_files=["res://.godot/imported/glove_normal.png-da82759e655cb7106cb0172b7076b948.s3tc.ctex", "res://.godot/imported/glove_normal.png-da82759e655cb7106cb0172b7076b948.etc2.ctex"]
+source_file="res://godot-xr-tools/hands/textures/glove_normal.png"
+dest_files=["res://.godot/imported/glove_normal.png-649dab32eeebaccb2d7f80501f4ee123.s3tc.ctex", "res://.godot/imported/glove_normal.png-649dab32eeebaccb2d7f80501f4ee123.etc2.ctex"]
 
 [params]
 
