@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvdhinw71q4d2"]
+
+[ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/player_desktop.tscn" id="1_wutu2"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g3iw1"]
+size = Vector2(10, 10)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="CSGCombiner3D"]
+mesh = SubResource("PlaneMesh_g3iw1")
+
+[node name="PlayerDesktop" parent="." instance=ExtResource("1_wutu2")]
