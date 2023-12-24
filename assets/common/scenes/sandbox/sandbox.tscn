@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvdhinw71q4d2"]
+[gd_scene load_steps=9 format=3 uid="uid://bvdhinw71q4d2"]
 
-[ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/player_desktop.tscn" id="1_wutu2"]
+[ext_resource type="Script" path="res://assets/common/scenes/sandbox/sandbox.gd" id="1_mva8m"]
 [ext_resource type="PackedScene" uid="uid://dek1px7gedbuv" path="res://assets/common/blends/hub/hub.blend" id="2_bqsfh"]
-[ext_resource type="VoxelGIData" uid="uid://bww1j21lukeki" path="res://assets/desktop/scenes/sandbox/sandbox.VoxelGI_data.res" id="3_7ttn0"]
+[ext_resource type="VoxelGIData" uid="uid://bww1j21lukeki" path="res://assets/common/scenes/sandbox/sandbox.VoxelGI_data.res" id="3_7ttn0"]
 [ext_resource type="Texture2D" uid="uid://eca1rsshqv2w" path="res://assets/common/images/sky_hdris/DaySkyB.exr" id="3_x3e5y"]
+[ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/player_desktop.tscn" id="4_7kvq3"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_j45fp"]
 panorama = ExtResource("3_x3e5y")
@@ -23,15 +24,13 @@ ssao_enabled = true
 ssil_enabled = true
 fog_density = 0.001
 
-[node name="Node3D" type="Node3D"]
-
-[node name="PlayerDesktop" parent="." instance=ExtResource("1_wutu2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115, 7.909, 0.118)
+[node name="Sandbox" type="Node3D"]
+script = ExtResource("1_mva8m")
 
 [node name="hub" parent="." instance=ExtResource("2_bqsfh")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 11.3829, 0)
+transform = Transform3D(0.824857, -2.47119e-08, 0.565341, -0.565341, -3.60557e-08, 0.824857, 0, -1, -4.37114e-08, 0, 11.3829, 0)
 light_energy = 0.3
 light_angular_distance = 0.5
 shadow_enabled = true
@@ -50,3 +49,6 @@ size = Vector3(197.817, 31.5377, 194.627)
 enable_shadows = true
 ambient_mode = 2
 ambient_color = Color(1, 1, 1, 1)
+
+[node name="PlayerDesktop" parent="." instance=ExtResource("4_7kvq3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115, 7.909, 0.118)

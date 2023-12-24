@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://du7rgg1mgvyvx"]
 
 [ext_resource type="Script" path="res://assets/desktop/scenes/player/player_desktop.gd" id="1_kplxm"]
-[ext_resource type="Script" path="res://assets/desktop/scenes/player/Head.gd" id="2_td7il"]
+[ext_resource type="Script" path="res://assets/desktop/scenes/player/head.gd" id="2_td7il"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c3888"]
 
