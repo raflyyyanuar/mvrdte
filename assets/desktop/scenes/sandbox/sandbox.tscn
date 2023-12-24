@@ -1,16 +1,52 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvdhinw71q4d2"]
+[gd_scene load_steps=8 format=3 uid="uid://bvdhinw71q4d2"]
 
 [ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/player_desktop.tscn" id="1_wutu2"]
+[ext_resource type="PackedScene" uid="uid://dek1px7gedbuv" path="res://assets/common/blends/hub/hub.blend" id="2_bqsfh"]
+[ext_resource type="VoxelGIData" uid="uid://bww1j21lukeki" path="res://assets/desktop/scenes/sandbox/sandbox.VoxelGI_data.res" id="3_7ttn0"]
+[ext_resource type="Texture2D" uid="uid://eca1rsshqv2w" path="res://assets/common/images/sky_hdris/DaySkyB.exr" id="3_x3e5y"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_g3iw1"]
-size = Vector2(10, 10)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_j45fp"]
+panorama = ExtResource("3_x3e5y")
+
+[sub_resource type="Sky" id="Sky_dn2re"]
+sky_material = SubResource("PanoramaSkyMaterial_j45fp")
+
+[sub_resource type="Environment" id="Environment_x04mb"]
+background_mode = 2
+background_energy_multiplier = 0.4
+sky = SubResource("Sky_dn2re")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 1
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+fog_density = 0.001
 
 [node name="Node3D" type="Node3D"]
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
-use_collision = true
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="CSGCombiner3D"]
-mesh = SubResource("PlaneMesh_g3iw1")
-
 [node name="PlayerDesktop" parent="." instance=ExtResource("1_wutu2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115, 7.909, 0.118)
+
+[node name="hub" parent="." instance=ExtResource("2_bqsfh")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 11.3829, 0)
+light_energy = 0.3
+light_angular_distance = 0.5
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_x04mb")
+
+[node name="VoxelGI" type="VoxelGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.22449, 15.41, -9.59619)
+size = Vector3(197.817, 31.5377, 194.627)
+data = ExtResource("3_7ttn0")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.22449, 15.41, -9.59619)
+size = Vector3(197.817, 31.5377, 194.627)
+enable_shadows = true
+ambient_mode = 2
+ambient_color = Color(1, 1, 1, 1)
