@@ -6,10 +6,6 @@ extends Control
 @onready var level_preview: TextureRect = $LevelPreview
 
 
-
-
-
-
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 

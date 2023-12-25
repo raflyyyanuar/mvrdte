@@ -1,7 +1,11 @@
 extends TextureRect
 
 const MOVE_TIME := 15.0
-const PAUSE_TIME := 15.0
+const PAUSE_TIME := 5.0
+
+@export var hub_preview : Texture2D
+@export var cat_image : Texture2D
+@export var dog_image : Texture2D
 
 ## Animate like minecraft main menu
 ## moving from left to right
@@ -20,3 +24,13 @@ func _ready() -> void:
 	
 	# pause for a bit
 	tween.tween_interval(PAUSE_TIME)
+
+
+
+
+func _on_dog_mouse_entered() -> void:
+	self.set_texture(dog_image)
+
+
+func _on_cat_mouse_entered() -> void:
+	self.set_texture(cat_image)
