@@ -1,0 +1,104 @@
+[gd_scene load_steps=5 format=3 uid="uid://c657rew27lmon"]
+
+[ext_resource type="Texture2D" uid="uid://bobh7tlqhvj1w" path="res://assets/common/images/level_previews/hub_preview.png" id="1_cw45p"]
+[ext_resource type="Script" path="res://assets/desktop/scenes/main_menu/main_menu.gd" id="1_hfkp2"]
+[ext_resource type="Theme" uid="uid://cjkhx0irum0iw" path="res://assets/common/themes/cartoony_theme.tres" id="2_p35xv"]
+[ext_resource type="Script" path="res://assets/desktop/scenes/main_menu/level_preview.gd" id="3_1nsda"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hfkp2")
+hub_scene_path = "res://assets/desktop/scenes/world/d_world.tscn"
+
+[node name="LevelPreview" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(0, 540)
+texture = ExtResource("1_cw45p")
+script = ExtResource("3_1nsda")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -322.5
+offset_top = 51.0
+offset_right = 322.5
+offset_bottom = 161.0
+grow_horizontal = 2
+theme = ExtResource("2_p35xv")
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 91
+text = "Museum VR DTE"
+
+[node name="Label2" type="Label" parent="Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 204.0
+offset_top = 31.0
+offset_right = 450.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.27743
+pivot_offset = Vector2(123, 20)
+theme = ExtResource("2_p35xv")
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "Desktop edition!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -32.0
+offset_right = 184.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_p35xv")
+theme_override_constants/outline_size = 23
+theme_override_font_sizes/font_size = 48
+text = "Start Main Hub!"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = 42.0
+offset_right = 184.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_p35xv")
+theme_override_constants/outline_size = 23
+theme_override_font_sizes/font_size = 48
+text = "Quit"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
