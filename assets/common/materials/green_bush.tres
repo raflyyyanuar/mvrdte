@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c2s68lk8d25pr"]
+
+[ext_resource type="Texture2D" uid="uid://do6krsc5op3ym" path="res://assets/common/textures/bush/TCom_Ivy0024_1_seamless_S.jpg" id="1_ynl24"]
+[ext_resource type="Texture2D" uid="uid://cnvcs23abe57j" path="res://assets/common/textures/bush/TCom_Ivy0024_1_seamless_N.jpg" id="2_eajv1"]
+
+[resource]
+albedo_color = Color(0.8, 1, 0.607843, 1)
+albedo_texture = ExtResource("1_ynl24")
+normal_enabled = true
+normal_texture = ExtResource("2_eajv1")
+uv1_scale = Vector3(20, 20, 20)

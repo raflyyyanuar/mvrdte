@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwa4uem2bg2oi"]
+
+[ext_resource type="PackedScene" uid="uid://bvdhinw71q4d2" path="res://assets/common/scenes/sandbox/sandbox.tscn" id="1_urbyq"]
+[ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/d_player.tscn" id="2_m0ysw"]
+
+[node name="World" type="Node3D"]
+
+[node name="Sandbox" parent="." instance=ExtResource("1_urbyq")]
+
+[node name="PlayerDesktop" parent="." instance=ExtResource("2_m0ysw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115, 7.909, 0.118)
+
+[editable path="PlayerDesktop"]

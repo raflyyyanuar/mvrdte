@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcqg1ay5yw15r"]
+
+[ext_resource type="PackedScene" uid="uid://ccpr7lfbclplo" path="res://assets/common/blends/maple_tree/maple_tree.blend" id="1_cnxo2"]
+[ext_resource type="Material" uid="uid://cjb1877i87si5" path="res://assets/common/materials/maple_bark.tres" id="2_fuugr"]
+[ext_resource type="Material" uid="uid://bih15ocfvy1nx" path="res://assets/common/materials/concrete.tres" id="2_hsajd"]
+[ext_resource type="Material" uid="uid://c8oinuaej6o3x" path="res://assets/common/materials/soil.tres" id="3_6upb6"]
+[ext_resource type="Material" uid="uid://bk2dtba2i4r5r" path="res://assets/common/materials/leaf.tres" id="3_dsm0e"]
+
+[node name="maple_tree" instance=ExtResource("1_cnxo2")]
+
+[node name="Circle" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_hsajd")
+surface_material_override/1 = ExtResource("3_6upb6")
+
+[node name="Cube" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_fuugr")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_001" parent="Cube" index="0"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_003" parent="Cube" index="1"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_007" parent="Cube" index="2"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_008" parent="Cube" index="3"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_011" parent="Cube" index="4"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_012" parent="Cube" index="5"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_013" parent="Cube" index="6"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_014" parent="Cube" index="7"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_016" parent="Cube" index="8"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_022" parent="Cube" index="9"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_023" parent="Cube" index="10"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_024" parent="Cube" index="11"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_025" parent="Cube" index="12"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_030" parent="Cube" index="13"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_031" parent="Cube" index="14"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_033" parent="Cube" index="15"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_038" parent="Cube" index="16"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_040" parent="Cube" index="17"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_041" parent="Cube" index="18"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_042" parent="Cube" index="19"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_043" parent="Cube" index="20"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_046" parent="Cube" index="21"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_047" parent="Cube" index="22"]
+surface_material_override/0 = ExtResource("3_dsm0e")
+
+[node name="TCom_Tree_NorwayMapleBranch03_512_albedo_049" parent="Cube" index="23"]
+surface_material_override/0 = ExtResource("3_dsm0e")

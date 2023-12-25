@@ -1,10 +1,97 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvdhinw71q4d2"]
+[gd_scene load_steps=32 format=3 uid="uid://bvdhinw71q4d2"]
 
 [ext_resource type="Script" path="res://assets/common/scenes/sandbox/sandbox.gd" id="1_mva8m"]
 [ext_resource type="PackedScene" uid="uid://dek1px7gedbuv" path="res://assets/common/blends/hub/hub.blend" id="2_bqsfh"]
 [ext_resource type="VoxelGIData" uid="uid://bww1j21lukeki" path="res://assets/common/scenes/sandbox/sandbox.VoxelGI_data.res" id="3_7ttn0"]
+[ext_resource type="Material" uid="uid://c2s68lk8d25pr" path="res://assets/common/materials/green_bush.tres" id="3_73hv0"]
+[ext_resource type="Material" uid="uid://3xx3pp5inhya" path="res://assets/common/materials/glossy_metal.tres" id="3_ltdjt"]
 [ext_resource type="Texture2D" uid="uid://eca1rsshqv2w" path="res://assets/common/images/sky_hdris/DaySkyB.exr" id="3_x3e5y"]
-[ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/player_desktop.tscn" id="4_7kvq3"]
+[ext_resource type="Material" uid="uid://bb7tnf40al754" path="res://assets/common/materials/pebble.tres" id="4_d8ipp"]
+[ext_resource type="Material" uid="uid://cr6gyji1fve7b" path="res://assets/common/materials/concrete_sidewalk.tres" id="5_32lhv"]
+[ext_resource type="Material" uid="uid://8xsucm65o8px" path="res://assets/common/materials/black.tres" id="7_sqyd3"]
+[ext_resource type="Shader" path="res://addons/water_shader_marcelb/shaders/water.gdshader" id="8_4hici"]
+[ext_resource type="Material" uid="uid://drhsx82m5kq8w" path="res://assets/common/materials/orange.tres" id="8_y1a0e"]
+[ext_resource type="Material" uid="uid://d1lbb6e3gaq4i" path="res://assets/common/materials/concrete_podium.tres" id="10_p8lc7"]
+[ext_resource type="PackedScene" uid="uid://8s66tuxwlf3l" path="res://assets/common/scenes/bench/bench.tscn" id="12_5ubhp"]
+[ext_resource type="PackedScene" uid="uid://dcqg1ay5yw15r" path="res://assets/common/scenes/maple_tree/maple_tree.tscn" id="13_3xe0j"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8fje7"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ptjyb"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_8fje7")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6i3b2"]
+noise_type = 0
+seed = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r4a3k"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_6i3b2")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5edmb"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qdptp"]
+seamless = true
+noise = SubResource("FastNoiseLite_5edmb")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vq7qh"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2unhc"]
+seamless = true
+bump_strength = 28.3
+noise = SubResource("FastNoiseLite_vq7qh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_06iud"]
+render_priority = 0
+shader = ExtResource("8_4hici")
+shader_parameter/albedo = Color(0.02, 0.45, 0.8, 1)
+shader_parameter/transparency = 0.4
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.5
+shader_parameter/surface_normals_move_direction_a = Vector2(-1, 0)
+shader_parameter/surface_normals_move_direction_b = Vector2(0, 1)
+shader_parameter/surface_texture_roughness = 0.6
+shader_parameter/surface_texture_scale = 0.3
+shader_parameter/surface_texture_time_scale = 0.06
+shader_parameter/ssr_resolution = 2.0
+shader_parameter/ssr_max_travel = 30.0
+shader_parameter/ssr_max_diff = 4.0
+shader_parameter/ssr_mix_strength = 0.7
+shader_parameter/wave_noise_scale = 15.0
+shader_parameter/wave_height_scale = 0.25
+shader_parameter/wave_time_scale = 0.01
+shader_parameter/wave_normal_flatness = 30.0
+shader_parameter/border_color = Color(1, 1, 1, 1)
+shader_parameter/border_scale = 0.0
+shader_parameter/border_near = 0.5
+shader_parameter/border_far = 300.0
+shader_parameter/refraction_intensity = 0.4
+shader_parameter/max_visible_depth = 100.0
+shader_parameter/color_deep = Color(0.431373, 0.619608, 1, 1)
+shader_parameter/wave_a = SubResource("NoiseTexture2D_qdptp")
+shader_parameter/wave_b = SubResource("NoiseTexture2D_2unhc")
+shader_parameter/surface_normals_a = SubResource("NoiseTexture2D_ptjyb")
+shader_parameter/surface_normals_b = SubResource("NoiseTexture2D_r4a3k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8cgy"]
+albedo_color = Color(0.505882, 0.0627451, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ch5q7"]
+albedo_color = Color(0.505882, 0.0627451, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d77r5"]
+albedo_color = Color(0, 0.105882, 0.105882, 1)
+roughness = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ns73i"]
+albedo_color = Color(1, 0.490196, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7tnr"]
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.2
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_j45fp"]
 panorama = ExtResource("3_x3e5y")
@@ -16,7 +103,7 @@ sky_material = SubResource("PanoramaSkyMaterial_j45fp")
 background_mode = 2
 background_energy_multiplier = 0.4
 sky = SubResource("Sky_dn2re")
-ambient_light_source = 3
+ambient_light_color = Color(0, 0, 0.172549, 1)
 reflected_light_source = 2
 tonemap_mode = 1
 ssr_enabled = true
@@ -29,11 +116,132 @@ script = ExtResource("1_mva8m")
 
 [node name="hub" parent="." instance=ExtResource("2_bqsfh")]
 
+[node name="ground" parent="hub" index="2"]
+surface_material_override/0 = ExtResource("3_ltdjt")
+surface_material_override/1 = ExtResource("4_d8ipp")
+surface_material_override/2 = ExtResource("5_32lhv")
+
+[node name="bush_001" parent="hub" index="4"]
+material_override = ExtResource("3_73hv0")
+
+[node name="bush_002" parent="hub" index="5"]
+material_override = ExtResource("3_73hv0")
+
+[node name="bush" parent="hub" index="7"]
+surface_material_override/0 = ExtResource("3_73hv0")
+
+[node name="Pool" parent="hub" index="8"]
+surface_material_override/0 = ExtResource("7_sqyd3")
+
+[node name="poolwater" parent="hub/Pool" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_06iud")
+
+[node name="Circle-col" parent="hub" index="9"]
+surface_material_override/0 = SubResource("StandardMaterial3D_p8cgy")
+
+[node name="Circle_001-col" parent="hub" index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ch5q7")
+
+[node name="Plane_007" parent="hub" index="13"]
+surface_material_override/0 = ExtResource("8_y1a0e")
+surface_material_override/1 = SubResource("StandardMaterial3D_d77r5")
+
+[node name="Podium-col" parent="hub" index="14"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ns73i")
+
+[node name="Plane" parent="hub" index="15"]
+surface_material_override/0 = ExtResource("7_sqyd3")
+
+[node name="bush_003" parent="hub" index="16"]
+material_override = ExtResource("3_73hv0")
+
+[node name="podbar" parent="hub/Podium" index="0"]
+material_override = ExtResource("10_p8lc7")
+
+[node name="podbody" parent="hub/Podium" index="1"]
+material_override = ExtResource("8_y1a0e")
+
+[node name="podfloor" parent="hub/Podium" index="2"]
+material_override = ExtResource("7_sqyd3")
+
+[node name="podplat" parent="hub/Podium" index="3"]
+material_override = ExtResource("7_sqyd3")
+
+[node name="podstairbot" parent="hub/Podium" index="4"]
+material_override = ExtResource("8_y1a0e")
+
+[node name="podstairs" parent="hub/Podium" index="5"]
+material_override = ExtResource("8_y1a0e")
+
+[node name="Plane_007_001" parent="hub" index="22"]
+surface_material_override/0 = SubResource("StandardMaterial3D_h7tnr")
+
+[node name="Circle" parent="hub" index="24"]
+surface_material_override/0 = ExtResource("8_y1a0e")
+
+[node name="Circle_003" parent="hub" index="25"]
+surface_material_override/0 = ExtResource("8_y1a0e")
+
+[node name="Circle_004" parent="hub" index="26"]
+surface_material_override/0 = ExtResource("8_y1a0e")
+
+[node name="Circle_005" parent="hub" index="27"]
+surface_material_override/0 = ExtResource("8_y1a0e")
+
+[node name="Circle_006" parent="hub" index="28"]
+surface_material_override/0 = ExtResource("8_y1a0e")
+
+[node name="Benches" type="Node3D" parent="."]
+
+[node name="bench" parent="Benches" instance=ExtResource("12_5ubhp")]
+transform = Transform3D(0.756345, 0, 0.654173, 0, 1, 0, -0.654173, 0, 0.756345, 35.8452, 4.76837e-07, -22.7966)
+
+[node name="bench4" parent="Benches" instance=ExtResource("12_5ubhp")]
+transform = Transform3D(0.755853, 0, -0.654741, 0, 1, 0, 0.654741, 0, 0.755853, -36.1876, 0, -22.4015)
+
+[node name="bench5" parent="Benches" instance=ExtResource("12_5ubhp")]
+transform = Transform3D(0.859505, 0, -0.511128, 0, 1, 0, 0.511128, 0, 0.859505, -13.3017, 0, -44.7303)
+
+[node name="bench6" parent="Benches" instance=ExtResource("12_5ubhp")]
+transform = Transform3D(0.859852, 0, 0.510543, 0, 1, 0, -0.510543, 0, 0.859852, 13.302, 0, -44.73)
+
+[node name="bench7" parent="Benches" instance=ExtResource("12_5ubhp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 22.2485, 0, -53.8203)
+
+[node name="bench8" parent="Benches" instance=ExtResource("12_5ubhp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -22.249, 0, -53.82)
+
+[node name="bench9" parent="Benches" instance=ExtResource("12_5ubhp")]
+transform = Transform3D(-0.765966, 0, 0.642881, 0, 1, 0, -0.642881, 0, -0.765966, -20.0038, 0, 41.6872)
+
+[node name="bench10" parent="Benches" instance=ExtResource("12_5ubhp")]
+transform = Transform3D(-0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, -0.766044, 19.6664, 0, 41.2846)
+
+[node name="bench2" parent="Benches" instance=ExtResource("12_5ubhp")]
+transform = Transform3D(0.756345, 0, 0.654173, 0, 1, 0, -0.654173, 0, 0.756345, 32.5364, 4.76837e-07, -29.0179)
+
+[node name="bench3" parent="Benches" instance=ExtResource("12_5ubhp")]
+transform = Transform3D(0.755853, 0, -0.654741, 0, 1, 0, 0.654741, 0, 0.755853, -33.6776, 0, -29.2968)
+
+[node name="bench11" parent="Benches" instance=ExtResource("12_5ubhp")]
+transform = Transform3D(-0.234447, 0, 0.972129, 0, 1, 0, -0.972129, 0, -0.234447, -40.1819, -1.43051e-06, 14.914)
+
+[node name="bench12" parent="Benches" instance=ExtResource("12_5ubhp")]
+transform = Transform3D(0.10878, 0, 0.994066, 0, 1, 0, -0.994066, 0, 0.10878, 39.0284, -1.43051e-06, 14.914)
+
+[node name="bench13" parent="Benches" instance=ExtResource("12_5ubhp")]
+transform = Transform3D(0.566953, 0, -0.82375, 0, 1, 0, 0.82375, 0, 0.566953, -46.5258, -1.90735e-06, -20.902)
+
+[node name="bench14" parent="Benches" instance=ExtResource("12_5ubhp")]
+transform = Transform3D(0.64157, 0, 0.767064, 0, 1, 0, -0.767064, 0, 0.64157, 44.6299, 0, -20.2488)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.824857, -2.47119e-08, 0.565341, -0.565341, -3.60557e-08, 0.824857, 0, -1, -4.37114e-08, 0, 11.3829, 0)
-light_energy = 0.3
 light_angular_distance = 0.5
 shadow_enabled = true
+shadow_bias = 0.01
+shadow_blur = 6.5
+directional_shadow_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_x04mb")
@@ -50,5 +258,48 @@ enable_shadows = true
 ambient_mode = 2
 ambient_color = Color(1, 1, 1, 1)
 
-[node name="PlayerDesktop" parent="." instance=ExtResource("4_7kvq3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115, 7.909, 0.118)
+[node name="MapleTrees" type="Node3D" parent="."]
+
+[node name="maple_tree" parent="MapleTrees" instance=ExtResource("13_3xe0j")]
+transform = Transform3D(0.305911, 0, 0.95206, 0, 1, 0, -0.95206, 0, 0.305911, 40.1797, 0, -30.565)
+
+[node name="maple_tree2" parent="MapleTrees" instance=ExtResource("13_3xe0j")]
+transform = Transform3D(0.439955, 0, -0.89802, 0, 1, 0, 0.89802, 0, 0.439955, 42.1697, 0, -15.4007)
+
+[node name="maple_tree3" parent="MapleTrees" instance=ExtResource("13_3xe0j")]
+transform = Transform3D(0.284434, 0, -0.958696, 0, 1, 0, 0.958696, 0, 0.284434, 39.6243, 0, 23.8581)
+
+[node name="maple_tree4" parent="MapleTrees" instance=ExtResource("13_3xe0j")]
+transform = Transform3D(-0.159278, 0, 0.987234, 0, 1, 0, -0.987234, 0, -0.159278, 30.8653, 0, 29.7809)
+
+[node name="maple_tree5" parent="MapleTrees" instance=ExtResource("13_3xe0j")]
+transform = Transform3D(0.55, 0, -0.835165, 0, 1, 0, 0.835165, 0, 0.55, -31.616, 4.76837e-07, 29.8363)
+
+[node name="maple_tree6" parent="MapleTrees" instance=ExtResource("13_3xe0j")]
+transform = Transform3D(-0.435435, 0, 0.90022, 0, 1, 0, -0.90022, 0, -0.435435, -43.2251, 0, -15.5037)
+
+[node name="maple_tree7" parent="MapleTrees" instance=ExtResource("13_3xe0j")]
+transform = Transform3D(-0.00253073, 0, -0.999997, 0, 1, 0, 0.999997, 0, -0.00253073, -41.8259, 0, -30.5486)
+
+[node name="maple_tree8" parent="MapleTrees" instance=ExtResource("13_3xe0j")]
+transform = Transform3D(-0.997928, 0, 0.0643406, 0, 1, 0, -0.0643406, 0, -0.997928, 27.2924, 9.53674e-07, -44.393)
+
+[node name="maple_tree9" parent="MapleTrees" instance=ExtResource("13_3xe0j")]
+transform = Transform3D(-0.107444, 0, -0.994211, 0, 1, 0, 0.994211, 0, -0.107444, -28.6427, -9.53674e-07, -43.9086)
+
+[node name="maple_tree10" parent="MapleTrees" instance=ExtResource("13_3xe0j")]
+transform = Transform3D(-0.415646, 0, 0.909527, 0, 1, 0, -0.909527, 0, -0.415646, -40.1629, 0, 22.7189)
+
+[node name="maple_tree" parent="." instance=ExtResource("13_3xe0j")]
+transform = Transform3D(0.107166, 0, -0.994241, 0, 1, 0, 0.994241, 0, 0.107166, -20.2602, 3.84809, -69.5211)
+
+[node name="maple_tree2" parent="." instance=ExtResource("13_3xe0j")]
+transform = Transform3D(0.450862, 0, 0.892594, 0, 1, 0, -0.892594, 0, 0.450862, 19.6647, 3.848, -70.1072)
+
+[node name="maple_tree3" parent="." instance=ExtResource("13_3xe0j")]
+transform = Transform3D(-0.740007, 0, 0.672599, 0, 1, 0, -0.672599, 0, -0.740007, -20.2602, 3.84809, -95.7841)
+
+[node name="maple_tree4" parent="." instance=ExtResource("13_3xe0j")]
+transform = Transform3D(0.255125, 0, -0.966908, 0, 1, 0, 0.966908, 0, 0.255125, 19.6647, 3.848, -96.3702)
+
+[editable path="hub"]

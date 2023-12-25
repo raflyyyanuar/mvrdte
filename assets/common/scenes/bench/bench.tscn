@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://8s66tuxwlf3l"]
+
+[ext_resource type="PackedScene" uid="uid://bpfr2fd0pbe5c" path="res://assets/common/blends/bench/bench.blend" id="1_plbij"]
+[ext_resource type="Material" uid="uid://bxam2pp73ko0m" path="res://assets/common/materials/bench_wood.tres" id="2_nuh6n"]
+[ext_resource type="Material" uid="uid://bih15ocfvy1nx" path="res://assets/common/materials/concrete.tres" id="3_o1vk3"]
+
+[node name="bench" instance=ExtResource("1_plbij")]
+
+[node name="Bench" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_nuh6n")
+
+[node name="benchsides" parent="Bench" index="0"]
+surface_material_override/0 = ExtResource("3_o1vk3")

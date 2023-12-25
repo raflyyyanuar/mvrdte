@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3w6pr3d7nkir"]
+
+[ext_resource type="PackedScene" uid="uid://bvdhinw71q4d2" path="res://assets/common/scenes/sandbox/sandbox.tscn" id="1_k2swo"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_tbs6p"]
+
+[node name="VRWorld" type="Node3D"]
+
+[node name="Sandbox" parent="." instance=ExtResource("1_k2swo")]
+
+[node name="PlayerBody" parent="." instance=ExtResource("2_tbs6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11511, 6.90882, -1.69462)

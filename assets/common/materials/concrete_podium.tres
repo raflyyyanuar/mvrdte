@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d1lbb6e3gaq4i"]
+
+[ext_resource type="Texture2D" uid="uid://bp8qss3rcsrh" path="res://assets/common/textures/concrete_sidewalk/TCom_ConcreteSidewalk02_1K_normal.png" id="1_odb7w"]
+
+[resource]
+normal_enabled = true
+normal_texture = ExtResource("1_odb7w")
+uv1_scale = Vector3(9.205, 9.205, 9.205)
