@@ -1,16 +1,16 @@
-[gd_scene load_steps=22 format=3 uid="uid://bvdhinw71q4d2"]
+[gd_scene load_steps=19 format=3 uid="uid://bvdhinw71q4d2"]
 
 [ext_resource type="Script" path="res://assets/common/scenes/sandbox/sandbox.gd" id="1_mva8m"]
 [ext_resource type="PackedScene" uid="uid://dek1px7gedbuv" path="res://assets/common/blends/hub/hub.blend" id="2_bqsfh"]
 [ext_resource type="VoxelGIData" uid="uid://bww1j21lukeki" path="res://assets/common/scenes/sandbox/sandbox.VoxelGI_data.res" id="3_7ttn0"]
 [ext_resource type="Material" uid="uid://c2s68lk8d25pr" path="res://assets/common/materials/green_bush.tres" id="3_73hv0"]
 [ext_resource type="Material" uid="uid://3xx3pp5inhya" path="res://assets/common/materials/glossy_metal.tres" id="3_ltdjt"]
-[ext_resource type="Texture2D" uid="uid://eca1rsshqv2w" path="res://assets/common/images/sky_hdris/DaySkyB.exr" id="3_x3e5y"]
 [ext_resource type="Material" uid="uid://bb7tnf40al754" path="res://assets/common/materials/pebble.tres" id="4_d8ipp"]
 [ext_resource type="Material" uid="uid://cr6gyji1fve7b" path="res://assets/common/materials/concrete_sidewalk.tres" id="5_32lhv"]
 [ext_resource type="Material" uid="uid://8xsucm65o8px" path="res://assets/common/materials/black.tres" id="7_sqyd3"]
 [ext_resource type="Material" uid="uid://drhsx82m5kq8w" path="res://assets/common/materials/orange.tres" id="8_y1a0e"]
 [ext_resource type="Material" uid="uid://d1lbb6e3gaq4i" path="res://assets/common/materials/concrete_podium.tres" id="10_p8lc7"]
+[ext_resource type="Environment" uid="uid://2pb77lj2ovsf" path="res://assets/common/scenes/sandbox/env.tres" id="11_18p6d"]
 [ext_resource type="PackedScene" uid="uid://8s66tuxwlf3l" path="res://assets/common/scenes/bench/bench.tscn" id="12_5ubhp"]
 [ext_resource type="PackedScene" uid="uid://dcqg1ay5yw15r" path="res://assets/common/scenes/maple_tree/maple_tree.tscn" id="13_3xe0j"]
 
@@ -30,24 +30,6 @@ albedo_color = Color(1, 0.490196, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7tnr"]
 albedo_color = Color(0, 0, 0, 1)
 roughness = 0.2
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_j45fp"]
-panorama = ExtResource("3_x3e5y")
-
-[sub_resource type="Sky" id="Sky_dn2re"]
-sky_material = SubResource("PanoramaSkyMaterial_j45fp")
-
-[sub_resource type="Environment" id="Environment_x04mb"]
-background_mode = 2
-background_energy_multiplier = 0.4
-sky = SubResource("Sky_dn2re")
-ambient_light_color = Color(0, 0, 0.172549, 1)
-reflected_light_source = 2
-tonemap_mode = 1
-ssr_enabled = true
-ssao_enabled = true
-ssil_enabled = true
-fog_density = 0.001
 
 [node name="Sandbox" type="Node3D"]
 script = ExtResource("1_mva8m")
@@ -179,7 +161,7 @@ shadow_blur = 6.5
 directional_shadow_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_x04mb")
+environment = ExtResource("11_18p6d")
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.22449, 15.41, -9.59619)
@@ -225,16 +207,16 @@ transform = Transform3D(-0.107444, 0, -0.994211, 0, 1, 0, 0.994211, 0, -0.107444
 [node name="maple_tree10" parent="MapleTrees" instance=ExtResource("13_3xe0j")]
 transform = Transform3D(-0.415646, 0, 0.909527, 0, 1, 0, -0.909527, 0, -0.415646, -40.1629, 0, 22.7189)
 
-[node name="maple_tree" parent="." instance=ExtResource("13_3xe0j")]
+[node name="maple_tree11" parent="MapleTrees" instance=ExtResource("13_3xe0j")]
 transform = Transform3D(0.107166, 0, -0.994241, 0, 1, 0, 0.994241, 0, 0.107166, -20.2602, 3.84809, -69.5211)
 
-[node name="maple_tree2" parent="." instance=ExtResource("13_3xe0j")]
+[node name="maple_tree12" parent="MapleTrees" instance=ExtResource("13_3xe0j")]
 transform = Transform3D(0.450862, 0, 0.892594, 0, 1, 0, -0.892594, 0, 0.450862, 19.6647, 3.848, -70.1072)
 
-[node name="maple_tree3" parent="." instance=ExtResource("13_3xe0j")]
+[node name="maple_tree13" parent="MapleTrees" instance=ExtResource("13_3xe0j")]
 transform = Transform3D(-0.740007, 0, 0.672599, 0, 1, 0, -0.672599, 0, -0.740007, -20.2602, 3.84809, -95.7841)
 
-[node name="maple_tree4" parent="." instance=ExtResource("13_3xe0j")]
+[node name="maple_tree14" parent="MapleTrees" instance=ExtResource("13_3xe0j")]
 transform = Transform3D(0.255125, 0, -0.966908, 0, 1, 0, 0.966908, 0, 0.255125, 19.6647, 3.848, -96.3702)
 
 [editable path="hub"]
