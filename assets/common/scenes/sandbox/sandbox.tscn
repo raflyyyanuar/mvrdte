@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bvdhinw71q4d2"]
+[gd_scene load_steps=21 format=3 uid="uid://bvdhinw71q4d2"]
 
 [ext_resource type="Script" path="res://assets/common/scenes/sandbox/sandbox.gd" id="1_mva8m"]
 [ext_resource type="PackedScene" uid="uid://dek1px7gedbuv" path="res://assets/common/blends/hub/hub.blend" id="2_bqsfh"]
@@ -13,9 +13,6 @@
 [ext_resource type="Material" uid="uid://d1lbb6e3gaq4i" path="res://assets/common/materials/concrete_podium.tres" id="10_p8lc7"]
 [ext_resource type="PackedScene" uid="uid://8s66tuxwlf3l" path="res://assets/common/scenes/bench/bench.tscn" id="12_5ubhp"]
 [ext_resource type="PackedScene" uid="uid://dcqg1ay5yw15r" path="res://assets/common/scenes/maple_tree/maple_tree.tscn" id="13_3xe0j"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8cgy"]
-albedo_color = Color(0.505882, 0.0627451, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ch5q7"]
 albedo_color = Color(0.505882, 0.0627451, 0, 1)
@@ -71,8 +68,8 @@ surface_material_override/0 = ExtResource("3_73hv0")
 [node name="Pool" parent="hub" index="8"]
 surface_material_override/0 = ExtResource("7_sqyd3")
 
-[node name="Circle-col" parent="hub" index="9"]
-surface_material_override/0 = SubResource("StandardMaterial3D_p8cgy")
+[node name="Circle" parent="hub" index="9"]
+surface_material_override/0 = ExtResource("8_y1a0e")
 
 [node name="Circle_001-col" parent="hub" index="10"]
 surface_material_override/0 = SubResource("StandardMaterial3D_ch5q7")
@@ -111,19 +108,22 @@ material_override = ExtResource("8_y1a0e")
 [node name="Plane_007_001" parent="hub" index="22"]
 surface_material_override/0 = SubResource("StandardMaterial3D_h7tnr")
 
-[node name="Circle" parent="hub" index="24"]
+[node name="GroundBarrier" parent="hub" index="24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.440545, 0, -0.151742)
 surface_material_override/0 = ExtResource("8_y1a0e")
 
-[node name="Circle_003" parent="hub" index="25"]
+[node name="GroundBarrier_001" parent="hub" index="25"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.278714, 0, -0.135739)
 surface_material_override/0 = ExtResource("8_y1a0e")
 
-[node name="Circle_004" parent="hub" index="26"]
+[node name="GroundBarrier_002" parent="hub" index="26"]
 surface_material_override/0 = ExtResource("8_y1a0e")
 
-[node name="Circle_005" parent="hub" index="27"]
+[node name="GroundBarrier_003" parent="hub" index="27"]
 surface_material_override/0 = ExtResource("8_y1a0e")
 
-[node name="Circle_006" parent="hub" index="28"]
+[node name="GroundBarrier_004" parent="hub" index="28"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.440545, 0, -0.151742)
 surface_material_override/0 = ExtResource("8_y1a0e")
 
 [node name="Benches" type="Node3D" parent="."]
