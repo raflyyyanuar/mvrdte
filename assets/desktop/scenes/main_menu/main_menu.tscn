@@ -1,14 +1,32 @@
-[gd_scene load_steps=10 format=3 uid="uid://c657rew27lmon"]
+[gd_scene load_steps=18 format=3 uid="uid://c657rew27lmon"]
 
 [ext_resource type="Script" path="res://assets/desktop/scenes/main_menu/main_menu.gd" id="1_hfkp2"]
+[ext_resource type="Script" path="res://assets/desktop/scenes/main_menu/level_preview.gd" id="2_gxkdt"]
 [ext_resource type="Theme" uid="uid://cjkhx0irum0iw" path="res://assets/common/themes/cartoony_theme.tres" id="2_p35xv"]
 [ext_resource type="Texture2D" uid="uid://b5yjol47w4iqb" path="res://assets/common/images/ui/down-arrow-transparent-14.png" id="3_i64cn"]
 [ext_resource type="Script" path="res://assets/desktop/scenes/main_menu/arrow.gd" id="4_1f7wf"]
 [ext_resource type="Texture2D" uid="uid://y3lbtlyaxjtc" path="res://assets/common/images/1920x1080/cat_small.png" id="6_jgj4u"]
 [ext_resource type="PackedScene" uid="uid://bj7sf3ki5lvnm" path="res://assets/desktop/scenes/level_select/level_select.tscn" id="7_8eot2"]
 [ext_resource type="Texture2D" uid="uid://dnou4vt3vmonf" path="res://assets/common/images/1920x1080/dog_small.png" id="7_aiuva"]
+[ext_resource type="Texture2D" uid="uid://bobh7tlqhvj1w" path="res://assets/common/images/level_previews/hub_preview.png" id="7_vsngm"]
 [ext_resource type="Texture2D" uid="uid://diw3ip5gq7e2p" path="res://assets/common/images/1920x1080/turtle_small.jpg" id="8_sx8yf"]
 [ext_resource type="Texture2D" uid="uid://6j57388h8uml" path="res://assets/common/images/1920x1080/cassowary_small.jpg" id="9_g52uk"]
+[ext_resource type="Texture2D" uid="uid://b2stq83yulojk" path="res://assets/common/images/1920x1080/cassowary.jpg" id="9_qfkv8"]
+[ext_resource type="Texture2D" uid="uid://r5htxw8ogk5g" path="res://assets/common/images/1920x1080/cat.png" id="11_807gc"]
+[ext_resource type="Texture2D" uid="uid://bopvp1rwtbkep" path="res://assets/common/images/1920x1080/turtle.jpg" id="14_4jo1y"]
+
+[sub_resource type="FontVariation" id="FontVariation_p77b6"]
+spacing_top = -40
+spacing_bottom = -40
+
+[sub_resource type="FontVariation" id="FontVariation_fysf0"]
+spacing_glyph = 1
+spacing_top = -10
+spacing_bottom = -100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1m267"]
+corner_radius_top_left = 6
+corner_detail = 1
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -18,7 +36,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hfkp2")
-hub_scene_path = "res://assets/desktop/scenes/world/d_world.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -31,10 +48,10 @@ color = Color(0.643137, 0.639216, 0.176471, 1)
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 2
-offset_left = 1896.0
-offset_top = 671.0
-offset_right = 1999.0
-offset_bottom = 737.0
+offset_left = 68.0
+offset_top = 49.0
+offset_right = 171.0
+offset_bottom = 148.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_p35xv")
@@ -79,60 +96,136 @@ text = "Desktop edition!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -889.0
-offset_top = -246.0
-offset_right = 889.0
-offset_bottom = -64.0
+anchor_bottom = 0.5
+offset_left = -887.0
+offset_top = -289.0
+offset_right = 887.0
+offset_bottom = 455.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+theme_override_constants/separation = 58
 
-[node name="Arrow" type="Sprite2D" parent="PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 37
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(800, 450)
+layout_mode = 2
+
+[node name="LevelPreview" type="TextureRect" parent="VBoxContainer/HBoxContainer/Control"]
+custom_minimum_size = Vector2(800, 450)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -227.0
+offset_right = 400.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(0, 225)
+texture = ExtResource("7_vsngm")
+expand_mode = 1
+script = ExtResource("2_gxkdt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(970, 0)
+layout_mode = 2
+
+[node name="LevelName" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 26
+theme_override_fonts/font = SubResource("FontVariation_p77b6")
+theme_override_font_sizes/font_size = 100
+text = "Level Name"
+
+[node name="LevelDescription" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110.48, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = SubResource("FontVariation_fysf0")
+theme_override_font_sizes/font_size = 48
+text = "This is a description. Lorem ipsum dolor sit amet. This is a description. Lorem ipsum dolor sit amet. This is a description. Lorem ipsum dolor sit amet. This is a description. Lorem ipsum dolor sit amet."
+autowrap_mode = 2
+
+[node name="Arrow" type="Sprite2D" parent="VBoxContainer"]
 modulate = Color(0, 0.176471, 1, 1)
-position = Vector2(184, -63)
+position = Vector2(182, 458)
 scale = Vector2(0.126667, 0.126667)
 texture = ExtResource("3_i64cn")
 script = ExtResource("4_1f7wf")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HubContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="HubLevel" parent="PanelContainer/HBoxContainer" instance=ExtResource("7_8eot2")]
+[node name="Level1" parent="VBoxContainer/PanelContainer/HubContainer" instance=ExtResource("7_8eot2")]
 layout_mode = 2
 level = "res://assets/desktop/scenes/world/d_world.tscn"
+preview_image = ExtResource("7_vsngm")
+level_description = "This is the description for Main Hub. Add more information to this."
 
-[node name="CatLevel" parent="PanelContainer/HBoxContainer" instance=ExtResource("7_8eot2")]
-layout_mode = 2
-text = "Cat"
-icon = ExtResource("6_jgj4u")
-
-[node name="DogLevel" parent="PanelContainer/HBoxContainer" instance=ExtResource("7_8eot2")]
-layout_mode = 2
-text = "Dog"
-icon = ExtResource("7_aiuva")
-
-[node name="TurtleLevel" parent="PanelContainer/HBoxContainer" instance=ExtResource("7_8eot2")]
-layout_mode = 2
-text = "Turtle"
-icon = ExtResource("8_sx8yf")
-
-[node name="CassowaryLevel" parent="PanelContainer/HBoxContainer" instance=ExtResource("7_8eot2")]
+[node name="Level2" parent="VBoxContainer/PanelContainer/HubContainer" instance=ExtResource("7_8eot2")]
 layout_mode = 2
 text = "Cassowary"
 icon = ExtResource("9_g52uk")
+preview_image = ExtResource("9_qfkv8")
+level_description = "This is the description for Cassowary. Add more information to this."
+
+[node name="Level3" parent="VBoxContainer/PanelContainer/HubContainer" instance=ExtResource("7_8eot2")]
+layout_mode = 2
+text = "Cat"
+icon = ExtResource("6_jgj4u")
+preview_image = ExtResource("11_807gc")
+level_description = "This is the description for Cat. Add more information to this."
+
+[node name="Level4" parent="VBoxContainer/PanelContainer/HubContainer" instance=ExtResource("7_8eot2")]
+layout_mode = 2
+text = "Dog"
+icon = ExtResource("7_aiuva")
+preview_image = ExtResource("7_aiuva")
+level_description = "This is the description for Dog. Add more information to this."
+
+[node name="Level5" parent="VBoxContainer/PanelContainer/HubContainer" instance=ExtResource("7_8eot2")]
+layout_mode = 2
+text = "Turtle"
+icon = ExtResource("8_sx8yf")
+preview_image = ExtResource("14_4jo1y")
+level_description = "This is the description for Turtle. Add more information to this."
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2279.0
+offset_top = 683.0
+offset_right = 2345.0
+offset_bottom = 722.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1m267")
+text = "Asadads"
 
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="level_hovered" from="VBoxContainer/Arrow" to="VBoxContainer/HBoxContainer/Control/LevelPreview" method="_on_arrow_level_hovered"]
 
-[editable path="PanelContainer/HBoxContainer/HubLevel"]
-[editable path="PanelContainer/HBoxContainer/CatLevel"]
-[editable path="PanelContainer/HBoxContainer/DogLevel"]
-[editable path="PanelContainer/HBoxContainer/TurtleLevel"]
-[editable path="PanelContainer/HBoxContainer/CassowaryLevel"]
+[editable path="VBoxContainer/PanelContainer/HubContainer/Level1"]
+[editable path="VBoxContainer/PanelContainer/HubContainer/Level2"]
+[editable path="VBoxContainer/PanelContainer/HubContainer/Level3"]
+[editable path="VBoxContainer/PanelContainer/HubContainer/Level4"]
+[editable path="VBoxContainer/PanelContainer/HubContainer/Level5"]
