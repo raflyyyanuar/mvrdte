@@ -25,6 +25,7 @@ func _input(event: InputEvent) -> void:
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
+	
 	if Input.is_action_just_pressed("zoom") and not is_zooming:
 		is_zooming = true
 		var tween := create_tween().set_trans(Tween.TRANS_QUAD)
