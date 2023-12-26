@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cicy8dgai43sc"]
+
+[ext_resource type="Script" path="res://assets/vr/scenes/main_menu/level_select/vr_level_select.gd" id="1_6j6ky"]
+[ext_resource type="PackedScene" uid="uid://c5qbwoy356hs7" path="res://assets/vr/scenes/main_menu/level_select/vr_level_select_screen.tscn" id="2_ibpjk"]
+
+[node name="VRLevelSelect" type="Node3D"]
+script = ExtResource("1_6j6ky")
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("2_ibpjk")]

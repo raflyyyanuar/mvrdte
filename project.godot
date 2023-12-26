@@ -19,13 +19,14 @@ config/icon="res://icon.png"
 
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
 
-
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
-window/stretch/mode="viewport"[editor_plugins]
+window/stretch/mode="viewport"
+
+[editor_plugins]
 
 enabled=PackedStringArray()
 
@@ -96,4 +97,5 @@ anti_aliasing/quality/screen_space_aa=1
 [xr]
 
 openxr/enabled=true
+openxr/extensions/eye_gaze_interaction=true
 shaders/enabled=true
