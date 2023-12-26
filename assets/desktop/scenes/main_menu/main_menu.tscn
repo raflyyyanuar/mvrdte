@@ -1,19 +1,24 @@
-[gd_scene load_steps=18 format=3 uid="uid://c657rew27lmon"]
+[gd_scene load_steps=14 format=3 uid="uid://c657rew27lmon"]
 
 [ext_resource type="Script" path="res://assets/desktop/scenes/main_menu/main_menu.gd" id="1_hfkp2"]
 [ext_resource type="Script" path="res://assets/desktop/scenes/main_menu/level_preview.gd" id="2_gxkdt"]
 [ext_resource type="Theme" uid="uid://cjkhx0irum0iw" path="res://assets/common/themes/cartoony_theme.tres" id="2_p35xv"]
 [ext_resource type="Texture2D" uid="uid://b5yjol47w4iqb" path="res://assets/common/images/ui/down-arrow-transparent-14.png" id="3_i64cn"]
 [ext_resource type="Script" path="res://assets/desktop/scenes/main_menu/arrow.gd" id="4_1f7wf"]
-[ext_resource type="Texture2D" uid="uid://y3lbtlyaxjtc" path="res://assets/common/images/1920x1080/cat_small.png" id="6_jgj4u"]
-[ext_resource type="PackedScene" uid="uid://bj7sf3ki5lvnm" path="res://assets/common/scenes/level_select/level_select.tscn" id="7_8eot2"]
-[ext_resource type="Texture2D" uid="uid://dnou4vt3vmonf" path="res://assets/common/images/1920x1080/dog_small.png" id="7_aiuva"]
+[ext_resource type="PackedScene" uid="uid://dg7eoj7r5sv4a" path="res://assets/common/scenes/level_select/variations/hub_level_select.tscn" id="7_6wn7g"]
 [ext_resource type="Texture2D" uid="uid://bobh7tlqhvj1w" path="res://assets/common/images/level_previews/hub_preview.png" id="7_vsngm"]
-[ext_resource type="Texture2D" uid="uid://diw3ip5gq7e2p" path="res://assets/common/images/1920x1080/turtle_small.jpg" id="8_sx8yf"]
-[ext_resource type="Texture2D" uid="uid://6j57388h8uml" path="res://assets/common/images/1920x1080/cassowary_small.jpg" id="9_g52uk"]
-[ext_resource type="Texture2D" uid="uid://b2stq83yulojk" path="res://assets/common/images/1920x1080/cassowary.jpg" id="9_qfkv8"]
-[ext_resource type="Texture2D" uid="uid://r5htxw8ogk5g" path="res://assets/common/images/1920x1080/cat.png" id="11_807gc"]
-[ext_resource type="Texture2D" uid="uid://bopvp1rwtbkep" path="res://assets/common/images/1920x1080/turtle.jpg" id="14_4jo1y"]
+[ext_resource type="PackedScene" uid="uid://c64pu0e3v1dhr" path="res://assets/common/scenes/level_select/variations/quit_level_select.tscn" id="8_i11ei"]
+[ext_resource type="PackedScene" uid="uid://xpfqigyv73tx" path="res://assets/desktop/scenes/level_transition/desktop_level_transition.tscn" id="9_jlk0t"]
+
+[sub_resource type="Gradient" id="Gradient_mls4u"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.309804, 0.309804, 0.309804, 1, 0.897872, 0.897872, 0.897872, 1, 0.309804, 0.309804, 0.309804, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ev4rt"]
+gradient = SubResource("Gradient_mls4u")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
 
 [sub_resource type="FontVariation" id="FontVariation_p77b6"]
 spacing_top = -40
@@ -24,10 +29,6 @@ spacing_glyph = 1
 spacing_top = -10
 spacing_bottom = -100
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1m267"]
-corner_radius_top_left = 6
-corner_detail = 1
-
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -37,27 +38,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hfkp2")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.643137, 0.639216, 0.176471, 1)
-
-[node name="Quit" type="Button" parent="."]
-layout_mode = 2
-offset_left = 68.0
-offset_top = 49.0
-offset_right = 171.0
-offset_bottom = 148.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_p35xv")
-theme_override_constants/outline_size = 23
-theme_override_font_sizes/font_size = 48
-text = "Quit"
+texture = SubResource("GradientTexture2D_ev4rt")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -65,9 +53,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -322.5
-offset_top = 51.0
+offset_top = 153.0
 offset_right = 322.5
-offset_bottom = 161.0
+offset_bottom = 324.0
 grow_horizontal = 2
 theme = ExtResource("2_p35xv")
 theme_override_constants/outline_size = 25
@@ -76,18 +64,17 @@ text = "Museum VR DTE"
 
 [node name="Label2" type="Label" parent="Label"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 204.0
-offset_top = 31.0
-offset_right = 450.0
-offset_bottom = 71.0
+anchor_bottom = 1.0
+offset_left = -123.0
+offset_top = -35.0
+offset_right = 123.0
+offset_bottom = 26.0
 grow_horizontal = 2
-grow_vertical = 2
-rotation = -0.27743
+grow_vertical = 0
 pivot_offset = Vector2(123, 20)
 theme = ExtResource("2_p35xv")
 theme_override_constants/outline_size = 10
@@ -103,15 +90,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -887.0
-offset_top = -289.0
-offset_right = 887.0
-offset_bottom = 455.0
+offset_left = -334.5
+offset_top = 161.0
+offset_right = 334.5
+offset_bottom = 397.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 58
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 37
 
@@ -156,6 +144,7 @@ text = "Level Name"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(110.48, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.309804, 0.309804, 0.309804, 1)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = SubResource("FontVariation_fysf0")
 theme_override_font_sizes/font_size = 48
@@ -163,69 +152,27 @@ text = "This is a description. Lorem ipsum dolor sit amet. This is a description
 autowrap_mode = 2
 
 [node name="Arrow" type="Sprite2D" parent="VBoxContainer"]
-modulate = Color(0, 0.176471, 1, 1)
-position = Vector2(182, 458)
+modulate = Color(0, 0, 0, 1)
+position = Vector2(148, -52)
 scale = Vector2(0.126667, 0.126667)
 texture = ExtResource("3_i64cn")
 script = ExtResource("4_1f7wf")
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="HubContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
+[node name="HubContainer" type="HBoxContainer" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="Level1" parent="VBoxContainer/PanelContainer/HubContainer" instance=ExtResource("7_8eot2")]
+[node name="HubLevelSelect" parent="VBoxContainer/HubContainer" instance=ExtResource("7_6wn7g")]
 layout_mode = 2
-level = "res://assets/desktop/scenes/world/d_world.tscn"
-preview_image = ExtResource("7_vsngm")
-level_description = "This is the description for Main Hub. Add more information to this."
+level_path = "res://assets/desktop/scenes/world/d_world.tscn"
 
-[node name="Level2" parent="VBoxContainer/PanelContainer/HubContainer" instance=ExtResource("7_8eot2")]
+[node name="QuitLevelSelect" parent="VBoxContainer/HubContainer" instance=ExtResource("8_i11ei")]
 layout_mode = 2
-text = "Cassowary"
-icon = ExtResource("9_g52uk")
-preview_image = ExtResource("9_qfkv8")
-level_description = "This is the description for Cassowary. Add more information to this."
 
-[node name="Level3" parent="VBoxContainer/PanelContainer/HubContainer" instance=ExtResource("7_8eot2")]
-layout_mode = 2
-text = "Cat"
-icon = ExtResource("6_jgj4u")
-preview_image = ExtResource("11_807gc")
-level_description = "This is the description for Cat. Add more information to this."
+[node name="DesktopLevelTransition" parent="." instance=ExtResource("9_jlk0t")]
 
-[node name="Level4" parent="VBoxContainer/PanelContainer/HubContainer" instance=ExtResource("7_8eot2")]
-layout_mode = 2
-text = "Dog"
-icon = ExtResource("7_aiuva")
-preview_image = ExtResource("7_aiuva")
-level_description = "This is the description for Dog. Add more information to this."
-
-[node name="Level5" parent="VBoxContainer/PanelContainer/HubContainer" instance=ExtResource("7_8eot2")]
-layout_mode = 2
-text = "Turtle"
-icon = ExtResource("8_sx8yf")
-preview_image = ExtResource("14_4jo1y")
-level_description = "This is the description for Turtle. Add more information to this."
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 2279.0
-offset_top = 683.0
-offset_right = 2345.0
-offset_bottom = 722.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_1m267")
-text = "Asadads"
-
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="level_hovered" from="VBoxContainer/Arrow" to="VBoxContainer/HBoxContainer/Control/LevelPreview" method="_on_arrow_level_hovered"]
-
-[editable path="VBoxContainer/PanelContainer/HubContainer/Level1"]
-[editable path="VBoxContainer/PanelContainer/HubContainer/Level2"]
-[editable path="VBoxContainer/PanelContainer/HubContainer/Level3"]
-[editable path="VBoxContainer/PanelContainer/HubContainer/Level4"]
-[editable path="VBoxContainer/PanelContainer/HubContainer/Level5"]
+[connection signal="pressed" from="VBoxContainer/HubContainer/HubLevelSelect" to="VBoxContainer/HubContainer/HubLevelSelect" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/HubContainer/QuitLevelSelect" to="VBoxContainer/HubContainer/QuitLevelSelect" method="_on_pressed"]

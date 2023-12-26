@@ -38,5 +38,3 @@ script = ExtResource("4_jq1l4")
 level_path = "res://assets/vr/scenes/world/vr_world.tscn"
 preview_image = ExtResource("3_c3r2u")
 level_description = "This is the level's description"
-
-[connection signal="pressed" from="." to="." method="_on_pressed"]
