@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bvdhinw71q4d2"]
+[gd_scene load_steps=16 format=3 uid="uid://bvdhinw71q4d2"]
 
 [ext_resource type="Script" path="res://assets/common/scenes/sandbox/sandbox.gd" id="1_mva8m"]
 [ext_resource type="PackedScene" uid="uid://dek1px7gedbuv" path="res://assets/common/blends/hub/hub.blend" id="2_bqsfh"]
@@ -9,65 +9,63 @@
 [ext_resource type="Material" uid="uid://cr6gyji1fve7b" path="res://assets/common/materials/concrete_sidewalk.tres" id="5_32lhv"]
 [ext_resource type="Material" uid="uid://8xsucm65o8px" path="res://assets/common/materials/black.tres" id="7_sqyd3"]
 [ext_resource type="Material" uid="uid://drhsx82m5kq8w" path="res://assets/common/materials/orange.tres" id="8_y1a0e"]
+[ext_resource type="Material" uid="uid://bih15ocfvy1nx" path="res://assets/common/materials/concrete.tres" id="9_600lj"]
 [ext_resource type="Material" uid="uid://d1lbb6e3gaq4i" path="res://assets/common/materials/concrete_podium.tres" id="10_p8lc7"]
 [ext_resource type="Environment" uid="uid://2pb77lj2ovsf" path="res://assets/common/scenes/sandbox/env.tres" id="11_18p6d"]
 [ext_resource type="PackedScene" uid="uid://8s66tuxwlf3l" path="res://assets/common/scenes/bench/bench.tscn" id="12_5ubhp"]
 [ext_resource type="PackedScene" uid="uid://dcqg1ay5yw15r" path="res://assets/common/scenes/maple_tree/maple_tree.tscn" id="13_3xe0j"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ch5q7"]
-albedo_color = Color(0.505882, 0.0627451, 0, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d77r5"]
 albedo_color = Color(0, 0.105882, 0.105882, 1)
 roughness = 0.4
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ns73i"]
-albedo_color = Color(1, 0.490196, 0, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7tnr"]
-albedo_color = Color(0, 0, 0, 1)
-roughness = 0.2
 
 [node name="Sandbox" type="Node3D"]
 script = ExtResource("1_mva8m")
 
 [node name="hub" parent="." instance=ExtResource("2_bqsfh")]
 
-[node name="ground" parent="hub" index="2"]
+[node name="main podium stairs" parent="hub" index="1"]
+material_override = ExtResource("8_y1a0e")
+
+[node name="PodiumBar" parent="hub" index="2"]
+material_override = ExtResource("7_sqyd3")
+
+[node name="ground" parent="hub" index="5"]
 surface_material_override/0 = ExtResource("3_ltdjt")
 surface_material_override/1 = ExtResource("4_d8ipp")
 surface_material_override/2 = ExtResource("5_32lhv")
 
-[node name="bush_001" parent="hub" index="4"]
+[node name="bush_001" parent="hub" index="7"]
 material_override = ExtResource("3_73hv0")
 
-[node name="bush_002" parent="hub" index="5"]
+[node name="bush_002" parent="hub" index="8"]
 material_override = ExtResource("3_73hv0")
 
-[node name="bush" parent="hub" index="7"]
+[node name="bush" parent="hub" index="10"]
 surface_material_override/0 = ExtResource("3_73hv0")
 
-[node name="Pool" parent="hub" index="8"]
+[node name="Pool" parent="hub" index="11"]
 surface_material_override/0 = ExtResource("7_sqyd3")
 
-[node name="Circle" parent="hub" index="9"]
+[node name="Circle" parent="hub" index="12"]
 surface_material_override/0 = ExtResource("8_y1a0e")
 
-[node name="Circle_001-col" parent="hub" index="10"]
-surface_material_override/0 = SubResource("StandardMaterial3D_ch5q7")
-
-[node name="Plane_007" parent="hub" index="13"]
+[node name="Plane_007" parent="hub" index="16"]
 surface_material_override/0 = ExtResource("8_y1a0e")
 surface_material_override/1 = SubResource("StandardMaterial3D_d77r5")
 
-[node name="Podium-col" parent="hub" index="14"]
-surface_material_override/0 = SubResource("StandardMaterial3D_ns73i")
+[node name="BackMuseum" parent="hub" index="17"]
+material_override = ExtResource("9_600lj")
 
-[node name="Plane" parent="hub" index="15"]
+[node name="Plane" parent="hub" index="18"]
 surface_material_override/0 = ExtResource("7_sqyd3")
 
-[node name="bush_003" parent="hub" index="16"]
+[node name="bush_003" parent="hub" index="19"]
 material_override = ExtResource("3_73hv0")
+
+[node name="GroundBarrier" parent="hub" index="26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.440545, 0, -0.151742)
+surface_material_override/0 = ExtResource("8_y1a0e")
 
 [node name="podbar" parent="hub/Podium" index="0"]
 material_override = ExtResource("10_p8lc7")
@@ -84,30 +82,6 @@ material_override = ExtResource("7_sqyd3")
 [node name="podstairbot" parent="hub/Podium" index="4"]
 material_override = ExtResource("8_y1a0e")
 
-[node name="podstairs" parent="hub/Podium" index="5"]
-material_override = ExtResource("8_y1a0e")
-
-[node name="Plane_007_001" parent="hub" index="22"]
-surface_material_override/0 = SubResource("StandardMaterial3D_h7tnr")
-
-[node name="GroundBarrier" parent="hub" index="24"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.440545, 0, -0.151742)
-surface_material_override/0 = ExtResource("8_y1a0e")
-
-[node name="GroundBarrier_001" parent="hub" index="25"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.278714, 0, -0.135739)
-surface_material_override/0 = ExtResource("8_y1a0e")
-
-[node name="GroundBarrier_002" parent="hub" index="26"]
-surface_material_override/0 = ExtResource("8_y1a0e")
-
-[node name="GroundBarrier_003" parent="hub" index="27"]
-surface_material_override/0 = ExtResource("8_y1a0e")
-
-[node name="GroundBarrier_004" parent="hub" index="28"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.440545, 0, -0.151742)
-surface_material_override/0 = ExtResource("8_y1a0e")
-
 [node name="Benches" type="Node3D" parent="."]
 
 [node name="bench" parent="Benches" instance=ExtResource("12_5ubhp")]
@@ -121,12 +95,6 @@ transform = Transform3D(0.859505, 0, -0.511128, 0, 1, 0, 0.511128, 0, 0.859505, 
 
 [node name="bench6" parent="Benches" instance=ExtResource("12_5ubhp")]
 transform = Transform3D(0.859852, 0, 0.510543, 0, 1, 0, -0.510543, 0, 0.859852, 13.302, 0, -44.73)
-
-[node name="bench7" parent="Benches" instance=ExtResource("12_5ubhp")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 22.2485, 0, -53.8203)
-
-[node name="bench8" parent="Benches" instance=ExtResource("12_5ubhp")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -22.249, 0, -53.82)
 
 [node name="bench9" parent="Benches" instance=ExtResource("12_5ubhp")]
 transform = Transform3D(-0.765966, 0, 0.642881, 0, 1, 0, -0.642881, 0, -0.765966, -20.0038, 0, 41.6872)

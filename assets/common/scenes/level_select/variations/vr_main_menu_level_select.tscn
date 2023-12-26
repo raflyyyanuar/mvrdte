@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://j1twuqveldop"]
+
+[ext_resource type="PackedScene" uid="uid://bj7sf3ki5lvnm" path="res://assets/common/scenes/level_select/level_select.tscn" id="1_55jp5"]
+[ext_resource type="Texture2D" uid="uid://d3nqk237t8s4b" path="res://assets/common/images/vr/meta_quest_2_front_shot_small.png" id="2_ll0m1"]
+[ext_resource type="Texture2D" uid="uid://b5p8vred5cmuq" path="res://assets/common/images/vr/meta_quest_2_front_shot.png" id="3_yya5p"]
+
+[node name="VRMainMenuLevelSelect" instance=ExtResource("1_55jp5")]
+text = "VR Main Menu"
+icon = ExtResource("2_ll0m1")
+level_path = "res://assets/vr/scenes/main_menu/main_menu.tscn"
+preview_image = ExtResource("3_yya5p")

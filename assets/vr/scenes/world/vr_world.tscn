@@ -1,30 +1,54 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3w6pr3d7nkir"]
+[gd_scene load_steps=15 format=3 uid="uid://b3w6pr3d7nkir"]
 
-[ext_resource type="Script" path="res://assets/vr/scenes/world/vr_world.gd" id="1_77nbr"]
 [ext_resource type="PackedScene" uid="uid://bvdhinw71q4d2" path="res://assets/common/scenes/sandbox/sandbox.tscn" id="1_k2swo"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_tbs6p"]
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="3_f08lh"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_qatlv"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="4_7v0dy"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_301tt"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_srjfr"]
 [ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="6_2mwg6"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="8_x05vi"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="9_crw2i"]
+[ext_resource type="PackedScene" uid="uid://c5qbwoy356hs7" path="res://assets/vr/scenes/main_menu/level_select/vr_level_select_screen.tscn" id="11_hlv7k"]
+[ext_resource type="PackedScene" uid="uid://j1twuqveldop" path="res://assets/common/scenes/level_select/variations/vr_main_menu_level_select.tscn" id="12_10was"]
+[ext_resource type="PackedScene" uid="uid://c64pu0e3v1dhr" path="res://assets/common/scenes/level_select/variations/quit_level_select.tscn" id="13_afvco"]
+[ext_resource type="PackedScene" uid="uid://bk3uatdptflx3" path="res://assets/vr/scenes/level_transition/vr_level_transition.tscn" id="13_dql8d"]
 
 [node name="VRWorld" instance=ExtResource("3_f08lh")]
-script = ExtResource("1_77nbr")
 
 [node name="XROrigin3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.909, 0)
 
 [node name="MovementDirect" parent="XROrigin3D/LeftHand" index="0" instance=ExtResource("3_qatlv")]
+strafe = true
 
-[node name="FunctionTeleport" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("4_301tt")]
+[node name="LeftHand" parent="XROrigin3D/LeftHand" index="1" instance=ExtResource("4_7v0dy")]
 
-[node name="MovementTurn" parent="XROrigin3D/RightHand" index="1" instance=ExtResource("4_srjfr")]
+[node name="FunctionTeleport" parent="XROrigin3D/LeftHand" index="2" instance=ExtResource("4_301tt")]
 
-[node name="MovementJump" parent="XROrigin3D/RightHand" index="2" instance=ExtResource("6_2mwg6")]
+[node name="MovementTurn" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("4_srjfr")]
+
+[node name="MovementJump" parent="XROrigin3D/RightHand" index="1" instance=ExtResource("6_2mwg6")]
 jump_button_action = "ax_button"
+
+[node name="RightHand" parent="XROrigin3D/RightHand" index="2" instance=ExtResource("8_x05vi")]
+
+[node name="FunctionPointer" parent="XROrigin3D/RightHand" index="3" instance=ExtResource("9_crw2i")]
+show_laser = 2
+laser_length = 1
 
 [node name="PlayerBody" parent="XROrigin3D" index="3" instance=ExtResource("2_tbs6p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.909, 0)
 
 [node name="Sandbox" parent="." index="1" instance=ExtResource("1_k2swo")]
+
+[node name="VRMainMenuLevelSelect" parent="." index="2" instance=ExtResource("11_hlv7k")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.80114, 9.00025, 0)
+scene = ExtResource("12_10was")
+
+[node name="QuitLevelSelect" parent="." index="3" instance=ExtResource("11_hlv7k")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.8206, 9, 0)
+scene = ExtResource("13_afvco")
+
+[node name="VRLevelTransition" parent="." index="4" instance=ExtResource("13_dql8d")]
