@@ -44,7 +44,6 @@ progress = 0.0
 [node name="Scene" type="Node3D" parent="."]
 
 [node name="StartXR" parent="." instance=ExtResource("6_balvx")]
-physics_rate_multiplier = 1
 
 [connection signal="xr_ended" from="StartXR" to="." method="_on_StartXR_xr_ended"]
 [connection signal="xr_started" from="StartXR" to="." method="_on_StartXR_xr_started"]
