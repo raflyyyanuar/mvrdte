@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg7eoj7r5sv4a"]
-
-[ext_resource type="PackedScene" uid="uid://bj7sf3ki5lvnm" path="res://assets/common/scenes/level_select/level_select.tscn" id="1_vut73"]
-
-[node name="HubLevelSelect" instance=ExtResource("1_vut73")]
-text = "Main Hub"
