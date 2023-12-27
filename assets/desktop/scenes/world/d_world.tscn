@@ -1,0 +1,163 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwa4uem2bg2oi"]
+
+[ext_resource type="Script" path="res://assets/desktop/scenes/world/d_world.gd" id="1_ulq2g"]
+[ext_resource type="PackedScene" uid="uid://bvdhinw71q4d2" path="res://assets/common/scenes/sandbox/sandbox.tscn" id="1_urbyq"]
+[ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/d_player.tscn" id="2_m0ysw"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_ulq2g")
+main_menu_path = "res://assets/desktop/scenes/main_menu/main_menu.tscn"
+
+[node name="Sandbox" parent="." instance=ExtResource("1_urbyq")]
+
+[node name="PlayerDesktop" parent="." instance=ExtResource("2_m0ysw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115, 7.909, 0.118)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.564706)
+
+[node name="Welcome" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 86.0
+offset_right = 20.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.72549, 0, 1)
+theme_override_font_sizes/font_size = 111
+text = "WELCOME!"
+
+[node name="Controls" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -258.0
+offset_right = 152.0
+offset_bottom = -172.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.72549, 0, 1)
+theme_override_font_sizes/font_size = 72
+text = "Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Controls2" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -495.5
+offset_top = 333.0
+offset_right = 495.5
+offset_bottom = 469.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.541176, 1, 1)
+theme_override_font_sizes/font_size = 72
+text = "Made with love by DTE VR TEAM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -251.5
+offset_top = -166.0
+offset_right = 251.5
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Welcome3" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "V - Zoom in and out"
+vertical_alignment = 1
+
+[node name="Welcome4" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "W - Move forward"
+vertical_alignment = 1
+
+[node name="Welcome5" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "A - Move left"
+vertical_alignment = 1
+
+[node name="Welcome6" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "S - Move right"
+vertical_alignment = 1
+
+[node name="Welcome7" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "D - Move backward"
+vertical_alignment = 1
+
+[node name="Welcome8" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "ESC - Main menu"
+vertical_alignment = 1
+
+[node name="Welcome9" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "Tab - Open/close this window"
+vertical_alignment = 1
+
+[node name="Tab" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 30.0
+offset_top = 19.0
+offset_right = 813.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 36
+text = "Press TAB to open tutorials..."
+
+[editable path="PlayerDesktop"]

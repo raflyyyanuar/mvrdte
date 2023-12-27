@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://xpfqigyv73tx"]
+
+[ext_resource type="Script" path="res://assets/desktop/scenes/level_transition/desktop_level_transition.gd" id="1_lpgbe"]
+
+[node name="DesktopLevelTransition" type="Node3D"]
+script = ExtResource("1_lpgbe")
