@@ -134,6 +134,13 @@ theme_override_font_sizes/font_size = 36
 text = "D - Move backward"
 vertical_alignment = 1
 
+[node name="Welcome10" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "Space- Jump"
+vertical_alignment = 1
+
 [node name="Welcome8" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
