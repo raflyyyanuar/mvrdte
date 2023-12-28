@@ -1,0 +1,224 @@
+[gd_scene load_steps=19 format=3 uid="uid://b2wpljxisqcnn"]
+
+[ext_resource type="PackedScene" uid="uid://b4wbs4wk0pso8" path="res://assets/common/scenes/museums/history/history_museum.tscn" id="1_7xqb3"]
+[ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/d_player.tscn" id="2_s0e2n"]
+[ext_resource type="PackedScene" uid="uid://bol5apmspwe41" path="res://assets/common/scenes/contents/info_board.tscn" id="3_r1jqo"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="4_em2w7"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ntc4x"]
+resource_local_to_scene = true
+size = Vector2(8.32, 8.26)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wiiny"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23mf2"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_wiiny")
+texture_filter = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lhfd6"]
+resource_local_to_scene = true
+size = Vector3(8.32, 8.26, 0.02)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4ucdi"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t140d"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_4ucdi")
+texture_filter = 1
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_j2hsy"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7fbu"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_j2hsy")
+texture_filter = 1
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tn12l"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hposh"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_tn12l")
+texture_filter = 1
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1iqmq"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6pem"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_1iqmq")
+texture_filter = 1
+
+[sub_resource type="FontVariation" id="FontVariation_x3xg7"]
+spacing_top = -224
+spacing_bottom = -442
+
+[sub_resource type="FontVariation" id="FontVariation_bpj6f"]
+spacing_top = -127
+spacing_bottom = -442
+
+[node name="DHistoryMuseum" type="Node3D"]
+
+[node name="PlayerDesktop" parent="." instance=ExtResource("2_s0e2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.383, -5.12, 60.9483)
+
+[node name="HistoryMuseum" parent="." instance=ExtResource("1_7xqb3")]
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("4_em2w7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.9113, -2.96422, 30.7197)
+screen_size = Vector2(8.32, 8.26)
+scene = ExtResource("3_r1jqo")
+viewport_size = Vector2(832, 826)
+unshaded = true
+
+[node name="Viewport" parent="Viewport2Din3D" index="0"]
+size = Vector2i(832, 826)
+
+[node name="Screen" parent="Viewport2Din3D" index="1"]
+mesh = SubResource("QuadMesh_ntc4x")
+surface_material_override/0 = SubResource("StandardMaterial3D_23mf2")
+
+[node name="StaticBody3D" parent="Viewport2Din3D" index="2"]
+screen_size = Vector2(8.32, 8.26)
+viewport_size = Vector2(832, 826)
+
+[node name="CollisionShape3D" parent="Viewport2Din3D/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_lhfd6")
+
+[node name="Viewport2Din3D3" parent="." instance=ExtResource("4_em2w7")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 49.3202, -2.96422, 55.4042)
+screen_size = Vector2(8.32, 8.26)
+scene = ExtResource("3_r1jqo")
+viewport_size = Vector2(832, 826)
+unshaded = true
+
+[node name="Viewport" parent="Viewport2Din3D3" index="0"]
+size = Vector2i(832, 826)
+
+[node name="Screen" parent="Viewport2Din3D3" index="1"]
+mesh = SubResource("QuadMesh_ntc4x")
+surface_material_override/0 = SubResource("StandardMaterial3D_t140d")
+
+[node name="StaticBody3D" parent="Viewport2Din3D3" index="2"]
+screen_size = Vector2(8.32, 8.26)
+viewport_size = Vector2(832, 826)
+
+[node name="CollisionShape3D" parent="Viewport2Din3D3/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_lhfd6")
+
+[node name="Viewport2Din3D6" parent="." instance=ExtResource("4_em2w7")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 63.3202, -2.96422, 55.4042)
+screen_size = Vector2(8.32, 8.26)
+scene = ExtResource("3_r1jqo")
+viewport_size = Vector2(832, 826)
+unshaded = true
+
+[node name="Viewport" parent="Viewport2Din3D6" index="0"]
+size = Vector2i(832, 826)
+
+[node name="Screen" parent="Viewport2Din3D6" index="1"]
+mesh = SubResource("QuadMesh_ntc4x")
+surface_material_override/0 = SubResource("StandardMaterial3D_u7fbu")
+
+[node name="StaticBody3D" parent="Viewport2Din3D6" index="2"]
+screen_size = Vector2(8.32, 8.26)
+viewport_size = Vector2(832, 826)
+
+[node name="CollisionShape3D" parent="Viewport2Din3D6/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_lhfd6")
+
+[node name="Viewport2Din3D4" parent="." instance=ExtResource("4_em2w7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.9031, -2.96422, 28.6854)
+screen_size = Vector2(8.32, 8.26)
+scene = ExtResource("3_r1jqo")
+viewport_size = Vector2(832, 826)
+unshaded = true
+
+[node name="Viewport" parent="Viewport2Din3D4" index="0"]
+size = Vector2i(832, 826)
+
+[node name="Screen" parent="Viewport2Din3D4" index="1"]
+mesh = SubResource("QuadMesh_ntc4x")
+surface_material_override/0 = SubResource("StandardMaterial3D_hposh")
+
+[node name="StaticBody3D" parent="Viewport2Din3D4" index="2"]
+screen_size = Vector2(8.32, 8.26)
+viewport_size = Vector2(832, 826)
+
+[node name="CollisionShape3D" parent="Viewport2Din3D4/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_lhfd6")
+
+[node name="Viewport2Din3D5" parent="." instance=ExtResource("4_em2w7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.5377, -2.96422, 19.6993)
+screen_size = Vector2(8.32, 8.26)
+scene = ExtResource("3_r1jqo")
+viewport_size = Vector2(832, 826)
+unshaded = true
+
+[node name="Viewport" parent="Viewport2Din3D5" index="0"]
+size = Vector2i(832, 826)
+
+[node name="Screen" parent="Viewport2Din3D5" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.761038)
+mesh = SubResource("QuadMesh_ntc4x")
+surface_material_override/0 = SubResource("StandardMaterial3D_v6pem")
+
+[node name="StaticBody3D" parent="Viewport2Din3D5" index="2"]
+screen_size = Vector2(8.32, 8.26)
+viewport_size = Vector2(832, 826)
+
+[node name="CollisionShape3D" parent="Viewport2Din3D5/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_lhfd6")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.6582, 4.86772, 30.7431)
+text = "HISTORY
+MUSEUM"
+font = SubResource("FontVariation_x3xg7")
+font_size = 677
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.7216, 2.49707, 49.4647)
+text = "\"Jangan sekali-kali
+ meninggalkan sejarah.\""
+font = SubResource("FontVariation_x3xg7")
+font_size = 568
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.7216, -2.7924, 49.4647)
+text = "- Bung Karno -"
+font = SubResource("FontVariation_x3xg7")
+font_size = 400
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 57.5106, 7.42937, 55.9531)
+text = "\"History will be kind to me
+for I intend to write it.\""
+font = SubResource("FontVariation_bpj6f")
+font_size = 400
+
+[node name="Label3D5" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 57.5106, 3.33328, 55.9531)
+text = "- Winston Churchill -"
+font = SubResource("FontVariation_x3xg7")
+font_size = 300
+
+[editable path="Viewport2Din3D"]
+[editable path="Viewport2Din3D3"]
+[editable path="Viewport2Din3D6"]
+[editable path="Viewport2Din3D4"]
+[editable path="Viewport2Din3D5"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c657rew27lmon"]
+[gd_scene load_steps=15 format=3 uid="uid://c657rew27lmon"]
 
 [ext_resource type="Script" path="res://assets/desktop/scenes/main_menu/main_menu.gd" id="1_hfkp2"]
 [ext_resource type="Script" path="res://assets/desktop/scenes/main_menu/level_preview.gd" id="2_gxkdt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://assets/desktop/scenes/main_menu/arrow.gd" id="4_1f7wf"]
 [ext_resource type="PackedScene" uid="uid://dg7eoj7r5sv4a" path="res://assets/common/scenes/level_select/variations/hub_level_select.tscn" id="7_6wn7g"]
 [ext_resource type="Texture2D" uid="uid://bobh7tlqhvj1w" path="res://assets/common/images/level_previews/hub_preview.png" id="7_vsngm"]
+[ext_resource type="PackedScene" uid="uid://r4txbqiswlc8" path="res://assets/common/scenes/level_select/variations/history_museum_level_select.tscn" id="8_ec3ri"]
 [ext_resource type="PackedScene" uid="uid://c64pu0e3v1dhr" path="res://assets/common/scenes/level_select/variations/quit_level_select.tscn" id="8_i11ei"]
 [ext_resource type="PackedScene" uid="uid://xpfqigyv73tx" path="res://assets/desktop/scenes/level_transition/desktop_level_transition.tscn" id="9_jlk0t"]
 
@@ -168,11 +169,13 @@ alignment = 1
 layout_mode = 2
 level_path = "res://assets/desktop/scenes/world/d_world.tscn"
 
+[node name="HistoryMuseumLevelSelect" parent="VBoxContainer/HubContainer" instance=ExtResource("8_ec3ri")]
+layout_mode = 2
+level_path = "res://assets/desktop/scenes/museums/history_museum/d_history_museum.tscn"
+
 [node name="QuitLevelSelect" parent="VBoxContainer/HubContainer" instance=ExtResource("8_i11ei")]
 layout_mode = 2
 
 [node name="DesktopLevelTransition" parent="." instance=ExtResource("9_jlk0t")]
 
 [connection signal="level_hovered" from="VBoxContainer/Arrow" to="VBoxContainer/HBoxContainer/Control/LevelPreview" method="_on_arrow_level_hovered"]
-[connection signal="pressed" from="VBoxContainer/HubContainer/HubLevelSelect" to="VBoxContainer/HubContainer/HubLevelSelect" method="_on_pressed"]
-[connection signal="pressed" from="VBoxContainer/HubContainer/QuitLevelSelect" to="VBoxContainer/HubContainer/QuitLevelSelect" method="_on_pressed"]
