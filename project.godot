@@ -38,7 +38,7 @@ singletons=["res://addons/godot-openxr/config/godot_openxr.gdnlib"]
 [gui]
 
 theme/custom="res://assets/common/themes/cartoony_theme.tres"
-theme/custom_font="res://assets/common/fonts/cairo/Cairo-VariableFont_slnt,wght.ttf"
+theme/custom_font="res://assets/common/fonts/arimo/Arimo-Regular.ttf"
 common/drop_mouse_on_gui_input_disabled=true
 
 [input]

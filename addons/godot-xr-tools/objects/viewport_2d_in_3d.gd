@@ -1,6 +1,6 @@
 @tool
 extends Node3D
-
+class_name Viewport2Din3D
 
 ## XR ToolsViewport 2D in 3D
 ##
@@ -399,9 +399,13 @@ func _update_render() -> void:
 			# Instantiate provided scene
 			scene_node = scene.instantiate()
 			$Viewport.add_child(scene_node)
+			print("Successfully instantiate scene")
+			print(scene)
 		elif $Viewport.get_child_count() == 1:
 			# Use already-provided scene
 			scene_node = $Viewport.get_child(0)
+			print("Null instantiate scene or new")
+			print(scene)
 
 		# Ensure the new scene is rendered at least once
 		_dirty |= _DIRTY_REDRAW

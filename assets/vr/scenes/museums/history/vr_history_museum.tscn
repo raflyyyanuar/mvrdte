@@ -1,0 +1,41 @@
+[gd_scene load_steps=11 format=3 uid="uid://b7n3ey54oj61f"]
+
+[ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_tpkjk"]
+[ext_resource type="PackedScene" uid="uid://b4wbs4wk0pso8" path="res://assets/common/scenes/museums/history/history_museum.tscn" id="2_8u8x7"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_mm3eo"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="3_qq0fw"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_m30bd"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_dy1hv"]
+[ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="6_47i6i"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="7_s8tko"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="8_uha2j"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="9_xwbm0"]
+
+[node name="SceneBase" instance=ExtResource("1_tpkjk")]
+
+[node name="XROrigin3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="MovementDirect" parent="XROrigin3D/LeftHand" index="0" instance=ExtResource("2_mm3eo")]
+strafe = true
+
+[node name="LeftHand" parent="XROrigin3D/LeftHand" index="1" instance=ExtResource("3_qq0fw")]
+
+[node name="FunctionTeleport" parent="XROrigin3D/LeftHand" index="2" instance=ExtResource("4_m30bd")]
+
+[node name="MovementTurn" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("5_dy1hv")]
+
+[node name="MovementJump" parent="XROrigin3D/RightHand" index="1" instance=ExtResource("6_47i6i")]
+jump_button_action = "ax_button"
+
+[node name="RightHand" parent="XROrigin3D/RightHand" index="2" instance=ExtResource("7_s8tko")]
+
+[node name="FunctionPointer" parent="XROrigin3D/RightHand" index="3" instance=ExtResource("8_uha2j")]
+distance = 20.0
+show_laser = 2
+laser_length = 1
+
+[node name="PlayerBody" parent="XROrigin3D" index="3" instance=ExtResource("9_xwbm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="HistoryMuseum" parent="." index="1" instance=ExtResource("2_8u8x7")]

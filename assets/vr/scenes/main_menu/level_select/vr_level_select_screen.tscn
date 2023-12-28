@@ -1,20 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5qbwoy356hs7"]
+[gd_scene load_steps=8 format=3 uid="uid://c5qbwoy356hs7"]
 
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_8urtt"]
 [ext_resource type="PackedScene" uid="uid://bj7sf3ki5lvnm" path="res://assets/common/scenes/level_select/level_select.tscn" id="1_ntcy6"]
+[ext_resource type="Script" path="res://assets/vr/scenes/main_menu/level_select/vr_level_select_screen.gd" id="3_cm5hx"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_cn4mn"]
 resource_local_to_scene = true
 size = Vector2(3.19, 2.36)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xudeq"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_nnkp5"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1gms"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1cyh"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_xudeq")
+albedo_texture = SubResource("ViewportTexture_nnkp5")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rwrsk"]
@@ -32,7 +33,8 @@ size = Vector2i(319, 236)
 
 [node name="Screen" parent="." index="1"]
 mesh = SubResource("QuadMesh_cn4mn")
-surface_material_override/0 = SubResource("StandardMaterial3D_m1gms")
+surface_material_override/0 = SubResource("StandardMaterial3D_g1cyh")
+script = ExtResource("3_cm5hx")
 
 [node name="StaticBody3D" parent="." index="2"]
 screen_size = Vector2(3.19, 2.36)
@@ -41,4 +43,5 @@ viewport_size = Vector2(319, 236)
 [node name="CollisionShape3D" parent="StaticBody3D" index="0"]
 shape = SubResource("BoxShape3D_rwrsk")
 
-[connection signal="pressed" from="Viewport/Button" to="Viewport/Button" method="_on_pressed"]
+[connection signal="pointer_event" from="." to="Screen" method="_on_vr_level_select_screen_pointer_event"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
