@@ -6,6 +6,6 @@
 [node name="DHistoryMuseum" type="Node3D"]
 
 [node name="PlayerDesktop" parent="." instance=ExtResource("2_s0e2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.383, -5.12, 60.9483)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.73368, 2.03035, -0.968547)
 
 [node name="HistoryMuseum" parent="." instance=ExtResource("1_7xqb3")]

@@ -1,6 +1,6 @@
 @tool
 extends Node3D
-
+class_name Viewport2Din3D
 
 ## XR ToolsViewport 2D in 3D
 ##

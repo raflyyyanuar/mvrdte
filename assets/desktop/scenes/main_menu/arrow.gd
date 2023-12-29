@@ -18,6 +18,7 @@ func _ready() -> void:
 func set_pos(what : float) -> void:
 	global_position.x = what
 
+
 func on_level_hovered(level : LevelSelect) -> void:
-	set_pos(level.global_position.x + level.pivot_offset.x)
+	set_pos(level.global_position.x + level.size.x / 2)
 	emit_signal("level_hovered", level)

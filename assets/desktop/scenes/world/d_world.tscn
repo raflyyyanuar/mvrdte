@@ -1,8 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwa4uem2bg2oi"]
+[gd_scene load_steps=10 format=3 uid="uid://dwa4uem2bg2oi"]
 
 [ext_resource type="Script" path="res://assets/desktop/scenes/world/d_world.gd" id="1_ulq2g"]
 [ext_resource type="PackedScene" uid="uid://bvdhinw71q4d2" path="res://assets/common/scenes/sandbox/sandbox.tscn" id="1_urbyq"]
 [ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/d_player.tscn" id="2_m0ysw"]
+[ext_resource type="PackedScene" uid="uid://r4txbqiswlc8" path="res://assets/common/scenes/level_select/variations/history_museum_level_select.tscn" id="4_b8cvs"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="4_h2mb5"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_xshhi"]
+resource_local_to_scene = true
+size = Vector2(4, 2.64)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_va8de"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3hcnn"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_va8de")
+texture_filter = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_atyef"]
+resource_local_to_scene = true
+size = Vector3(4, 2.64, 0.02)
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_ulq2g")
@@ -11,6 +31,27 @@ main_menu_path = "res://assets/desktop/scenes/main_menu/main_menu.tscn"
 [node name="Sandbox" parent="." instance=ExtResource("1_urbyq")]
 
 [node name="PlayerDesktop" parent="." instance=ExtResource("2_m0ysw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115, 7.909, 0.118)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.115, 4.84809, 74.8257)
 
-[editable path="PlayerDesktop"]
+[node name="Viewport2Din3D" parent="." instance=ExtResource("4_h2mb5")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 5.5245, 80.0481)
+screen_size = Vector2(4, 2.64)
+scene = ExtResource("4_b8cvs")
+viewport_size = Vector2(1000, 660)
+unshaded = true
+
+[node name="Viewport" parent="Viewport2Din3D" index="0"]
+size = Vector2i(1000, 660)
+
+[node name="Screen" parent="Viewport2Din3D" index="1"]
+mesh = SubResource("QuadMesh_xshhi")
+surface_material_override/0 = SubResource("StandardMaterial3D_3hcnn")
+
+[node name="StaticBody3D" parent="Viewport2Din3D" index="2"]
+screen_size = Vector2(4, 2.64)
+viewport_size = Vector2(1000, 660)
+
+[node name="CollisionShape3D" parent="Viewport2Din3D/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_atyef")
+
+[editable path="Viewport2Din3D"]

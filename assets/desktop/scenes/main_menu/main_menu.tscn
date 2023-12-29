@@ -91,10 +91,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -334.5
-offset_top = 161.0
-offset_right = 334.5
-offset_bottom = 397.0
+offset_left = -1530.0
+offset_top = -51.0
+offset_right = 1530.0
+offset_bottom = 609.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 58
@@ -154,7 +154,7 @@ autowrap_mode = 2
 
 [node name="Arrow" type="Sprite2D" parent="VBoxContainer"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(148, -52)
+position = Vector2(1096, -52)
 scale = Vector2(0.126667, 0.126667)
 texture = ExtResource("3_i64cn")
 script = ExtResource("4_1f7wf")
@@ -166,15 +166,21 @@ theme_override_constants/separation = 30
 alignment = 1
 
 [node name="HubLevelSelect" parent="VBoxContainer/HubContainer" instance=ExtResource("7_6wn7g")]
+custom_minimum_size = Vector2(400, 300)
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 level_path = "res://assets/desktop/scenes/world/d_world.tscn"
 
 [node name="HistoryMuseumLevelSelect" parent="VBoxContainer/HubContainer" instance=ExtResource("8_ec3ri")]
+custom_minimum_size = Vector2(400, 300)
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 level_path = "res://assets/desktop/scenes/museums/history_museum/d_history_museum.tscn"
 
 [node name="QuitLevelSelect" parent="VBoxContainer/HubContainer" instance=ExtResource("8_i11ei")]
+custom_minimum_size = Vector2(400, 300)
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 
 [node name="DesktopLevelTransition" parent="." instance=ExtResource("9_jlk0t")]
 
