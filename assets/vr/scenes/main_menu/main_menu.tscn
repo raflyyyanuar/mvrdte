@@ -28,15 +28,15 @@ show_laser = 2
 laser_length = 1
 
 [node name="HubLevelSelect" parent="." index="1" instance=ExtResource("3_3l5b7")]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -3.74628, 1.57049, -5.7002)
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -5.60882, 1.57049, -7.7002)
 scene = ExtResource("5_s1bu1")
 
 [node name="HistoryLevelSelect" parent="." index="2" instance=ExtResource("3_3l5b7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57, -5.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57, -7.7)
 scene = ExtResource("5_ex00s")
 
 [node name="QuitLevelSelect" parent="." index="3" instance=ExtResource("3_3l5b7")]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 3.88844, 1.57049, -5.7002)
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 5.64116, 1.57049, -7.7002)
 scene = ExtResource("5_kea6l")
 
 [node name="VRLevelTransition" parent="." index="4" instance=ExtResource("5_2j1s7")]
