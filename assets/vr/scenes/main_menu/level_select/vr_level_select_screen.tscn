@@ -8,6 +8,7 @@
 resource_local_to_scene = true
 size = Vector2(5, 3.3)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_bf7u0"]
 [sub_resource type="ViewportTexture" id="ViewportTexture_3j8e2"]
 viewport_path = NodePath("Viewport")
 
@@ -33,7 +34,7 @@ size = Vector2i(1000, 660)
 
 [node name="Screen" parent="." index="1"]
 mesh = SubResource("QuadMesh_cn4mn")
-surface_material_override/0 = SubResource("StandardMaterial3D_02by6")
+screen_size = Vector2(5, 3.3)
 script = ExtResource("3_cm5hx")
 
 [node name="StaticBody3D" parent="." index="2"]
