@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq0uwjab324ei"]
+
+[ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/d_player.tscn" id="1_40ta1"]
+[ext_resource type="Script" path="res://assets/desktop/scenes/museums/history_museum/desktop_history_museum_remastered.gd" id="1_vtcgv"]
+[ext_resource type="PackedScene" uid="uid://dgk244q611sy2" path="res://assets/common/scenes/museums/history/history_museum_remastered.tscn" id="2_kcv6r"]
+
+[node name="DesktopHistoryMuseumRemastered" type="Node3D"]
+script = ExtResource("1_vtcgv")
+
+[node name="HistoryMuseumRemastered" parent="." instance=ExtResource("2_kcv6r")]
+
+[node name="PlayerDesktop" parent="." instance=ExtResource("1_40ta1")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 24.5175, 1, 0)

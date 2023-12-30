@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://c657rew27lmon"]
 
-[ext_resource type="Script" path="res://assets/desktop/scenes/main_menu/main_menu.gd" id="1_hfkp2"]
+[ext_resource type="Script" path="res://assets/desktop/scenes/main_menu/desktop_main_menu.gd" id="1_hfkp2"]
 [ext_resource type="Script" path="res://assets/desktop/scenes/main_menu/level_preview.gd" id="2_gxkdt"]
 [ext_resource type="Theme" uid="uid://cjkhx0irum0iw" path="res://assets/common/themes/cartoony_theme.tres" id="2_p35xv"]
 [ext_resource type="Texture2D" uid="uid://b5yjol47w4iqb" path="res://assets/common/images/ui/down-arrow-transparent-14.png" id="3_i64cn"]
@@ -175,6 +175,7 @@ level_path = "res://assets/desktop/scenes/world/d_world.tscn"
 custom_minimum_size = Vector2(400, 300)
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
+level_path = "res://assets/desktop/scenes/museums/history_museum/desktop_history_museum_remastered.tscn"
 
 [node name="QuitLevelSelect" parent="VBoxContainer/HubContainer" instance=ExtResource("8_i11ei")]
 custom_minimum_size = Vector2(400, 300)

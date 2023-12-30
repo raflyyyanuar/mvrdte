@@ -19,12 +19,6 @@ func _input(event: InputEvent) -> void:
 		self.rotate_x(-event.relative.y * sensitivity)
 		player.rotate_y(-event.relative.x * sensitivity)
 	
-	if Input.is_key_pressed(KEY_ESCAPE):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
 	if Input.is_action_just_pressed("zoom") and not is_zooming:
 		is_zooming = true
 		var tween := create_tween().set_trans(Tween.TRANS_QUAD)
