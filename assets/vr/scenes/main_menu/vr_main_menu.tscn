@@ -1,0 +1,45 @@
+[gd_scene load_steps=12 format=3 uid="uid://b6ep2twd4ik7j"]
+
+[ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_3oxhw"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_bggt4"]
+[ext_resource type="PackedScene" uid="uid://c5qbwoy356hs7" path="res://assets/vr/scenes/main_menu/level_select/vr_level_select_screen.tscn" id="3_3l5b7"]
+[ext_resource type="PackedScene" uid="uid://bk3uatdptflx3" path="res://assets/vr/scenes/level_transition/vr_level_transition.tscn" id="5_2j1s7"]
+[ext_resource type="PackedScene" uid="uid://r4txbqiswlc8" path="res://assets/common/scenes/level_select/variations/history_museum_level_select.tscn" id="5_ex00s"]
+[ext_resource type="PackedScene" uid="uid://c64pu0e3v1dhr" path="res://assets/common/scenes/level_select/variations/quit_level_select.tscn" id="5_kea6l"]
+[ext_resource type="PackedScene" uid="uid://dg7eoj7r5sv4a" path="res://assets/common/scenes/level_select/variations/hub_level_select.tscn" id="5_s1bu1"]
+[ext_resource type="Texture2D" uid="uid://by4u2g4o70gkq" path="res://assets/common/images/sky_hdris/universe-the-background-image-space-galaxy.jpg" id="7_no002"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ggw20"]
+panorama = ExtResource("7_no002")
+
+[sub_resource type="Sky" id="Sky_55lc0"]
+sky_material = SubResource("PanoramaSkyMaterial_ggw20")
+
+[sub_resource type="Environment" id="Environment_h57nj"]
+background_mode = 2
+sky = SubResource("Sky_55lc0")
+sky_custom_fov = 160.0
+sky_rotation = Vector3(0, 1.87623, 0)
+
+[node name="MainMenu" instance=ExtResource("1_3oxhw")]
+
+[node name="FunctionPointer" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("2_bggt4")]
+show_laser = 2
+laser_length = 1
+
+[node name="HubLevelSelect" parent="." index="1" instance=ExtResource("3_3l5b7")]
+transform = Transform3D(0.86665, 0, 0.232218, 0, 0.897222, 0, -0.232218, 0, 0.86665, -5.60882, 1.57049, -7.7002)
+scene = ExtResource("5_s1bu1")
+
+[node name="HistoryLevelSelect" parent="." index="2" instance=ExtResource("3_3l5b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57, -7.7)
+scene = ExtResource("5_ex00s")
+
+[node name="QuitLevelSelect" parent="." index="3" instance=ExtResource("3_3l5b7")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 5.64116, 1.57049, -7.7002)
+scene = ExtResource("5_kea6l")
+
+[node name="VRLevelTransition" parent="." index="4" instance=ExtResource("5_2j1s7")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="5"]
+environment = SubResource("Environment_h57nj")
