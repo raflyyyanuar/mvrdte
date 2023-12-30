@@ -6,24 +6,24 @@
 
 [sub_resource type="QuadMesh" id="QuadMesh_cn4mn"]
 resource_local_to_scene = true
-size = Vector2(5, 3.3)
+size = Vector2(4.55, 3)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_3j8e2"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_sa8ss"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02by6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jy7u3"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_3j8e2")
+albedo_texture = SubResource("ViewportTexture_sa8ss")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rwrsk"]
 resource_local_to_scene = true
-size = Vector3(5, 3.3, 0.02)
+size = Vector3(4.55, 3, 0.02)
 
 [node name="VRLevelSelectScreen" instance=ExtResource("1_8urtt")]
-screen_size = Vector2(5, 3.3)
+screen_size = Vector2(4.55, 3)
 scene = ExtResource("1_ntcy6")
 viewport_size = Vector2(1000, 660)
 unshaded = true
@@ -33,11 +33,11 @@ size = Vector2i(1000, 660)
 
 [node name="Screen" parent="." index="1"]
 mesh = SubResource("QuadMesh_cn4mn")
-surface_material_override/0 = SubResource("StandardMaterial3D_02by6")
+surface_material_override/0 = SubResource("StandardMaterial3D_jy7u3")
 script = ExtResource("3_cm5hx")
 
 [node name="StaticBody3D" parent="." index="2"]
-screen_size = Vector2(5, 3.3)
+screen_size = Vector2(4.55, 3)
 viewport_size = Vector2(1000, 660)
 
 [node name="CollisionShape3D" parent="StaticBody3D" index="0"]

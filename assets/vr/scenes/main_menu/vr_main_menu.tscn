@@ -28,7 +28,7 @@ show_laser = 2
 laser_length = 1
 
 [node name="HubLevelSelect" parent="." index="1" instance=ExtResource("3_3l5b7")]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -5.60882, 1.57049, -7.7002)
+transform = Transform3D(0.86665, 0, 0.232218, 0, 0.897222, 0, -0.232218, 0, 0.86665, -5.60882, 1.57049, -7.7002)
 scene = ExtResource("5_s1bu1")
 
 [node name="HistoryLevelSelect" parent="." index="2" instance=ExtResource("3_3l5b7")]
