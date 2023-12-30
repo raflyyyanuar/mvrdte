@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cosr314nslyh2"]
+
+[ext_resource type="PackedScene" uid="uid://bj7sf3ki5lvnm" path="res://assets/common/scenes/level_select/level_select.tscn" id="1_whavq"]
+[ext_resource type="Texture2D" uid="uid://bfbj88p5r1nun" path="res://assets/common/images/level_previews/history_preview.png" id="2_2sfi3"]
+
+[node name="HistoryMuseumLevelSelect" instance=ExtResource("1_whavq")]
+text = "History Museum"
+icon = ExtResource("2_2sfi3")
+level_path = "res://assets/desktop/scenes/museums/history_museum/desktop_history_museum_remastered.tscn"

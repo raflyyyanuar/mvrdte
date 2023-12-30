@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk3uatdptflx3"]
-
-[ext_resource type="Script" path="res://assets/vr/scenes/level_transition/vr_level_transition.gd" id="1_ut86h"]
-
-[node name="VRLevelTransition" type="Node3D"]
-script = ExtResource("1_ut86h")
