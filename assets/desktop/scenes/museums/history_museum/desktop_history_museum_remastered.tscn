@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bq0uwjab324ei"]
 
-[ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/d_player.tscn" id="1_40ta1"]
+[ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/desktop_player.tscn" id="1_40ta1"]
 [ext_resource type="Script" path="res://assets/desktop/scenes/museums/history_museum/desktop_history_museum_remastered.gd" id="1_vtcgv"]
 [ext_resource type="PackedScene" uid="uid://dgk244q611sy2" path="res://assets/common/scenes/museums/history/history_museum_remastered.tscn" id="2_kcv6r"]
 

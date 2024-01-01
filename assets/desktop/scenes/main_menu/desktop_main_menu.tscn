@@ -169,7 +169,7 @@ alignment = 1
 custom_minimum_size = Vector2(400, 300)
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-level_path = "res://assets/desktop/scenes/world/d_world.tscn"
+level_path = "res://assets/desktop/scenes/museums/hub/desktop_hub.tscn"
 
 [node name="HistoryMuseumLevelSelect" parent="VBoxContainer/HubContainer" instance=ExtResource("8_ec3ri")]
 custom_minimum_size = Vector2(400, 300)
@@ -181,6 +181,7 @@ level_path = "res://assets/desktop/scenes/museums/history_museum/desktop_history
 custom_minimum_size = Vector2(400, 300)
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
+level_path = ""
 
 [node name="DesktopLevelTransition" parent="." instance=ExtResource("9_jlk0t")]
 

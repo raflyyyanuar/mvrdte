@@ -39,7 +39,7 @@ func _input(event: InputEvent) -> void:
 
 
 func reset_height() -> void:
-	position.y = 0.6
+	position.y = 0.5
 
 
 func increase_height() -> void:

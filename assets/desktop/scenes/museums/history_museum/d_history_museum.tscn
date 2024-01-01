@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2wpljxisqcnn"]
 
 [ext_resource type="PackedScene" uid="uid://b4wbs4wk0pso8" path="res://assets/common/scenes/museums/history/history_museum.tscn" id="1_7xqb3"]
-[ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/d_player.tscn" id="2_s0e2n"]
+[ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/desktop_player.tscn" id="2_s0e2n"]
 
 [node name="DHistoryMuseum" type="Node3D"]
 

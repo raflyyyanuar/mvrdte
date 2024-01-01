@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://du7rgg1mgvyvx"]
 
-[ext_resource type="Script" path="res://assets/desktop/scenes/player/d_player.gd" id="1_wf7io"]
-[ext_resource type="Script" path="res://assets/desktop/scenes/player/head.gd" id="2_1sxyt"]
-[ext_resource type="Script" path="res://assets/desktop/scenes/player/interact.gd" id="3_8c6om"]
-[ext_resource type="Script" path="res://assets/desktop/scenes/player/ui.gd" id="3_h32gq"]
-[ext_resource type="Script" path="res://assets/desktop/scenes/player/interact_ui.gd" id="5_kacbu"]
+[ext_resource type="Script" path="res://assets/desktop/scenes/player/desktop_player.gd" id="1_6ofcn"]
+[ext_resource type="Script" path="res://assets/desktop/scenes/player/head.gd" id="2_hq2so"]
+[ext_resource type="Script" path="res://assets/desktop/scenes/player/interact.gd" id="3_sl2s4"]
+[ext_resource type="Script" path="res://assets/desktop/scenes/player/ui.gd" id="4_yejpv"]
+[ext_resource type="Script" path="res://assets/desktop/scenes/player/interact_ui.gd" id="5_7gc2w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c3888"]
 
@@ -12,17 +12,18 @@
 
 [node name="PlayerDesktop" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("1_wf7io")
+script = ExtResource("1_6ofcn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_c3888")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_r7tct")
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
-script = ExtResource("2_1sxyt")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("2_hq2so")
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 current = true
@@ -32,10 +33,10 @@ fov = 70.0
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(0, -10, 0)
 collision_mask = 4194304
-script = ExtResource("3_8c6om")
+script = ExtResource("3_sl2s4")
 
 [node name="WelcomeUI" type="CanvasLayer" parent="."]
-script = ExtResource("3_h32gq")
+script = ExtResource("4_yejpv")
 
 [node name="Welcome" type="Control" parent="WelcomeUI"]
 layout_mode = 3
@@ -220,7 +221,7 @@ text = "Press TAB to open tutorials..."
 
 [node name="InteractUI" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
-script = ExtResource("5_kacbu")
+script = ExtResource("5_7gc2w")
 
 [node name="Control" type="Control" parent="InteractUI"]
 layout_mode = 3

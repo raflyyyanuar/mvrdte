@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/desktop/scenes/world/desktop_base_scene.gd" id="1_ulq2g"]
 [ext_resource type="PackedScene" uid="uid://bvdhinw71q4d2" path="res://assets/common/scenes/sandbox/sandbox.tscn" id="1_urbyq"]
-[ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/d_player.tscn" id="2_m0ysw"]
+[ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/desktop_player.tscn" id="2_m0ysw"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="4_h2mb5"]
 [ext_resource type="PackedScene" uid="uid://cosr314nslyh2" path="res://assets/desktop/scenes/level_select/desktop_history_museum_level_select.tscn" id="5_02xdn"]
 
