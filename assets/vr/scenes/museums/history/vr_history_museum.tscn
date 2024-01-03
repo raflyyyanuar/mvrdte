@@ -1,63 +1,41 @@
-[gd_scene load_steps=15 format=3 uid="uid://b7n3ey54oj61f"]
+[gd_scene load_steps=12 format=3 uid="uid://ck74l7n1u4ack"]
 
-[ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_tpkjk"]
-[ext_resource type="PackedScene" uid="uid://b4wbs4wk0pso8" path="res://assets/common/scenes/museums/history/history_museum.tscn" id="2_8u8x7"]
-[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_mm3eo"]
-[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="3_qq0fw"]
-[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_m30bd"]
-[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_dy1hv"]
-[ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="6_47i6i"]
-[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="7_s8tko"]
-[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="8_uha2j"]
-[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="9_xwbm0"]
-[ext_resource type="PackedScene" uid="uid://c5qbwoy356hs7" path="res://assets/vr/scenes/main_menu/level_select/vr_level_select_screen.tscn" id="11_oaira"]
-[ext_resource type="PackedScene" uid="uid://dg7eoj7r5sv4a" path="res://assets/common/scenes/level_select/variations/hub_level_select.tscn" id="12_iwb06"]
-[ext_resource type="PackedScene" uid="uid://j1twuqveldop" path="res://assets/common/scenes/level_select/variations/vr_main_menu_level_select.tscn" id="13_6bxu5"]
-[ext_resource type="PackedScene" uid="uid://bk3uatdptflx3" path="res://assets/vr/scenes/level_transition/vr_level_transition.tscn" id="14_wgyvj"]
+[ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_645rn"]
+[ext_resource type="PackedScene" uid="uid://b5mablng7ks3y" path="res://assets/common/scenes/museums/history/history_remastered.tscn" id="1_xf4gq"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_fnh71"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="3_pme4x"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_omo4c"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="5_4qqb8"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="5_brky8"]
+[ext_resource type="PackedScene" uid="uid://c5qbwoy356hs7" path="res://assets/vr/scenes/main_menu/level_select/vr_level_select_screen.tscn" id="8_6i6j7"]
+[ext_resource type="PackedScene" uid="uid://j1twuqveldop" path="res://assets/common/scenes/level_select/variations/vr_main_menu_level_select.tscn" id="9_v4dpd"]
+[ext_resource type="PackedScene" uid="uid://dg7eoj7r5sv4a" path="res://assets/common/scenes/level_select/variations/hub_level_select.tscn" id="10_ytavm"]
+[ext_resource type="PackedScene" uid="uid://bk3uatdptflx3" path="res://assets/vr/scenes/level_transition/vr_level_transition.tscn" id="11_53nqe"]
 
-[node name="SceneBase" instance=ExtResource("1_tpkjk")]
+[node name="VRHistoryMuseum" instance=ExtResource("1_645rn")]
 
-[node name="XROrigin3D" parent="." index="0"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2, 0)
-
-[node name="MovementDirect" parent="XROrigin3D/LeftHand" index="0" instance=ExtResource("2_mm3eo")]
+[node name="MovementDirect" parent="XROrigin3D/LeftHand" index="0" instance=ExtResource("2_fnh71")]
 strafe = true
 
-[node name="LeftHand" parent="XROrigin3D/LeftHand" index="1" instance=ExtResource("3_qq0fw")]
+[node name="FunctionTeleport" parent="XROrigin3D/LeftHand" index="1" instance=ExtResource("3_pme4x")]
 
-[node name="FunctionTeleport" parent="XROrigin3D/LeftHand" index="2" instance=ExtResource("4_m30bd")]
+[node name="MovementTurn" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("4_omo4c")]
 
-[node name="MovementTurn" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("5_dy1hv")]
-
-[node name="MovementJump" parent="XROrigin3D/RightHand" index="1" instance=ExtResource("6_47i6i")]
-jump_button_action = "ax_button"
-
-[node name="RightHand" parent="XROrigin3D/RightHand" index="2" instance=ExtResource("7_s8tko")]
-
-[node name="FunctionPointer" parent="XROrigin3D/RightHand" index="3" instance=ExtResource("8_uha2j")]
-distance = 20.0
-show_laser = 2
+[node name="FunctionPointer" parent="XROrigin3D/RightHand" index="1" instance=ExtResource("5_brky8")]
 laser_length = 1
 
-[node name="PlayerBody" parent="XROrigin3D" index="3" instance=ExtResource("9_xwbm0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+[node name="PlayerBody" parent="XROrigin3D" index="3" instance=ExtResource("5_4qqb8")]
 
-[node name="HistoryMuseum" parent="." index="1" instance=ExtResource("2_8u8x7")]
+[node name="HistoryRemastered" parent="." index="1" instance=ExtResource("1_xf4gq")]
 
-[node name="Label3D5" type="Label3D" parent="." index="2"]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 29.519, 8.60069, -16.0816)
-text = "Going somewhere else?"
-font_size = 208
-outline_size = 66
-autowrap_mode = 2
-width = 5000.0
+[node name="HistoryLevelSelect2" parent="." index="2" instance=ExtResource("8_6i6j7")]
+transform = Transform3D(-1.00935, 0, -0.0251966, 0, 1.00966, 0, 0.0251966, 0, -1.00935, 5.19773, 1.57, 4.15542)
+screen_size = Vector2(1.138, 0.75)
+scene = ExtResource("9_v4dpd")
 
-[node name="MainHubSelectScreen" parent="." index="3" instance=ExtResource("11_oaira")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.427, 5.36945, -18.9613)
-scene = ExtResource("12_iwb06")
+[node name="HistoryLevelSelect3" parent="." index="3" instance=ExtResource("8_6i6j7")]
+transform = Transform3D(-1.00935, 0, -0.0251966, 0, 1.00966, 0, 0.0251966, 0, -1.00935, 3.98019, 1.57, 4.15542)
+screen_size = Vector2(1.138, 0.75)
+scene = ExtResource("10_ytavm")
 
-[node name="VRMainMenuSelectScreen" parent="." index="4" instance=ExtResource("11_oaira")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.427, 5.36945, -13.2946)
-scene = ExtResource("13_6bxu5")
-
-[node name="VRLevelTransition" parent="." index="5" instance=ExtResource("14_wgyvj")]
+[node name="VRLevelTransition" parent="." index="4" instance=ExtResource("11_53nqe")]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=11 format=3 uid="uid://b6x7mdweax6td"]
+
+[ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_u3ryq"]
+[ext_resource type="PackedScene" uid="uid://cgtfl6t3p4wne" path="res://assets/common/scenes/museums/hub/hub_remastered.tscn" id="2_nrrdc"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_vr2w6"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="3_tyykb"]
+[ext_resource type="PackedScene" uid="uid://c5qbwoy356hs7" path="res://assets/vr/scenes/main_menu/level_select/vr_level_select_screen.tscn" id="4_be2ix"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_nu6s5"]
+[ext_resource type="PackedScene" uid="uid://r4txbqiswlc8" path="res://assets/common/scenes/level_select/variations/history_museum_level_select.tscn" id="5_icb8e"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/player/player_body.gd" id="5_jw4c8"]
+[ext_resource type="PackedScene" uid="uid://j1twuqveldop" path="res://assets/common/scenes/level_select/variations/vr_main_menu_level_select.tscn" id="6_2unxg"]
+[ext_resource type="PackedScene" uid="uid://bk3uatdptflx3" path="res://assets/vr/scenes/level_transition/vr_level_transition.tscn" id="10_roso7"]
+
+[node name="VRHub" instance=ExtResource("1_u3ryq")]
+
+[node name="XROrigin3D" parent="." index="0"]
+transform = Transform3D(-0.776256, 0, 0.630418, 0, 1, 0, -0.630418, 0, -0.776256, -1.03397, 0, 1.24333)
+
+[node name="FunctionPointer" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("2_vr2w6")]
+laser_length = 1
+
+[node name="MovementTurn" parent="XROrigin3D/RightHand" index="1" instance=ExtResource("3_tyykb")]
+
+[node name="PlayerBody" type="CharacterBody3D" parent="XROrigin3D" index="3" groups=["player_body"] instance=ExtResource("4_nu6s5")]
+process_priority = -100
+process_physics_priority = -100
+top_level = true
+collision_layer = 524288
+collision_mask = 1023
+script = ExtResource("5_jw4c8")
+
+[node name="HubRemastered" parent="." index="1" instance=ExtResource("2_nrrdc")]
+
+[node name="HistoryLevelSelect" parent="." index="2" instance=ExtResource("4_be2ix")]
+transform = Transform3D(-0.581568, 0, 0.825343, 0, 1.00966, 0, -0.825343, 0, -0.581568, -2.62859, 1.57, 2.25917)
+screen_size = Vector2(1.138, 0.75)
+scene = ExtResource("5_icb8e")
+
+[node name="HistoryLevelSelect2" parent="." index="3" instance=ExtResource("4_be2ix")]
+transform = Transform3D(-0.990622, 0, 0.195143, 0, 1.00966, 0, -0.195143, 0, -0.990622, -1.57024, 1.57, 2.9364)
+screen_size = Vector2(1.138, 0.75)
+scene = ExtResource("6_2unxg")
+
+[node name="VRLevelTransition" parent="." index="4" instance=ExtResource("10_roso7")]

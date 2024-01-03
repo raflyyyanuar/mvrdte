@@ -25,18 +25,17 @@ sky_rotation = Vector3(0, 1.87623, 0)
 
 [node name="FunctionPointer" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("2_bggt4")]
 show_laser = 2
-laser_length = 1
 
 [node name="HubLevelSelect" parent="." index="1" instance=ExtResource("3_3l5b7")]
-transform = Transform3D(0.86665, 0, 0.232218, 0, 0.897222, 0, -0.232218, 0, 0.86665, -5.60882, 1.57049, -7.7002)
+transform = Transform3D(0.875021, 0, 0.234461, 0, 0.905889, 0, -0.234461, 0, 0.875021, -5.6631, 1.57049, -7.7002)
 scene = ExtResource("5_s1bu1")
 
 [node name="HistoryLevelSelect" parent="." index="2" instance=ExtResource("3_3l5b7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57, -7.7)
+transform = Transform3D(1.00966, 0, 0, 0, 1.00966, 0, 0, 0, 1.00966, -0.00010413, 1.57, -7.7)
 scene = ExtResource("5_ex00s")
 
 [node name="QuitLevelSelect" parent="." index="3" instance=ExtResource("3_3l5b7")]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 5.64116, 1.57049, -7.7002)
+transform = Transform3D(0.975256, 0, -0.261319, 0, 1.00966, 0, 0.261319, 0, 0.975256, 5.69555, 1.57049, -7.7002)
 scene = ExtResource("5_kea6l")
 
 [node name="VRLevelTransition" parent="." index="4" instance=ExtResource("5_2j1s7")]
