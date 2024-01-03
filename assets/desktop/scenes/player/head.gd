@@ -14,8 +14,6 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		event.relative.x
-		
 		self.rotate_x(-event.relative.y * sensitivity)
 		player.rotate_y(-event.relative.x * sensitivity)
 	
@@ -29,25 +27,3 @@ func _input(event: InputEvent) -> void:
 		await tween.finished
 		is_zoomed_in = !is_zoomed_in
 		is_zooming = false
-	
-	if Input.is_action_pressed("increase_height"):
-		increase_height()
-	elif Input.is_action_pressed("decrease_height"):
-		decrease_height()
-	elif Input.is_action_just_pressed("reset_height"):
-		reset_height()
-
-
-func reset_height() -> void:
-	position.y = 0.6
-
-
-func increase_height() -> void:
-	position.y += 0.3
-	position.y = clampf(position.y, 0.0, 5.0)
-
-
-func decrease_height() -> void:
-	position.y -= 0.3
-	position.y = clampf(position.y, 0.0, 5.0)
-
