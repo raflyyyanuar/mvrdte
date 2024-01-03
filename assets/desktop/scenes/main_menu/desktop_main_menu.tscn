@@ -175,7 +175,7 @@ level_path = "res://assets/desktop/scenes/museums/hub/desktop_hub.tscn"
 custom_minimum_size = Vector2(400, 300)
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-level_path = "res://assets/desktop/scenes/museums/history_museum/desktop_history_museum_remastered.tscn"
+level_path = "res://assets/desktop/scenes/museums/history_museum/desktop_history.tscn"
 
 [node name="QuitLevelSelect" parent="VBoxContainer/HubContainer" instance=ExtResource("8_i11ei")]
 custom_minimum_size = Vector2(400, 300)
