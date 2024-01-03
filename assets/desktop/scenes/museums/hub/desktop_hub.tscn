@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7dli4ht466jq"]
 
 [ext_resource type="Script" path="res://assets/desktop/scenes/museums/hub/desktop_hub.gd" id="1_6cfgu"]
-[ext_resource type="PackedScene" uid="uid://cgtfl6t3p4wne" path="res://assets/common/scenes/museums/hub/hub_remastered.tscn" id="2_3wgfh"]
+[ext_resource type="PackedScene" uid="uid://cgtfl6t3p4wne" path="res://assets/common/scenes/museums/hub/hub.tscn" id="2_3wgfh"]
 [ext_resource type="PackedScene" uid="uid://du7rgg1mgvyvx" path="res://assets/desktop/scenes/player/desktop_player.tscn" id="2_lu21c"]
 
 [node name="DesktopHub" type="Node3D"]

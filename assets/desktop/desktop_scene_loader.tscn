@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dtjof20iwc46e"]
 
 [ext_resource type="Script" path="res://assets/desktop/desktop_scene_loader.gd" id="1_bcayb"]
-[ext_resource type="Texture2D" uid="uid://cf3u54mjpfrat" path="res://assets/common/blends/hub/hub_preview.png" id="2_o0lp5"]
+[ext_resource type="Texture2D" uid="uid://bobh7tlqhvj1w" path="res://assets/common/images/level_previews/hub_preview.png" id="2_o0lp5"]
 
 [sub_resource type="Animation" id="Animation_c6yb2"]
 length = 0.001

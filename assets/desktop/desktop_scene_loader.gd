@@ -6,9 +6,6 @@ extends Control
 @onready var texture_rect: TextureRect = $ColorRect/TextureRect
 var scene := ""
 
-func _ready() -> void:
-	print("Hey, I'm the desktop scene loader singleton")
-
 
 func load_scene(level : LevelSelect) -> void:
 	scene = level.level_path
