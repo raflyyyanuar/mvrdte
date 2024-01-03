@@ -14,7 +14,7 @@ config/name="MVRDTE"
 config/tags=PackedStringArray("focus")
 run/main_scene="res://assets/vr/scenes/vr_staging/vr_staging.tscn"
 config/features=PackedStringArray("4.2")
-config/icon="res://icon.png"
+config/icon="res://icon.svg"
 
 [autoload]
 
@@ -37,8 +37,6 @@ singletons=["res://addons/godot-openxr/config/godot_openxr.gdnlib"]
 
 [gui]
 
-theme/custom="res://assets/common/themes/cartoony_theme.tres"
-theme/custom_font="res://assets/common/fonts/arimo/Arimo-Regular.ttf"
 common/drop_mouse_on_gui_input_disabled=true
 
 [input]
