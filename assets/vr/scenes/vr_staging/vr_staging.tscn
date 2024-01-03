@@ -6,7 +6,7 @@
 
 [node name="Staging" instance=ExtResource("1_qughe")]
 script = ExtResource("2_3egtb")
-main_scene = "res://assets/vr/scenes/main_menu/vr_main_menu.tscn"
+main_scene = "res://assets/vr/scenes/museums/hub/vr_hub.tscn"
 
 [node name="LoadingScreen" parent="." index="2"]
 splash_screen = ExtResource("3_kj4ol")
