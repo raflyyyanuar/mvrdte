@@ -10,11 +10,11 @@ config_version=5
 
 [application]
 
-config/name="MVRDTE"
+config/name="MVRDTE Desktop Version"
 config/tags=PackedStringArray("focus")
 run/main_scene="res://assets/desktop/scenes/main_menu/desktop_main_menu.tscn"
 config/features=PackedStringArray("4.2")
-config/icon="res://icon.svg"
+config/icon="res://1.png"
 
 [autoload]
 
