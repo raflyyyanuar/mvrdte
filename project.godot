@@ -10,11 +10,11 @@ config_version=5
 
 [application]
 
-config/name="MVRDTE"
+config/name="MVRDTE VR Version"
 config/tags=PackedStringArray("focus")
 run/main_scene="res://assets/vr/scenes/vr_staging/vr_staging.tscn"
 config/features=PackedStringArray("4.2")
-config/icon="res://icon.svg"
+config/icon="res://2.png"
 
 [autoload]
 
