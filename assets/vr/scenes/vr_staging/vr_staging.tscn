@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bnqnnnet4dw12" path="res://addons/godot-xr-tools/staging/staging.tscn" id="1_qughe"]
 [ext_resource type="Script" path="res://assets/vr/scenes/vr_staging/vr_staging.gd" id="2_3egtb"]
-[ext_resource type="Texture2D" uid="uid://b5p8vred5cmuq" path="res://assets/common/images/vr/meta_quest_2_front_shot.png" id="3_kj4ol"]
+[ext_resource type="Texture2D" uid="uid://df02urmlorbj2" path="res://assets/common/images/vr/meta_quest_2_front_shot.png" id="3_kj4ol"]
 
 [node name="Staging" instance=ExtResource("1_qughe")]
 script = ExtResource("2_3egtb")
