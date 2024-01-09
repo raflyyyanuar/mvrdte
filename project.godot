@@ -20,6 +20,10 @@ config/icon="res://1.png"
 
 DesktopSceneLoader="*res://assets/desktop/desktop_scene_loader.tscn"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [display]
 
 window/size/viewport_width=1920

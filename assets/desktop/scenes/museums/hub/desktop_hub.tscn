@@ -8,7 +8,7 @@
 script = ExtResource("1_6cfgu")
 
 [node name="PlayerDesktop" parent="." instance=ExtResource("2_lu21c")]
-transform = Transform3D(0.93716, 0, 0.348899, 0, 1, 0, -0.348899, 0, 0.93716, 1.19368, 1, 0.934829)
+transform = Transform3D(0.999926, 0, 0.0121645, 0, 1, 0, -0.0121645, 0, 0.999926, -6.18553, 1, 5.26919)
 SPEED = 2.0
 
 [node name="HubRemastered" parent="." instance=ExtResource("2_3wgfh")]
