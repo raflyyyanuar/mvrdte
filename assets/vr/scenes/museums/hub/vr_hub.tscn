@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6x7mdweax6td"]
+[gd_scene load_steps=12 format=3 uid="uid://b6x7mdweax6td"]
 
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_u3ryq"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_k8l5c"]
 [ext_resource type="PackedScene" uid="uid://cgtfl6t3p4wne" path="res://assets/common/scenes/museums/hub/hub.tscn" id="2_nrrdc"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="2_vr2w6"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="3_h740f"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="3_tyykb"]
 [ext_resource type="PackedScene" uid="uid://c5qbwoy356hs7" path="res://assets/vr/scenes/main_menu/level_select/vr_level_select_screen.tscn" id="4_be2ix"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_nu6s5"]
@@ -15,6 +17,11 @@
 [node name="XROrigin3D" parent="." index="0"]
 transform = Transform3D(-0.776256, 0, 0.630418, 0, 1, 0, -0.630418, 0, -0.776256, -1.03397, 0.75356, 1.24333)
 
+[node name="MovementDirect" parent="XROrigin3D/LeftHand" index="0" instance=ExtResource("2_k8l5c")]
+strafe = true
+
+[node name="FunctionTeleport" parent="XROrigin3D/LeftHand" index="1" instance=ExtResource("3_h740f")]
+
 [node name="FunctionPointer" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("2_vr2w6")]
 laser_length = 1
 
@@ -23,16 +30,16 @@ laser_length = 1
 [node name="PlayerBody" parent="XROrigin3D" index="3" instance=ExtResource("4_nu6s5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.03397, 0, 1.24333)
 
-[node name="HubRemastered" parent="." index="1" instance=ExtResource("2_nrrdc")]
-
-[node name="HistoryLevelSelect" parent="." index="2" instance=ExtResource("4_be2ix")]
-transform = Transform3D(-0.581568, 0, 0.825343, 0, 1.00966, 0, -0.825343, 0, -0.581568, -2.62859, 1.57, 2.25917)
+[node name="HistoryLevelSelect" parent="." index="1" instance=ExtResource("4_be2ix")]
+transform = Transform3D(1.00966, 0, 0, 0, 1.00966, 0, 0, 0, 1.00966, -3.47273, 1.57, -6.8047)
 screen_size = Vector2(1.138, 0.75)
 scene = ExtResource("5_icb8e")
 
-[node name="HistoryLevelSelect2" parent="." index="3" instance=ExtResource("4_be2ix")]
-transform = Transform3D(-0.990622, 0, 0.195143, 0, 1.00966, 0, -0.195143, 0, -0.990622, -1.57024, 1.57, 2.9364)
+[node name="HistoryLevelSelect2" parent="." index="2" instance=ExtResource("4_be2ix")]
+transform = Transform3D(1.00966, 0, 0, 0, 1.00966, 0, 0, 0, 1.00966, -1.57024, 1.57, -6.78316)
 screen_size = Vector2(1.138, 0.75)
 scene = ExtResource("8_rp7q3")
 
-[node name="VRLevelTransition" parent="." index="4" instance=ExtResource("10_roso7")]
+[node name="VRLevelTransition" parent="." index="3" instance=ExtResource("10_roso7")]
+
+[node name="HubRemastered" parent="." index="4" instance=ExtResource("2_nrrdc")]

@@ -32,12 +32,12 @@ laser_length = 1
 [node name="HistoryRemastered" parent="." index="1" instance=ExtResource("1_xf4gq")]
 
 [node name="HistoryLevelSelect2" parent="." index="2" instance=ExtResource("8_6i6j7")]
-transform = Transform3D(-1.00935, 0, -0.0251966, 0, 1.00966, 0, 0.0251966, 0, -1.00935, 5.19773, 1.57, 4.15542)
+transform = Transform3D(-1.00966, 0, 8.82677e-08, 0, 1.00966, 0, -8.82677e-08, 0, -1.00966, 5.19773, 1.57, 4.21207)
 screen_size = Vector2(1.138, 0.75)
 scene = ExtResource("9_dwx5y")
 
 [node name="HistoryLevelSelect3" parent="." index="3" instance=ExtResource("8_6i6j7")]
-transform = Transform3D(-1.00935, 0, -0.0251966, 0, 1.00966, 0, 0.0251966, 0, -1.00935, 3.98019, 1.57, 4.15542)
+transform = Transform3D(-1.00966, 0, 8.82677e-08, 0, 1.00966, 0, -8.82677e-08, 0, -1.00966, 3.98019, 1.57, 4.22231)
 screen_size = Vector2(1.138, 0.75)
 scene = ExtResource("10_ytavm")
 
