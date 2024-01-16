@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c22sydnos21ql"]
+
+[ext_resource type="Texture2D" uid="uid://dpwnwvbwqaoev" path="res://assets/common/images/ui/sediment.png" id="1_u155w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sywxd"]
+size = Vector2(233, 90)
+
+[node name="Sediment" type="Area2D" groups=["Sediments"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_u155w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11.5, -11)
+shape = SubResource("RectangleShape2D_sywxd")
