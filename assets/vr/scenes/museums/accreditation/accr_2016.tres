@@ -5,6 +5,5 @@
 [resource]
 script = ExtResource("1_x7tmp")
 year = 2016
-major1 = "Teknik Komputer S1"
-major2 = ""
-major3 = ""
+majors = Array[int]([4])
+grades = Array[int]([0])

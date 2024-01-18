@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_qy1lr")
 year = 2011
-majors = Array[int]([])
+majors = Array[int]([4])
+grades = Array[int]([1])

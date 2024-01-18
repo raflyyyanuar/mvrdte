@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_dtsrl")
 year = 2015
-majors = Array[int]([])
-grades = Array[int]([])
+majors = Array[int]([1])
+grades = Array[int]([0])

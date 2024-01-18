@@ -19,6 +19,7 @@ enum Grade {
 	Unggul,
 	Baik,
 	IAABE,
+	AUNQA,
 }
 
 @export var majors : Array[MajorEnum]
@@ -42,6 +43,10 @@ func get_grade_name(index: int) -> String:
 			return "Unggul"
 		3:
 			return "Baik"
+		4:
+			return "IAABE"
+		5:
+			return "AUN-QA"
 		_:
 			return "-"
 

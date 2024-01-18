@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d4c1p0uxlxfbc"]
+[gd_scene load_steps=19 format=3 uid="uid://d4c1p0uxlxfbc"]
 
 [ext_resource type="PackedScene" uid="uid://dtlh203v411uc" path="res://assets/vr/scenes/museums/accreditation/accreditation_card.tscn" id="1_6aiow"]
 [ext_resource type="Resource" uid="uid://rqux8fr55amv" path="res://assets/vr/scenes/museums/accreditation/accr_2004.tres" id="2_wqtae"]
@@ -26,11 +26,17 @@ fill_to = Vector2(0, 0)
 font_size = 120
 font_color = Color(0.384314, 0, 1, 1)
 
+[sub_resource type="Resource" id="Resource_mrbfs"]
+script = ExtResource("3_wkfko")
+year = 2008
+majors = Array[int]([3])
+grades = Array[int]([1])
+
 [sub_resource type="Resource" id="Resource_jsd8x"]
 script = ExtResource("3_wkfko")
 year = 2010
-majors = Array[int]([0])
-grades = Array[int]([])
+majors = Array[int]([1])
+grades = Array[int]([0])
 
 [node name="AccreditationBoard" type="Control"]
 clip_children = 1
@@ -75,6 +81,7 @@ accreditation = ExtResource("2_wqtae")
 
 [node name="2008" parent="List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
+accreditation = SubResource("Resource_mrbfs")
 
 [node name="2010" parent="List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
