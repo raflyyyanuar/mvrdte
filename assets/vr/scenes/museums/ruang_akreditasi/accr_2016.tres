@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Accreditation" load_steps=2 format=3 uid="uid://doc1x2ww3gd0e"]
+
+[ext_resource type="Script" path="res://assets/vr/scenes/museums/ruang_akreditasi/accreditation.gd" id="1_x7tmp"]
+
+[resource]
+script = ExtResource("1_x7tmp")
+year = 2016
+major1 = "Teknik Komputer S1"
+major2 = ""
+major3 = ""

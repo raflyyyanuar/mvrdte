@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Accreditation" load_steps=2 format=3 uid="uid://rqux8fr55amv"]
+
+[ext_resource type="Script" path="res://assets/vr/scenes/museums/ruang_akreditasi/accreditation.gd" id="1_er0eg"]
+
+[resource]
+script = ExtResource("1_er0eg")
+year = 2004
+major1 = "Teknik Elektro S1"
+major2 = ""
+major3 = ""

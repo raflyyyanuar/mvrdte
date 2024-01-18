@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://hbide85u4r0n"]
+[gd_scene load_steps=45 format=3 uid="uid://hbide85u4r0n"]
 
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_6voe0"]
 [ext_resource type="PackedScene" uid="uid://saxb6w03fjuf" path="res://assets/common/blends/pltu/blue_robotics/blue_robotics.blend" id="2_8vusj"]
@@ -36,7 +36,9 @@
 [ext_resource type="AudioStream" uid="uid://0k4loxnd77d5" path="res://assets/common/music/y2mate.com - Free Music  Space Ambient Background Music For Videos  Universe.mp3" id="34_camt0"]
 [ext_resource type="PackedScene" uid="uid://bk3uatdptflx3" path="res://assets/vr/scenes/level_transition/vr_level_transition.tscn" id="35_p5pq2"]
 [ext_resource type="PackedScene" uid="uid://c5qbwoy356hs7" path="res://assets/vr/scenes/main_menu/level_select/vr_level_select_screen.tscn" id="36_7xy3w"]
-[ext_resource type="PackedScene" uid="uid://q3rajc4mlxqp" path="res://assets/common/scenes/level_select/variations/indonesia_power_level_select.tscn" id="37_11yt5"]
+[ext_resource type="PackedScene" uid="uid://dg7eoj7r5sv4a" path="res://assets/common/scenes/level_select/variations/hub_level_select.tscn" id="37_40hx3"]
+[ext_resource type="PackedScene" uid="uid://r4txbqiswlc8" path="res://assets/common/scenes/level_select/variations/history_museum_level_select.tscn" id="37_xqmcb"]
+[ext_resource type="PackedScene" uid="uid://c64pu0e3v1dhr" path="res://assets/common/scenes/level_select/variations/quit_level_select.tscn" id="38_2munu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bdcn"]
 albedo_color = Color(0, 0.329412, 1, 1)
@@ -336,10 +338,20 @@ autoplay = true
 
 [node name="VRLevelTransition" parent="." index="13" instance=ExtResource("35_p5pq2")]
 
-[node name="VRLevelSelectScreen" parent="." index="14" instance=ExtResource("36_7xy3w")]
-transform = Transform3D(-0.777377, 0, -0.629036, 0, 1, 0, 0.629036, 0, -0.777377, 3.45174, 1.45821, 1.93281)
-screen_size = Vector2(1.138, 0.75)
-scene = ExtResource("37_11yt5")
+[node name="HistoryLevelSelect" parent="." index="14" instance=ExtResource("36_7xy3w")]
+transform = Transform3D(-0.749202, 0, -0.676838, 0, 1.00966, 0, 0.676838, 0, -0.749202, 3.32184, 1.67053, 1.95659)
+screen_size = Vector2(2.276, 1.5)
+scene = ExtResource("37_40hx3")
+
+[node name="HistoryLevelSelect2" parent="." index="15" instance=ExtResource("36_7xy3w")]
+transform = Transform3D(1.00966, 0, 0, 0, 1.00966, 0, 0, 0, 1.00966, 8.50775, 1.57, -1.91746)
+screen_size = Vector2(2.276, 1.5)
+scene = ExtResource("38_2munu")
+
+[node name="HistoryLevelSelect3" parent="." index="16" instance=ExtResource("36_7xy3w")]
+transform = Transform3D(-1.00966, 0, 8.82673e-08, 0, 1.00966, 0, -8.82673e-08, 0, -1.00966, 8.50775, 1.57, 1.18656)
+screen_size = Vector2(2.276, 1.5)
+scene = ExtResource("37_xqmcb")
 
 [connection signal="has_dropped" from="control-room/RobotSnap/RobotSnapZone" to="." method="_on_robot_snap_zone_has_dropped"]
 [connection signal="has_picked_up" from="control-room/RobotSnap/RobotSnapZone" to="." method="_on_robot_snap_zone_has_picked_up"]

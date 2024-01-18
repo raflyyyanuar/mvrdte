@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bqumugyvkct4r"]
+[gd_scene load_steps=14 format=3 uid="uid://bqumugyvkct4r"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/staging/loading_screen.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://c4w6v2n842mlk" path="res://assets/common/images/vr/meta_quest_2_front_shot.png" id="2_8uokj"]
 [ext_resource type="Shader" uid="uid://4i0pwdtfmtsv" path="res://addons/godot-xr-tools/staging/loading_screen/loading_screen_shader.tres" id="3"]
 [ext_resource type="Texture2D" uid="uid://clbtsf0ahb3fm" path="res://addons/godot-xr-tools/assets/misc/progress_bar.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://ocyj01x5mtt7" path="res://addons/godot-xr-tools/assets/misc/Hold trigger to continue.png" id="5"]
@@ -17,6 +18,7 @@ size = Vector2(80, 60)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1o2lp"]
 transparency = 1
 shading_mode = 0
+albedo_texture = ExtResource("2_8uokj")
 
 [sub_resource type="ShaderMaterial" id="18"]
 render_priority = 0

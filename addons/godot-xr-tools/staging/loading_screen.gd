@@ -67,7 +67,7 @@ func _process(delta):
 	# Skip if no camera to track
 	if !_camera:
 		return
-
+	
 	# Get the camera direction (horizontal only)
 	var camera_dir := _camera.global_transform.basis.z
 	camera_dir.y = 0.0

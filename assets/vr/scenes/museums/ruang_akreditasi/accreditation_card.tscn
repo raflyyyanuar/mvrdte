@@ -1,0 +1,161 @@
+[gd_scene load_steps=12 format=3 uid="uid://dtlh203v411uc"]
+
+[ext_resource type="Script" path="res://assets/vr/scenes/museums/ruang_akreditasi/accreditation_card.gd" id="1_47fy8"]
+[ext_resource type="Resource" uid="uid://rqux8fr55amv" path="res://assets/vr/scenes/museums/ruang_akreditasi/accr_2004.tres" id="2_qhtk4"]
+[ext_resource type="Texture2D" uid="uid://dmf6t4r3c8y4o" path="res://assets/common/images/ui/MajorsLogo.png" id="3_34k6n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it0g8"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.0705882, 0.0705882, 0.0705882, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_5v580"]
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_3hns8"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_gopud"]
+font_size = 20
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs48i"]
+resource_local_to_scene = true
+atlas = ExtResource("3_34k6n")
+region = Rect2(123, 0, 117, 120)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8y0vw"]
+font_size = 60
+outline_size = 19
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt41d"]
+resource_local_to_scene = true
+atlas = ExtResource("3_34k6n")
+region = Rect2(0, 0, 62, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay5xv"]
+resource_local_to_scene = true
+atlas = ExtResource("3_34k6n")
+region = Rect2(64, 0, 58, 120)
+
+[node name="Card" type="PanelContainer"]
+custom_minimum_size = Vector2(621, 187)
+offset_right = 621.0
+offset_bottom = 187.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_it0g8")
+script = ExtResource("1_47fy8")
+accreditation = ExtResource("2_qhtk4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="Year" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "2004"
+label_settings = SubResource("LabelSettings_5v580")
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Major1" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+self_modulate = Color(0.498039, 1, 0.831373, 1)
+layout_mode = 2
+text = "Teknik Elektro S1"
+label_settings = SubResource("LabelSettings_3hns8")
+
+[node name="Major2" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+visible = false
+self_modulate = Color(0.498039, 1, 0.831373, 1)
+layout_mode = 2
+text = "Teknik Komputer S1"
+label_settings = SubResource("LabelSettings_gopud")
+
+[node name="Major3" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+visible = false
+self_modulate = Color(0.498039, 1, 0.831373, 1)
+layout_mode = 2
+text = "Teknik Komputer S1"
+label_settings = SubResource("LabelSettings_gopud")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Logo1" type="TextureRect" parent="HBoxContainer/HBoxContainer"]
+self_modulate = Color(0.498039, 1, 0.831373, 1)
+layout_mode = 2
+texture = SubResource("AtlasTexture_gs48i")
+stretch_mode = 3
+
+[node name="Accreditation" type="Label" parent="HBoxContainer/HBoxContainer/Logo1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -44.5
+offset_right = 33.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "A"
+label_settings = SubResource("LabelSettings_8y0vw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Logo2" type="TextureRect" parent="HBoxContainer/HBoxContainer"]
+visible = false
+self_modulate = Color(0.498039, 1, 0.831373, 1)
+layout_mode = 2
+texture = SubResource("AtlasTexture_bt41d")
+stretch_mode = 3
+
+[node name="Accreditation" type="Label" parent="HBoxContainer/HBoxContainer/Logo2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A"
+label_settings = SubResource("LabelSettings_8y0vw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Logo3" type="TextureRect" parent="HBoxContainer/HBoxContainer"]
+visible = false
+self_modulate = Color(0.498039, 1, 0.831373, 1)
+layout_mode = 2
+texture = SubResource("AtlasTexture_ay5xv")
+stretch_mode = 3
+
+[node name="Accreditation" type="Label" parent="HBoxContainer/HBoxContainer/Logo3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A"
+label_settings = SubResource("LabelSettings_8y0vw")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Accreditation" load_steps=2 format=3 uid="uid://c3kyjgskj02xs"]
+
+[ext_resource type="Script" path="res://assets/vr/scenes/museums/ruang_akreditasi/accreditation.gd" id="1_gqkj7"]
+
+[resource]
+script = ExtResource("1_gqkj7")
+year = 2019
+major1 = "Teknik Elektro S2"
+major2 = "Teknik Elektro S3"
+major3 = "Teknik Biomedik S2"

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://csr8mpobrpavp"]
+
+[ext_resource type="Script" path="res://assets/vr/scenes/ui/follow_xr_camera.gd" id="1_skc0t"]
+
+[sub_resource type="Curve" id="Curve_c4jyy"]
+max_value = 3.14
+_data = [Vector2(0.00207039, 0), 0.0, 1.00884, 0, 0, Vector2(1, 3.14), 0.313348, 0.0, 0, 0]
+point_count = 2
+
+[node name="FollowXRCamera" type="Node3D"]
+script = ExtResource("1_skc0t")
+follow_speed = SubResource("Curve_c4jyy")
