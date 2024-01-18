@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d4c1p0uxlxfbc"]
+[gd_scene load_steps=18 format=3 uid="uid://d4c1p0uxlxfbc"]
 
 [ext_resource type="PackedScene" uid="uid://dtlh203v411uc" path="res://assets/vr/scenes/museums/accreditation/accreditation_card.tscn" id="1_6aiow"]
 [ext_resource type="Resource" uid="uid://rqux8fr55amv" path="res://assets/vr/scenes/museums/accreditation/accr_2004.tres" id="2_wqtae"]
@@ -8,7 +8,6 @@
 [ext_resource type="Resource" uid="uid://cqty1jnyg0bo2" path="res://assets/vr/scenes/museums/accreditation/accr_2015.tres" id="6_rkysp"]
 [ext_resource type="Resource" uid="uid://doc1x2ww3gd0e" path="res://assets/vr/scenes/museums/accreditation/accr_2016.tres" id="7_i1qxt"]
 [ext_resource type="Resource" uid="uid://bhvo32hy1we5a" path="res://assets/vr/scenes/museums/accreditation/accr_2018.tres" id="8_t4v1d"]
-[ext_resource type="Resource" uid="uid://c3kyjgskj02xs" path="res://assets/vr/scenes/museums/accreditation/accr_2019.tres" id="9_pl67r"]
 [ext_resource type="Resource" uid="uid://k8j4x76wmkbh" path="res://assets/vr/scenes/museums/accreditation/accr_2020.tres" id="10_jgyds"]
 [ext_resource type="Resource" uid="uid://rcer3gica6ax" path="res://assets/vr/scenes/museums/accreditation/accr_2021.tres" id="11_jekyg"]
 [ext_resource type="Resource" uid="uid://v2hosxnclapk" path="res://assets/vr/scenes/museums/accreditation/accr_2022.tres" id="12_b7tbc"]
@@ -69,14 +68,15 @@ uppercase = true
 layout_mode = 2
 offset_left = 37.0
 offset_top = 159.0
-offset_right = 495.0
-offset_bottom = 346.0
+offset_right = 658.0
+offset_bottom = 3493.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 20
 
 [node name="2004" parent="List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
+size_flags_vertical = 0
 accreditation = ExtResource("2_wqtae")
 
 [node name="2008" parent="List" instance=ExtResource("1_6aiow")]
@@ -109,7 +109,6 @@ accreditation = ExtResource("8_t4v1d")
 
 [node name="2019" parent="List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
-accreditation = ExtResource("9_pl67r")
 
 [node name="2020" parent="List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
