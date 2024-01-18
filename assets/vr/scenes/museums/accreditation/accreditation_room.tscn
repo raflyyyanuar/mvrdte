@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d4c1p0uxlxfbc" path="res://assets/vr/scenes/museums/accreditation/accreditation_board.tscn" id="6_d61b7"]
 [ext_resource type="PackedScene" uid="uid://bk3uatdptflx3" path="res://assets/vr/scenes/level_transition/vr_level_transition.tscn" id="7_xvbp7"]
 [ext_resource type="PackedScene" uid="uid://csr8mpobrpavp" path="res://assets/vr/scenes/ui/follow_xr_camera.tscn" id="10_ejie3"]
-[ext_resource type="Texture2D" uid="uid://bsfenyed1sd6i" path="res://assets/common/images/akreditasi/BAN_S1_TK_1_Jul_2011-1_Jul_2016.png" id="11_cse5h"]
+[ext_resource type="Texture2D" path="res://assets/common/images/akreditasi/BAN_S1_TK_1_Jul_2011-1_Jul_2016.png" id="11_cse5h"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5qaid"]
 height = 0.1
@@ -54,7 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02002, 0.851399, -2.53681)
 follow_camera = false
 
 [node name="AccredicationList" parent="FollowXRCamera" index="0" instance=ExtResource("5_mvxe3")]
-screen_size = Vector2(2.667, 1.5)
+screen_size = Vector2(2, 2)
 scene = ExtResource("6_d61b7")
-viewport_size = Vector2(1920, 1080)
+viewport_size = Vector2(1200, 1200)
 unshaded = true

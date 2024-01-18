@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Accreditation" load_steps=2 format=3 uid="uid://bhvo32hy1we5a"]
+[gd_resource type="Resource" script_class="Accreditation" load_steps=3 format=3 uid="uid://bhvo32hy1we5a"]
 
+[ext_resource type="Texture2D" uid="uid://c74ucbrm6tawa" path="res://assets/common/images/akreditasi/2018_komputer_s1.png" id="1_bbigx"]
 [ext_resource type="Script" path="res://assets/vr/scenes/museums/accreditation/accreditation.gd" id="1_olox7"]
 
 [resource]
@@ -7,3 +8,4 @@ script = ExtResource("1_olox7")
 year = 2018
 majors = Array[int]([4])
 grades = Array[int]([5])
+certificates = Array[Texture2D]([ExtResource("1_bbigx")])

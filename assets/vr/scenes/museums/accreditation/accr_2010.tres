@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Accreditation" load_steps=2 format=3 uid="uid://tangc5vhb6xc"]
+[gd_resource type="Resource" script_class="Accreditation" load_steps=3 format=3 uid="uid://tangc5vhb6xc"]
 
+[ext_resource type="Texture2D" uid="uid://64jtipxn57tb" path="res://assets/common/images/akreditasi/2010_elektro_s1.png" id="1_3b7y4"]
 [ext_resource type="Script" path="res://assets/vr/scenes/museums/accreditation/accreditation.gd" id="1_tfmvi"]
 
 [resource]
 script = ExtResource("1_tfmvi")
-year = 2011
-major1 = "Teknik Komputer S1"
-major2 = ""
-major3 = ""
+year = 2010
+majors = Array[int]([1])
+grades = Array[int]([0])
+certificates = Array[Texture2D]([ExtResource("1_3b7y4")])

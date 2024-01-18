@@ -9,11 +9,12 @@ class_name AccredicationCard
 @onready var majors = $HBoxContainer/VBoxContainer/MajorContainer.get_children()
 @onready var buttons = $HBoxContainer/ButtonContainer.get_children()
 
-@onready var logos = [
+var logos = [
 	preload("res://assets/common/images/atlases/LogoElektro.png"),
 	preload("res://assets/common/images/atlases/LogoKomputer.png"),
 	preload("res://assets/common/images/atlases/LogoBiomed.png"),
 ]
+
 
 var colors : Array[Color] = [
 	Color.AQUAMARINE,

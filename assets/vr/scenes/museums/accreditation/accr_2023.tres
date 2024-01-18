@@ -1,9 +1,12 @@
-[gd_resource type="Resource" script_class="Accreditation" load_steps=2 format=3 uid="uid://cagjap2wf2v7g"]
+[gd_resource type="Resource" script_class="Accreditation" load_steps=4 format=3 uid="uid://cagjap2wf2v7g"]
 
+[ext_resource type="Texture2D" uid="uid://bdvaqxi17lk" path="res://assets/common/images/akreditasi/2023_elektro_s1.jpg" id="1_c41wn"]
 [ext_resource type="Script" path="res://assets/vr/scenes/museums/accreditation/accreditation.gd" id="1_ee2jd"]
+[ext_resource type="Texture2D" uid="uid://ddvnwjhm1353n" path="res://assets/common/images/akreditasi/2023_elektro_s2.jpg" id="2_mdqar"]
 
 [resource]
 script = ExtResource("1_ee2jd")
 year = 2023
-majors = Array[int]([1, 3])
+majors = Array[int]([1, 2])
 grades = Array[int]([2, 2])
+certificates = Array[Texture2D]([ExtResource("1_c41wn"), ExtResource("2_mdqar")])

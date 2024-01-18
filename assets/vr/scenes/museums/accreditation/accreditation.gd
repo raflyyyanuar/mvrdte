@@ -25,6 +25,7 @@ enum Grade {
 @export var majors : Array[MajorEnum]
 @export var grades : Array[Grade]
 
+@export var certificates : Array[Texture2D]
 
 func get_major_index(index : int) -> int:
 	if index > 4: return 2 # Biomedik
