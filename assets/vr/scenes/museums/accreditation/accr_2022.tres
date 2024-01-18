@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Accreditation" load_steps=2 format=3 uid="uid://v2hosxnclapk"]
 
-[ext_resource type="Script" path="res://assets/vr/scenes/museums/ruang_akreditasi/accreditation.gd" id="1_t8xxb"]
+[ext_resource type="Script" path="res://assets/vr/scenes/museums/accreditation/accreditation.gd" id="1_t8xxb"]
 
 [resource]
 script = ExtResource("1_t8xxb")

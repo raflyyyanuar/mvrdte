@@ -1,0 +1,121 @@
+[gd_scene load_steps=18 format=3 uid="uid://d4c1p0uxlxfbc"]
+
+[ext_resource type="PackedScene" uid="uid://dtlh203v411uc" path="res://assets/vr/scenes/museums/accreditation/accreditation_card.tscn" id="1_6aiow"]
+[ext_resource type="Resource" uid="uid://rqux8fr55amv" path="res://assets/vr/scenes/museums/accreditation/accr_2004.tres" id="2_wqtae"]
+[ext_resource type="Resource" uid="uid://ckxg34m8r05r1" path="res://assets/vr/scenes/museums/accreditation/accr_2011.tres" id="3_n87s1"]
+[ext_resource type="Script" path="res://assets/vr/scenes/museums/accreditation/accreditation.gd" id="3_wkfko"]
+[ext_resource type="Resource" uid="uid://c6m3tqf772s6l" path="res://assets/vr/scenes/museums/accreditation/accr_2014.tres" id="5_cde8b"]
+[ext_resource type="Resource" uid="uid://cqty1jnyg0bo2" path="res://assets/vr/scenes/museums/accreditation/accr_2015.tres" id="6_rkysp"]
+[ext_resource type="Resource" uid="uid://doc1x2ww3gd0e" path="res://assets/vr/scenes/museums/accreditation/accr_2016.tres" id="7_i1qxt"]
+[ext_resource type="Resource" uid="uid://bhvo32hy1we5a" path="res://assets/vr/scenes/museums/accreditation/accr_2018.tres" id="8_t4v1d"]
+[ext_resource type="Resource" uid="uid://c3kyjgskj02xs" path="res://assets/vr/scenes/museums/accreditation/accr_2019.tres" id="9_pl67r"]
+[ext_resource type="Resource" uid="uid://k8j4x76wmkbh" path="res://assets/vr/scenes/museums/accreditation/accr_2020.tres" id="10_jgyds"]
+[ext_resource type="Resource" uid="uid://rcer3gica6ax" path="res://assets/vr/scenes/museums/accreditation/accr_2021.tres" id="11_jekyg"]
+[ext_resource type="Resource" uid="uid://v2hosxnclapk" path="res://assets/vr/scenes/museums/accreditation/accr_2022.tres" id="12_b7tbc"]
+[ext_resource type="Resource" uid="uid://cagjap2wf2v7g" path="res://assets/vr/scenes/museums/accreditation/accr_2023.tres" id="13_koxko"]
+
+[sub_resource type="Gradient" id="Gradient_0u3ls"]
+colors = PackedColorArray(0.2972, 0.155352, 0.466883, 1, 1, 0.839216, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qa4dx"]
+gradient = SubResource("Gradient_0u3ls")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_csdir"]
+font_size = 120
+font_color = Color(0.384314, 0, 1, 1)
+
+[sub_resource type="Resource" id="Resource_jsd8x"]
+script = ExtResource("3_wkfko")
+year = 2010
+majors = Array[int]([0])
+grades = Array[int]([])
+
+[node name="AccreditationBoard" type="Control"]
+clip_children = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture2D_qa4dx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_right = 1132.0
+offset_bottom = 165.0
+size_flags_horizontal = 4
+text = "Ruang akreditasi"
+label_settings = SubResource("LabelSettings_csdir")
+uppercase = true
+
+[node name="List" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 37.0
+offset_top = 159.0
+offset_right = 495.0
+offset_bottom = 346.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="2004" parent="List" instance=ExtResource("1_6aiow")]
+layout_mode = 2
+accreditation = ExtResource("2_wqtae")
+
+[node name="2008" parent="List" instance=ExtResource("1_6aiow")]
+layout_mode = 2
+
+[node name="2010" parent="List" instance=ExtResource("1_6aiow")]
+layout_mode = 2
+accreditation = SubResource("Resource_jsd8x")
+
+[node name="2011" parent="List" instance=ExtResource("1_6aiow")]
+layout_mode = 2
+accreditation = ExtResource("3_n87s1")
+
+[node name="2014" parent="List" instance=ExtResource("1_6aiow")]
+layout_mode = 2
+accreditation = ExtResource("5_cde8b")
+
+[node name="2015" parent="List" instance=ExtResource("1_6aiow")]
+layout_mode = 2
+accreditation = ExtResource("6_rkysp")
+
+[node name="2016" parent="List" instance=ExtResource("1_6aiow")]
+layout_mode = 2
+accreditation = ExtResource("7_i1qxt")
+
+[node name="2018" parent="List" instance=ExtResource("1_6aiow")]
+layout_mode = 2
+accreditation = ExtResource("8_t4v1d")
+
+[node name="2019" parent="List" instance=ExtResource("1_6aiow")]
+layout_mode = 2
+accreditation = ExtResource("9_pl67r")
+
+[node name="2020" parent="List" instance=ExtResource("1_6aiow")]
+layout_mode = 2
+accreditation = ExtResource("10_jgyds")
+
+[node name="2021" parent="List" instance=ExtResource("1_6aiow")]
+layout_mode = 2
+accreditation = ExtResource("11_jekyg")
+
+[node name="2022" parent="List" instance=ExtResource("1_6aiow")]
+layout_mode = 2
+accreditation = ExtResource("12_b7tbc")
+
+[node name="2023" parent="List" instance=ExtResource("1_6aiow")]
+layout_mode = 2
+accreditation = ExtResource("13_koxko")

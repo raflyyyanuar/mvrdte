@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Accreditation" load_steps=2 format=3 uid="uid://cagjap2wf2v7g"]
+
+[ext_resource type="Script" path="res://assets/vr/scenes/museums/accreditation/accreditation.gd" id="1_ee2jd"]
+
+[resource]
+script = ExtResource("1_ee2jd")
+year = 2023
+majors = Array[int]([1, 3])
+grades = Array[int]([2, 2])

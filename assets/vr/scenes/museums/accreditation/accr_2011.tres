@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Accreditation" load_steps=2 format=3 uid="uid://ckxg34m8r05r1"]
+
+[ext_resource type="Script" path="res://assets/vr/scenes/museums/accreditation/accreditation.gd" id="1_qy1lr"]
+
+[resource]
+script = ExtResource("1_qy1lr")
+year = 2011
+majors = Array[int]([])
