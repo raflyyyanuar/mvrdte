@@ -14,11 +14,11 @@
 [ext_resource type="Resource" uid="uid://cagjap2wf2v7g" path="res://assets/vr/scenes/museums/accreditation/accr_2023.tres" id="13_koxko"]
 
 [sub_resource type="Gradient" id="Gradient_0u3ls"]
-colors = PackedColorArray(0.2972, 0.155352, 0.466883, 1, 1, 0.839216, 1, 1)
+colors = PackedColorArray(0.476305, 0, 0.131308, 1, 1, 0.839216, 0.0862745, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qa4dx"]
 gradient = SubResource("Gradient_0u3ls")
-fill_from = Vector2(0, 1)
+fill_from = Vector2(0, 0.994302)
 fill_to = Vector2(0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_csdir"]
@@ -45,83 +45,95 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 2
-offset_right = 1920.0
-offset_bottom = 1080.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = SubResource("GradientTexture2D_qa4dx")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
-offset_right = 1132.0
-offset_bottom = 165.0
+offset_left = 147.0
+offset_top = 3.0
+offset_right = 1279.0
+offset_bottom = 168.0
 size_flags_horizontal = 4
 text = "Ruang akreditasi"
 label_settings = SubResource("LabelSettings_csdir")
 uppercase = true
 
-[node name="List" type="VBoxContainer" parent="."]
+[node name="AccreditationList" type="ScrollContainer" parent="."]
+layout_mode = 1
+offset_left = 147.0
+offset_top = 190.0
+offset_right = 957.0
+offset_bottom = 906.0
+follow_focus = true
+vertical_scroll_mode = 2
+
+[node name="List" type="VBoxContainer" parent="AccreditationList"]
 layout_mode = 2
-offset_left = 37.0
-offset_top = 159.0
-offset_right = 658.0
-offset_bottom = 3493.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
+size_flags_horizontal = 3
 theme_override_constants/separation = 20
 
-[node name="2004" parent="List" instance=ExtResource("1_6aiow")]
+[node name="2004" parent="AccreditationList/List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
 size_flags_vertical = 0
 accreditation = ExtResource("2_wqtae")
 
-[node name="2008" parent="List" instance=ExtResource("1_6aiow")]
+[node name="2008" parent="AccreditationList/List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
 accreditation = SubResource("Resource_mrbfs")
 
-[node name="2010" parent="List" instance=ExtResource("1_6aiow")]
+[node name="2010" parent="AccreditationList/List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
 accreditation = SubResource("Resource_jsd8x")
 
-[node name="2011" parent="List" instance=ExtResource("1_6aiow")]
+[node name="2011" parent="AccreditationList/List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
 accreditation = ExtResource("3_n87s1")
 
-[node name="2014" parent="List" instance=ExtResource("1_6aiow")]
+[node name="2014" parent="AccreditationList/List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
 accreditation = ExtResource("5_cde8b")
 
-[node name="2015" parent="List" instance=ExtResource("1_6aiow")]
+[node name="2015" parent="AccreditationList/List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
 accreditation = ExtResource("6_rkysp")
 
-[node name="2016" parent="List" instance=ExtResource("1_6aiow")]
+[node name="2016" parent="AccreditationList/List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
 accreditation = ExtResource("7_i1qxt")
 
-[node name="2018" parent="List" instance=ExtResource("1_6aiow")]
+[node name="2018" parent="AccreditationList/List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
 accreditation = ExtResource("8_t4v1d")
 
-[node name="2019" parent="List" instance=ExtResource("1_6aiow")]
+[node name="2019" parent="AccreditationList/List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
 
-[node name="2020" parent="List" instance=ExtResource("1_6aiow")]
+[node name="2020" parent="AccreditationList/List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
 accreditation = ExtResource("10_jgyds")
 
-[node name="2021" parent="List" instance=ExtResource("1_6aiow")]
+[node name="2021" parent="AccreditationList/List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
 accreditation = ExtResource("11_jekyg")
 
-[node name="2022" parent="List" instance=ExtResource("1_6aiow")]
+[node name="2022" parent="AccreditationList/List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
 accreditation = ExtResource("12_b7tbc")
 
-[node name="2023" parent="List" instance=ExtResource("1_6aiow")]
+[node name="2023" parent="AccreditationList/List" instance=ExtResource("1_6aiow")]
 layout_mode = 2
 accreditation = ExtResource("13_koxko")
+
+[connection signal="gui_input" from="AccreditationList" to="AccreditationList" method="_on_gui_input"]

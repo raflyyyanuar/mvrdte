@@ -30,6 +30,7 @@ font_size = 20
 custom_minimum_size = Vector2(759, 187)
 offset_right = 759.0
 offset_bottom = 238.0
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_it0g8")
 script = ExtResource("1_47fy8")
 accreditation = ExtResource("2_y4npl")
@@ -113,3 +114,5 @@ text = "B"
 icon = ExtResource("4_bbrjy")
 flat = true
 icon_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

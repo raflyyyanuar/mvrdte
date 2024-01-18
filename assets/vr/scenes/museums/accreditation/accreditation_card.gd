@@ -74,3 +74,9 @@ func set_refresh(p_refresh : bool = true) -> void:
 	refresh = false
 	if accreditation:
 		set_accreditation()
+
+
+func _on_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			set_focus_mode(Control.FOCUS_CLICK)

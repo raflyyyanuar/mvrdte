@@ -30,6 +30,8 @@ environment = ExtResource("2_xwkjt")
 [node name="RightHand" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("3_mfc6d")]
 
 [node name="FunctionPointer" parent="XROrigin3D/RightHand" index="1" instance=ExtResource("5_wi4x0")]
+show_laser = 2
+laser_length = 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 0.279125, 0.960255, 0, -0.960255, 0.279125, 0, 0, 0)
