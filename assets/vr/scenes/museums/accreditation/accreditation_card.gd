@@ -1,6 +1,8 @@
 @tool
 extends PanelContainer
-class_name AccredicationCard
+class_name AccreditationCard
+
+signal certificate_pressed(image: Texture2D)
 
 @export var refresh := false : set = set_refresh
 @export var accreditation : Accreditation = null
@@ -81,3 +83,15 @@ func _on_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			set_focus_mode(Control.FOCUS_CLICK)
+
+
+func _on_button_1_pressed():
+	emit_signal("certificate_pressed", accreditation.certificates[0])
+
+
+func _on_button_2_pressed():
+	emit_signal("certificate_pressed", accreditation.certificates[1])
+
+
+func _on_button_3_pressed():
+	emit_signal("certificate_pressed", accreditation.certificates[2])

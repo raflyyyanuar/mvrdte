@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://yfm4brf45wvx"]
+[gd_scene load_steps=14 format=3 uid="uid://yfm4brf45wvx"]
 
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_6y015"]
 [ext_resource type="Script" path="res://assets/vr/scenes/museums/accreditation/accreditation_room.gd" id="2_48vrx"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="5_wi4x0"]
 [ext_resource type="PackedScene" uid="uid://d4c1p0uxlxfbc" path="res://assets/vr/scenes/museums/accreditation/accreditation_board.tscn" id="6_d61b7"]
 [ext_resource type="PackedScene" uid="uid://bk3uatdptflx3" path="res://assets/vr/scenes/level_transition/vr_level_transition.tscn" id="7_xvbp7"]
+[ext_resource type="Script" path="res://assets/vr/scenes/museums/accreditation/certificate_viewer.gd" id="10_7w16q"]
 [ext_resource type="PackedScene" uid="uid://csr8mpobrpavp" path="res://assets/vr/scenes/ui/follow_xr_camera.tscn" id="10_ejie3"]
 [ext_resource type="Texture2D" path="res://assets/common/images/akreditasi/BAN_S1_TK_1_Jul_2011-1_Jul_2016.png" id="11_cse5h"]
 
@@ -17,9 +18,8 @@ height = 0.1
 radial_segments = 24
 cap_bottom = false
 
-[node name="RuangAkreditasi" instance=ExtResource("1_6y015")]
+[node name="AccreditationRoom" instance=ExtResource("1_6y015")]
 script = ExtResource("2_48vrx")
-accreditations = []
 
 [node name="XRCamera3D" parent="XROrigin3D" index="0"]
 unique_name_in_owner = true
@@ -45,15 +45,17 @@ mesh = SubResource("CylinderMesh_5qaid")
 [node name="FollowXRCamera" parent="MeshInstance3D" index="0" instance=ExtResource("10_ejie3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.939627, 0)
 
-[node name="Certificate" type="Sprite3D" parent="MeshInstance3D/FollowXRCamera" index="0"]
+[node name="CertificateViewer" type="Sprite3D" parent="MeshInstance3D/FollowXRCamera" index="0"]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+double_sided = false
 texture = ExtResource("11_cse5h")
+script = ExtResource("10_7w16q")
 
 [node name="FollowXRCamera" parent="." index="4" instance=ExtResource("10_ejie3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02002, 0.851399, -2.53681)
 follow_camera = false
 
-[node name="AccredicationList" parent="FollowXRCamera" index="0" instance=ExtResource("5_mvxe3")]
+[node name="AccreditationList" parent="FollowXRCamera" index="0" instance=ExtResource("5_mvxe3")]
 screen_size = Vector2(2, 2)
 scene = ExtResource("6_d61b7")
 viewport_size = Vector2(1200, 1200)
