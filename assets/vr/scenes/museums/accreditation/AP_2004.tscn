@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://csnhltcwx6vhc"]
+
+[ext_resource type="PackedScene" uid="uid://dwscmnw3s6skt" path="res://assets/vr/scenes/museums/accreditation/accreditation_poster.tscn" id="1_mw4j8"]
+
+[sub_resource type="Gradient" id="Gradient_ar5fy"]
+colors = PackedColorArray(0.372549, 0.2, 0.380392, 1, 0.498039, 0.160784, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_207n7"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_ar5fy")
+fill_to = Vector2(1, 1)
+
+[node name="AccreditationPoster" instance=ExtResource("1_mw4j8")]
+
+[node name="TopBanner" parent="." index="0"]
+texture = SubResource("GradientTexture2D_207n7")

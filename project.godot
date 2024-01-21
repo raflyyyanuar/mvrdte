@@ -96,7 +96,6 @@ pointing/emulate_touch_from_mouse=true
 textures/vram_compression/import_etc2_astc=true
 limits/time/time_rollover_secs=30.0
 textures/default_filters/anisotropic_filtering_level=0
-environment/volumetric_fog/use_filter=0
 
 [xr]
 

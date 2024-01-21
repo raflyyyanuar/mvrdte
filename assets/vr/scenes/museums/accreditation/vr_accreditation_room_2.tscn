@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0h2ds017kudn"]
+[gd_scene load_steps=9 format=3 uid="uid://c0h2ds017kudn"]
 
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_33amq"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_2pfii"]
 [ext_resource type="PackedScene" uid="uid://cr357x27o22hv" path="res://assets/common/scenes/museums/accreditation/accreditation_room_1.tscn" id="2_fb7vs"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="3_dmaqj"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="3_im684"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_aydvk"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="5_yony6"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="6_cy2dh"]
 
 [node name="VRAccreditationRoom2" instance=ExtResource("1_33amq")]
 
@@ -14,8 +17,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.222939, 0)
 [node name="MovementDirect" parent="XROrigin3D/LeftHand" index="0" instance=ExtResource("2_2pfii")]
 strafe = true
 
+[node name="LeftHand" parent="XROrigin3D/LeftHand" index="1" instance=ExtResource("3_dmaqj")]
+
 [node name="MovementTurn" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("3_im684")]
 turn_mode = 1
+
+[node name="RightHand" parent="XROrigin3D/RightHand" index="1" instance=ExtResource("5_yony6")]
+
+[node name="FunctionPointer" parent="XROrigin3D/RightHand" index="2" instance=ExtResource("6_cy2dh")]
+show_laser = 2
+laser_length = 1
 
 [node name="PlayerBody" parent="XROrigin3D" index="3" instance=ExtResource("4_aydvk")]
 

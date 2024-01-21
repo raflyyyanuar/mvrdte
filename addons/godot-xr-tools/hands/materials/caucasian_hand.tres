@@ -4,5 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://h3sjbnu6uplb" path="res://addons/godot-xr-tools/hands/textures/hands_occlusionRoughnessMetallic.png" id="2_agvfk"]
 
 [resource]
+shading_mode = 0
 albedo_texture = ExtResource("1_si4on")
 orm_texture = ExtResource("2_agvfk")
