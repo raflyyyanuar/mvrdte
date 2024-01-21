@@ -16,16 +16,16 @@
 [ext_resource type="Resource" uid="uid://cagjap2wf2v7g" path="res://assets/vr/scenes/museums/accreditation/accr_2023.tres" id="13_koxko"]
 
 [sub_resource type="Gradient" id="Gradient_0u3ls"]
-colors = PackedColorArray(0.476305, 0, 0.131308, 1, 1, 0.839216, 0.0862745, 1)
+colors = PackedColorArray(0.331483, 0.137975, 0.441364, 1, 1, 0.760193, 0.974171, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qa4dx"]
 gradient = SubResource("Gradient_0u3ls")
-fill_from = Vector2(0, 0.994302)
+fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_csdir"]
 font_size = 120
-font_color = Color(0.384314, 0, 1, 1)
+font_color = Color(0, 0, 0.419608, 1)
 
 [node name="AccreditationBoard" type="Control"]
 clip_children = 1

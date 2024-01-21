@@ -1,4 +1,5 @@
 @tool
+extends Node
 
 # Set of supported vendors
 const META_VENDOR_NAME = "meta"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Accreditation" load_steps=3 format=3 uid="uid://okd1s5itill0"]
+
+[ext_resource type="Texture2D" uid="uid://ddvnwjhm1353n" path="res://assets/common/images/akreditasi/2023_elektro_s2.jpg" id="1_5qkma"]
+[ext_resource type="Script" path="res://assets/vr/scenes/museums/accreditation/accreditation.gd" id="2_bkpea"]
+
+[resource]
+script = ExtResource("2_bkpea")
+year = 2023
+major = "Teknik Elektro S2"
+grade = "Unggul"
+certificate = ExtResource("1_5qkma")

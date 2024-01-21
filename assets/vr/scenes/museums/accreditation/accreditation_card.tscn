@@ -55,9 +55,9 @@ layout_mode = 2
 alignment = 1
 
 [node name="Major1" type="Label" parent="HBoxContainer/VBoxContainer/MajorContainer"]
-self_modulate = Color(0.498039, 1, 0.831373, 1)
+self_modulate = Color(1, 0, 1, 1)
 layout_mode = 2
-text = "Teknik Elektro S1"
+text = "Teknik Elektro S2"
 label_settings = SubResource("LabelSettings_3hns8")
 
 [node name="Major2" type="Label" parent="HBoxContainer/VBoxContainer/MajorContainer"]
@@ -80,7 +80,7 @@ theme_override_constants/separation = 10
 alignment = 2
 
 [node name="Button1" type="Button" parent="HBoxContainer/ButtonContainer"]
-self_modulate = Color(0.498039, 1, 0.831373, 1)
+self_modulate = Color(1, 0, 1, 1)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

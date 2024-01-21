@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Accreditation" load_steps=3 format=3 uid="uid://vdckdsudrup1"]
+
+[ext_resource type="Texture2D" uid="uid://b3cnyk300do26" path="res://assets/common/images/akreditasi/2019_elektro_s3.png" id="1_f4hq1"]
+[ext_resource type="Script" path="res://assets/vr/scenes/museums/accreditation/accreditation.gd" id="2_hhnlm"]
+
+[resource]
+script = ExtResource("2_hhnlm")
+year = 2019
+major = "Teknik Elektro S3"
+grade = "A"
+certificate = ExtResource("1_f4hq1")

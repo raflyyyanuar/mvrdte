@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwscmnw3s6skt"]
+
+[ext_resource type="Texture2D" uid="uid://duyyqnk75u0se" path="res://assets/common/images/akreditasi/2004_elektro_s1.png" id="1_6ogad"]
+[ext_resource type="Script" path="res://assets/vr/scenes/museums/accreditation/accreditation_poster.gd" id="1_8g1xr"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_38npa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wdqdr"]
+texture = SubResource("ImageTexture_38npa")
+
+[sub_resource type="LabelSettings" id="LabelSettings_p81oh"]
+font_size = 150
+
+[sub_resource type="LabelSettings" id="LabelSettings_bsde8"]
+font_size = 47
+
+[node name="AccreditationPoster" type="Panel"]
+custom_minimum_size = Vector2(512, 1024)
+offset_right = 512.0
+offset_bottom = 512.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wdqdr")
+script = ExtResource("1_8g1xr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 38.0
+offset_top = 161.0
+offset_right = -40.0
+offset_bottom = 461.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_6ogad")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Year" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -313.0
+offset_right = -37.0
+offset_bottom = 165.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "2004"
+label_settings = SubResource("LabelSettings_p81oh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -424.0
+offset_top = -322.0
+offset_right = -36.0
+offset_bottom = -188.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Major" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Teknik Elektro S1"
+label_settings = SubResource("LabelSettings_bsde8")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Accreditation" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Akreditasi A"
+label_settings = SubResource("LabelSettings_bsde8")
+horizontal_alignment = 2
+vertical_alignment = 1

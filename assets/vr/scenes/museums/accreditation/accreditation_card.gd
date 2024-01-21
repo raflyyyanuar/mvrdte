@@ -73,7 +73,7 @@ func set_accreditation() -> void:
 		buttons[i].set_self_modulate(colors[current_color])
 
 
-func set_refresh(p_refresh : bool = true) -> void:
+func set_refresh(_p_refresh : bool = true) -> void:
 	refresh = false
 	if accreditation:
 		set_accreditation()

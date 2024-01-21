@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_er0eg")
 year = 2004
-majors = Array[int]([1])
-grades = Array[int]([0])
-certificates = Array[Texture2D]([ExtResource("1_qwgje")])
+major = "Teknik Elektro S1"
+grade = "A"
+certificate = ExtResource("1_qwgje")

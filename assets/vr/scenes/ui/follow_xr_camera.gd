@@ -44,6 +44,8 @@ func _process(delta):
 			Vector3.UP * sign(angle),
 			follow_speed.sample_baked(abs(angle) / PI) * delta
 	).orthonormalized()
+	
+	# global_rotation_degrees.y = clampf(global_rotation_degrees.y, -22.6, 40.0)
 
 
 ## Set the follow_camera property
