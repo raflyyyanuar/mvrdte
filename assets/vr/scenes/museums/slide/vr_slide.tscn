@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dftprhp1ju0y8"]
+
+[ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_kpthf"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="2_vdjy3"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="3_7f2b5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_df1oa"]
+
+[node name="SceneBase" instance=ExtResource("1_kpthf")]
+
+[node name="LeftHand" parent="XROrigin3D/LeftHand" index="0" instance=ExtResource("2_vdjy3")]
+
+[node name="RightHand" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("3_7f2b5")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.800077, -1.46566)
+mesh = SubResource("BoxMesh_df1oa")
