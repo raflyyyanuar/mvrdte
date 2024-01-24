@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dwscmnw3s6skt"]
+[gd_scene load_steps=11 format=3 uid="uid://dwscmnw3s6skt"]
 
 [ext_resource type="Texture2D" uid="uid://duyyqnk75u0se" path="res://assets/common/images/akreditasi/2004_elektro_s1.png" id="1_6ogad"]
 [ext_resource type="Script" path="res://assets/vr/scenes/museums/accreditation/accreditation_poster.gd" id="1_8g1xr"]
@@ -6,14 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bp1n3odmhjhsx" path="res://assets/common/images/kenney_pattern-pack/PNG/Default size/pattern_06.png" id="3_cq4k3"]
 [ext_resource type="FontFile" uid="uid://caywu0v4q7kwm" path="res://assets/common/fonts/arimo/Arimo-Bold.ttf" id="3_ghn2f"]
 [ext_resource type="FontFile" uid="uid://v8j5w3xllibu" path="res://assets/common/fonts/vollkorn/TTF/Vollkorn-Regular.ttf" id="3_yeg7w"]
-
-[sub_resource type="Gradient" id="Gradient_ar5fy"]
-colors = PackedColorArray(0.372549, 0.2, 0.380392, 1, 0.498039, 0.160784, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2hya8"]
-resource_local_to_scene = true
-gradient = SubResource("Gradient_ar5fy")
-fill_to = Vector2(1, 1)
 
 [sub_resource type="Gradient" id="Gradient_fg1ok"]
 offsets = PackedFloat32Array(0.762195, 1)
@@ -43,19 +35,17 @@ offset_right = 512.0
 offset_bottom = 512.0
 script = ExtResource("1_8g1xr")
 accreditation = ExtResource("2_52q7w")
-primary_color = Color(0.372549, 0.2, 0.380392, 1)
-secondary_color = Color(0.498039, 0.160784, 1, 1)
 
-[node name="TopBanner" type="TextureRect" parent="."]
+[node name="TopBanner" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 230.0
 grow_horizontal = 2
-texture = SubResource("GradientTexture2D_2hya8")
+color = Color(0, 0, 0.705882, 1)
 
 [node name="BottomBanner" type="TextureRect" parent="."]
-modulate = Color(0.498039, 0.160784, 1, 1)
+modulate = Color(0, 0, 0.705882, 1)
 clip_contents = true
 layout_mode = 1
 anchors_preset = 12
@@ -120,7 +110,7 @@ anchor_bottom = 1.0
 offset_left = 30.0
 offset_right = 60.0
 grow_vertical = 2
-color = Color(0.372549, 0.2, 0.380392, 1)
+color = Color(0, 0, 0.705882, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 1
@@ -161,7 +151,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -218.0
-offset_top = -302.0
+offset_top = -408.0
 offset_right = 218.0
 offset_bottom = -14.0
 grow_horizontal = 2
@@ -176,7 +166,9 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Button" type="Button" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(0, 90.765)
 layout_mode = 2
-text = "See full image."
+theme_override_font_sizes/font_size = 45
+text = "Lihat penuh."
 
 [connection signal="pressed" from="VBoxContainer2/Button" to="." method="_on_button_pressed"]

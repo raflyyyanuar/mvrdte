@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://bl22k88rmw6u8"]
+
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_3xvxu"]
+[ext_resource type="PackedScene" uid="uid://csnhltcwx6vhc" path="res://assets/vr/scenes/museums/accreditation/AP_2004.tscn" id="2_oc3n5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3enp"]
+emission_operator = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_0ljsj"]
+resource_local_to_scene = true
+size = Vector2(1.5, 3)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2oojb"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0s32w"]
+albedo_texture = SubResource("ViewportTexture_2oojb")
+emission_operator = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lbji7"]
+resource_local_to_scene = true
+size = Vector3(1.5, 3, 0.02)
+
+[sub_resource type="Gradient" id="Gradient_cfpyc"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a7yep"]
+gradient = SubResource("Gradient_cfpyc")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[node name="AccreditationPoster" instance=ExtResource("1_3xvxu")]
+screen_size = Vector2(1.5, 3)
+scene = ExtResource("2_oc3n5")
+viewport_size = Vector2(512, 1024)
+material = SubResource("StandardMaterial3D_i3enp")
+
+[node name="Viewport" parent="." index="0"]
+size = Vector2i(512, 1024)
+
+[node name="Screen" parent="." index="1"]
+mesh = SubResource("QuadMesh_0ljsj")
+surface_material_override/0 = SubResource("StandardMaterial3D_0s32w")
+
+[node name="StaticBody3D" parent="." index="2"]
+screen_size = Vector2(1.5, 3)
+viewport_size = Vector2(512, 1024)
+
+[node name="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_lbji7")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="3"]
+transform = Transform3D(1, -2.21757e-08, 2.95303e-08, 1.86213e-08, 0.993325, 0.115353, -3.18912e-08, -0.115353, 0.993325, 0, 1.15567, 2.20143)
+light_energy = 1.5
+light_indirect_energy = 0.0
+light_projector = SubResource("GradientTexture2D_a7yep")
+light_bake_mode = 1
+shadow_enabled = true
+spot_angle = 24.35
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." index="4"]
+transform = Transform3D(1, -2.21757e-08, 2.95303e-08, 1.86213e-08, 0.993325, 0.115353, -3.18912e-08, -0.115353, 0.993325, 0, -0.461049, 2.20143)
+light_energy = 1.5
+light_indirect_energy = 0.0
+light_projector = SubResource("GradientTexture2D_a7yep")
+light_bake_mode = 1
+shadow_enabled = true
+spot_angle = 24.35

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://vai45rf844x1" path="res://assets/common/images/akreditasi/2011_komputer_s1.png" id="3_qjtf0"]
 
 [sub_resource type="Gradient" id="Gradient_ar5fy"]
-colors = PackedColorArray(0.117647, 0.282353, 0.45098, 1, 0.356863, 0.47451, 0.411765, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.529412, 0, 0.403922, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_207n7"]
 resource_local_to_scene = true
@@ -14,20 +14,16 @@ fill_to = Vector2(1, 1)
 
 [node name="AccreditationPoster" instance=ExtResource("1_4maox")]
 accreditation = ExtResource("2_xi3t5")
-primary_color = Color(0.117647, 0.282353, 0.45098, 1)
-secondary_color = Color(0.356863, 0.47451, 0.411765, 1)
+secondary_color = Color(0.529412, 0, 0.403922, 1)
 
 [node name="TopBanner" parent="." index="0"]
 texture = SubResource("GradientTexture2D_207n7")
 
 [node name="BottomBanner" parent="." index="1"]
-modulate = Color(0.356863, 0.47451, 0.411765, 1)
+modulate = Color(0.529412, 0, 0.403922, 1)
 
 [node name="Year" parent="." index="2"]
 text = "2011"
-
-[node name="Ribbon" parent="ColorRect" index="0"]
-color = Color(0.117647, 0.282353, 0.45098, 1)
 
 [node name="Major" parent="ColorRect/VBoxContainer" index="0"]
 text = "Teknik Komputer S1"
