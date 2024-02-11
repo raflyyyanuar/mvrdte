@@ -19,14 +19,16 @@ config/icon="res://2.png"
 [autoload]
 
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
-Globals="*res://addons/godotopenxrvendors/globals.gd"
+Globals="res://addons/godotopenxrvendors/globals.gd"
+PauseMenu="*res://assets/vr/scenes/pause/pause_menu.tscn"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
+window/size/mode=2
 window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 
@@ -93,7 +95,6 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 limits/time/time_rollover_secs=30.0
 textures/default_filters/anisotropic_filtering_level=0

@@ -353,6 +353,7 @@ func _update_enabled() -> void:
 func _update_collision_layer() -> void:
 	$StaticBody3D.collision_layer = collision_layer
 
+@export var render_on_top := false
 
 # This complex function processes the render dirty flags and performs the
 # minimal number of updates to get the render objects into the correct state.
@@ -488,7 +489,6 @@ func _update_render() -> void:
 	# Handle filter update
 	if _dirty & _DIRTY_FILTERED:
 		_dirty &= ~_DIRTY_FILTERED
-
 		# If using a temporary material then update the filter mode and force a redraw
 		if _screen_material and not material:
 			_screen_material.texture_filter = (
@@ -499,7 +499,9 @@ func _update_render() -> void:
 	# Handle surface material update
 	if _dirty & _DIRTY_SURFACE:
 		_dirty &= ~_DIRTY_SURFACE
-
+		
+		_screen_material.no_depth_test = render_on_top
+		
 		# Set the screen to render using the new screen material
 		$Screen.set_surface_override_material(0, _screen_material)
 

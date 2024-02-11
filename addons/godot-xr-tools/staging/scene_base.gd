@@ -56,7 +56,7 @@ func center_player_on(p_transform : Transform3D):
 	# indicated by p_transform, and having our player looking in the required
 	# direction, we must offset this transform using the cameras transform.
 
-	# So we get our current camera transform in local space
+	# So we get our current  transform in local space
 	var camera_transform = $XROrigin3D/XRCamera3D.transform
 
 	# We obtain our view direction and zero out our height
