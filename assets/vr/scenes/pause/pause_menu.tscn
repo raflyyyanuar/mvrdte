@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://xip2v36dlmtm"]
+
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_ghyk3"]
+[ext_resource type="PackedScene" uid="uid://cleqg3u2nadx4" path="res://assets/vr/scenes/pause/function_pause.tscn" id="2_fvw72"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_t44ab"]
+resource_local_to_scene = true
+size = Vector2(3.2, 1.8)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_71a7w"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brhiw"]
+transparency = 2
+alpha_scissor_threshold = 0.25
+alpha_antialiasing_mode = 0
+cull_mode = 2
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_71a7w")
+texture_filter = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4v6dt"]
+resource_local_to_scene = true
+size = Vector3(3.2, 1.8, 0.02)
+
+[node name="PauseMenu" instance=ExtResource("1_ghyk3")]
+screen_size = Vector2(3.2, 1.8)
+scene = ExtResource("2_fvw72")
+viewport_size = Vector2(1920, 1080)
+transparent = 2
+render_on_top = true
+unshaded = true
+
+[node name="Viewport" parent="." index="0"]
+size = Vector2i(1920, 1080)
+
+[node name="Screen" parent="." index="1"]
+mesh = SubResource("QuadMesh_t44ab")
+surface_material_override/0 = SubResource("StandardMaterial3D_brhiw")
+
+[node name="StaticBody3D" parent="." index="2"]
+screen_size = Vector2(3.2, 1.8)
+viewport_size = Vector2(1920, 1080)
+
+[node name="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_4v6dt")
