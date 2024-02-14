@@ -1,0 +1,24 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnln7hjx4jv4s"]
+
+[ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_1fclm"]
+[ext_resource type="PackedScene" uid="uid://be7ro76wqxw5g" path="res://assets/common/scenes/museum_1/s_museum_1.tscn" id="2_536v3"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_q3n2c"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="3_pr51w"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_6u013"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="5_frfts"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_g265t"]
+
+[node name="SceneBase" instance=ExtResource("1_1fclm")]
+
+[node name="MovementDirect" parent="XROrigin3D/LeftHand" index="0" instance=ExtResource("2_q3n2c")]
+strafe = true
+
+[node name="FunctionTeleport" parent="XROrigin3D/LeftHand" index="1" instance=ExtResource("3_pr51w")]
+
+[node name="MovementTurn" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("4_6u013")]
+
+[node name="FunctionPointer" parent="XROrigin3D/RightHand" index="1" instance=ExtResource("5_frfts")]
+
+[node name="PlayerBody" parent="XROrigin3D" index="3" instance=ExtResource("6_g265t")]
+
+[node name="SMuseum1" parent="." index="1" instance=ExtResource("2_536v3")]
