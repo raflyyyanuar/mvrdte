@@ -1,6 +1,6 @@
 @tool
 extends Node3D
-class_name Viewport2Din3D
+class_name Viewport2Din3DCustom
 
 ## XR ToolsViewport 2D in 3D
 ##
@@ -26,8 +26,6 @@ enum UpdateMode {
 	UPDATE_ALWAYS,		## Update on every frame
 	UPDATE_THROTTLED,	## Update at throttled rate
 }
-
-@export var custom_mesh := false
 
 # The following dirty flags are private (leading _) to suppress them in the
 # generated documentation. Unfortunately gdlint complaints on private constants
@@ -57,9 +55,6 @@ const DEFAULT_LAYER := 0b0000_0000_0101_0000_0000_0000_0000_0001
 # Physics property group
 @export_group("Physics")
 
-## Physical screen size property
-@export var screen_size : Vector2 = Vector2(3.0, 2.0): set = set_screen_size
-
 ## Viewport collision enabled property
 @export var enabled : bool = true: set = set_enabled
 
@@ -71,9 +66,6 @@ const DEFAULT_LAYER := 0b0000_0000_0101_0000_0000_0000_0000_0001
 
 ## Scene property
 @export var scene : PackedScene: set = set_scene
-
-## Viewport size property
-@export var viewport_size : Vector2 = Vector2(300.0, 200.0): set = set_viewport_size
 
 ## Update Mode property
 @export var update_mode : UpdateMode = UpdateMode.UPDATE_ALWAYS: set = set_update_mode
@@ -125,7 +117,6 @@ func _ready():
 	$StaticBody3D.connect("pointer_event", _on_pointer_event)
 
 	# Apply physics properties
-	_update_screen_size()
 	_update_enabled()
 	_update_collision_layer()
 
@@ -245,13 +236,6 @@ func _process(delta):
 		set_process(false)
 
 
-## Set screen size property
-func set_screen_size(new_size: Vector2) -> void:
-	screen_size = new_size
-	if is_ready:
-		_update_screen_size()
-
-
 ## Set enabled property
 func set_enabled(is_enabled: bool) -> void:
 	enabled = is_enabled
@@ -270,14 +254,6 @@ func set_collision_layer(new_layer: int) -> void:
 func set_scene(new_scene: PackedScene) -> void:
 	scene = new_scene
 	_dirty |= _DIRTY_SCENE
-	if is_ready:
-		_update_render()
-
-
-## Set viewport size property
-func set_viewport_size(new_size: Vector2) -> void:
-	viewport_size = new_size
-	_dirty |= _DIRTY_SIZE
 	if is_ready:
 		_update_render()
 
@@ -330,17 +306,6 @@ func set_filter(new_filter: bool) -> void:
 	_dirty |= _DIRTY_FILTERED
 	if is_ready:
 		_update_render()
-
-
-# Screen size update handler
-func _update_screen_size() -> void:
-	if not custom_mesh:
-		$Screen.mesh.size = screen_size
-		$StaticBody3D.screen_size = screen_size
-		$StaticBody3D/CollisionShape3D.shape.size = Vector3(
-				screen_size.x,
-				screen_size.y,
-				0.02)
 
 
 # Enabled update handler
@@ -412,11 +377,6 @@ func _update_render() -> void:
 	# Handle viewport size change
 	if _dirty & _DIRTY_SIZE:
 		_dirty &= ~_DIRTY_SIZE
-		
-		if not custom_mesh:
-			# Set the viewport size
-			$Viewport.size = viewport_size
-			$StaticBody3D.viewport_size = viewport_size
 
 		# Update our viewport texture, it will have changed
 		_dirty |= _DIRTY_ALBEDO
