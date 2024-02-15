@@ -27,8 +27,6 @@ enum UpdateMode {
 	UPDATE_THROTTLED,	## Update at throttled rate
 }
 
-@export var custom_mesh := false
-
 # The following dirty flags are private (leading _) to suppress them in the
 # generated documentation. Unfortunately gdlint complaints on private constants
 # (see https://github.com/Scony/godot-gdscript-toolkit/issues/223). Until this
@@ -334,13 +332,12 @@ func set_filter(new_filter: bool) -> void:
 
 # Screen size update handler
 func _update_screen_size() -> void:
-	if not custom_mesh:
-		$Screen.mesh.size = screen_size
-		$StaticBody3D.screen_size = screen_size
-		$StaticBody3D/CollisionShape3D.shape.size = Vector3(
-				screen_size.x,
-				screen_size.y,
-				0.02)
+	$Screen.mesh.size = screen_size
+	$StaticBody3D.screen_size = screen_size
+	$StaticBody3D/CollisionShape3D.shape.size = Vector3(
+			screen_size.x,
+			screen_size.y,
+			0.02)
 
 
 # Enabled update handler
@@ -413,10 +410,9 @@ func _update_render() -> void:
 	if _dirty & _DIRTY_SIZE:
 		_dirty &= ~_DIRTY_SIZE
 		
-		if not custom_mesh:
-			# Set the viewport size
-			$Viewport.size = viewport_size
-			$StaticBody3D.viewport_size = viewport_size
+		# Set the viewport size
+		$Viewport.size = viewport_size
+		$StaticBody3D.viewport_size = viewport_size
 
 		# Update our viewport texture, it will have changed
 		_dirty |= _DIRTY_ALBEDO

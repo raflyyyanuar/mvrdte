@@ -20,7 +20,7 @@ config/icon="res://2.png"
 
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
 Globals="res://addons/godotopenxrvendors/globals.gd"
-PauseMenu="*res://assets/vr/scenes/pause/pause_menu.tscn"
+PauseMenu="res://assets/vr/scenes/pause/pause_menu.tscn"
 
 [display]
 

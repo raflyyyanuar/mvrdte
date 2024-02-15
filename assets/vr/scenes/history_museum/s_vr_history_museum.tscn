@@ -1,0 +1,54 @@
+[gd_scene load_steps=15 format=3 uid="uid://2jytgkwhib5j"]
+
+[ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_htnpw"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_2lkmw"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="3_g75dj"]
+[ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="4_uaij6"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="5_f0wiq"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="6_hwyvj"]
+[ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="7_ianvg"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="8_w10pn"]
+[ext_resource type="PackedScene" uid="uid://bn3c3saxrk6rx" path="res://assets/common/scenes/history-museum/s_history_museum.tscn" id="9_i5yis"]
+[ext_resource type="PackedScene" uid="uid://0xlsitpu17r1" path="res://addons/godot-xr-tools/functions/movement_footstep.tscn" id="9_yadt7"]
+[ext_resource type="AudioStream" uid="uid://b1lh2ty32jsik" path="res://assets/common/audio/563473__nicholasdaryl__footstep-walk-hardsurface-6.wav" id="10_r1o1g"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/audio/surface_audio_type.gd" id="11_h5mmi"]
+[ext_resource type="Script" path="res://assets/vr/scenes/museum_1/level_switcher.gd" id="13_lq6fr"]
+
+[sub_resource type="Resource" id="Resource_qstk2"]
+script = ExtResource("11_h5mmi")
+name = "Ground"
+hit_sound = ExtResource("10_r1o1g")
+walk_sounds = Array[AudioStream]([ExtResource("10_r1o1g")])
+walk_pitch_minimum = 0.8
+walk_pitch_maximum = 1.2
+
+[node name="SVRHub" instance=ExtResource("1_htnpw")]
+
+[node name="XROrigin3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.07185)
+
+[node name="MovementDirect" parent="XROrigin3D/LeftHand" index="0" instance=ExtResource("2_2lkmw")]
+strafe = true
+
+[node name="FunctionTeleport" parent="XROrigin3D/LeftHand" index="1" instance=ExtResource("3_g75dj")]
+
+[node name="LeftHand" parent="XROrigin3D/LeftHand" index="2" instance=ExtResource("4_uaij6")]
+
+[node name="FunctionPointer" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("5_f0wiq")]
+laser_length = 1
+show_target = true
+
+[node name="MovementTurn" parent="XROrigin3D/RightHand" index="1" instance=ExtResource("6_hwyvj")]
+
+[node name="RightHand" parent="XROrigin3D/RightHand" index="2" instance=ExtResource("7_ianvg")]
+
+[node name="PlayerBody" parent="XROrigin3D" index="3" instance=ExtResource("8_w10pn")]
+
+[node name="MovementFootstep" parent="XROrigin3D" index="4" instance=ExtResource("9_yadt7")]
+default_surface_audio_type = SubResource("Resource_qstk2")
+steps_per_meter = 1.5
+
+[node name="SHub" parent="." index="1" instance=ExtResource("9_i5yis")]
+
+[node name="LevelSwitcher" type="Node3D" parent="." index="2"]
+script = ExtResource("13_lq6fr")
